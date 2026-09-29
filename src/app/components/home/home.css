@@ -1,0 +1,1339 @@
+/* =========================================================
+   HOME PAGE
+========================================================= */
+
+.home-page {
+  position: relative;
+  min-height: calc(100vh - 72px);
+  overflow: hidden;
+  background: #f8fbfc;
+  padding: 55px 20px 45px;
+}
+
+
+/* =========================================================
+   HERO BACKGROUND
+========================================================= */
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(0, 145, 150, 0.08),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(0, 61, 91, 0.07),
+      transparent 38%
+    );
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  background-image:
+    linear-gradient(rgba(0, 61, 91, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 61, 91, 0.035) 1px, transparent 1px);
+  background-size: 45px 45px;
+}
+
+.hero-glow {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+}
+
+.glow-left {
+  top: 10%;
+  left: -180px;
+  background: #00a6a6;
+}
+
+.glow-right {
+  right: -180px;
+  bottom: 5%;
+  background: #00617d;
+}
+
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.hero-section {
+  position: relative;
+  z-index: 2;
+
+  width: min(1200px, 94%);
+  min-height: 530px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: center;
+
+  gap: 30px;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+  animation: contentReveal 0.8s ease-out both;
+}
+
+.welcome-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 7px 12px;
+
+  border: 1px solid rgba(0, 145, 150, 0.15);
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  color: var(--teal);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  backdrop-filter: blur(8px);
+
+  animation: badgePulse 3s ease-in-out infinite;
+}
+
+.welcome-badge span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--teal);
+
+  box-shadow: 0 0 0 4px rgba(0, 145, 150, 0.08);
+}
+
+.hero-content h1 {
+  margin: 20px 0 15px;
+
+  color: var(--primary);
+
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+.hero-content h1 strong {
+  display: block;
+  color: var(--teal);
+  font-weight: 800;
+}
+
+.hero-description {
+  max-width: 530px;
+
+  margin: 0 0 28px;
+
+  color: var(--text-light);
+
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   HERO ACTIONS
+========================================================= */
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  flex-wrap: wrap;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  min-height: 46px;
+
+  padding: 0 18px;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.primary-button {
+  background: var(--primary);
+  color: #fff;
+
+  box-shadow: 0 12px 25px rgba(0, 61, 91, 0.18);
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(0, 61, 91, 0.23);
+}
+
+.secondary-button {
+  background: rgba(255, 255, 255, 0.85);
+
+  color: var(--primary);
+
+  border: 1px solid var(--border);
+}
+
+.secondary-button:hover {
+  transform: translateY(-2px);
+  background: #fff;
+}
+
+
+/* =========================================================
+   HERO INFO
+========================================================= */
+
+.hero-info {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  margin-top: 30px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.info-item > i {
+  color: var(--teal);
+  font-size: 16px;
+}
+
+.info-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.info-item strong {
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.info-item span {
+  color: var(--text-light);
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.hero-visual {
+  position: relative;
+
+  min-height: 500px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: visualReveal 0.9s ease-out both;
+}
+
+
+/* =========================================================
+   TRAVEL IMAGE
+========================================================= */
+
+.travel-image {
+  position: relative;
+
+  width: min(560px, 100%);
+  height: 430px;
+
+  overflow: hidden;
+
+  border-radius: 26px;
+
+  background: #dfeaec;
+
+  box-shadow:
+    0 30px 70px rgba(0, 61, 91, 0.18),
+    0 10px 25px rgba(0, 61, 91, 0.08);
+
+  transform: perspective(1200px) rotateY(-3deg);
+}
+
+.travel-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.8s ease;
+}
+
+.travel-image:hover img {
+  transform: scale(1.04);
+}
+
+.travel-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 61, 91, 0.02),
+      rgba(0, 61, 91, 0.18)
+    );
+}
+
+/* =========================================================
+   LIVE CLOCK FLOATING CARD
+   Styled like the Destination / Dubai card
+========================================================= */
+
+.clock-floating-card {
+  position: absolute;
+  top: 38px;
+  left: 38px;
+  z-index: 8;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 8px 11px 8px 8px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  box-shadow:
+    0 15px 35px rgba(0, 61, 91, 0.13);
+
+  backdrop-filter: blur(10px);
+
+  animation: clockFloat 5.5s ease-in-out infinite;
+}
+
+.clock-icon {
+  width: 47px;
+  height: 47px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: #eef7f9;
+  color: var(--teal);
+}
+
+.clock-icon i {
+  font-size: 18px;
+}
+
+.clock-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.clock-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  color: var(--teal);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.clock-floating-card strong {
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.clock-date {
+  display: block;
+  margin-top: 0;
+
+  color: var(--text-light);
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   45+ SERVICES FLOATING CARD
+========================================================= */
+
+.services-floating-card {
+  position: absolute;
+
+  z-index: 9;
+
+  top: 42px;
+  right: -15px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 11px 15px;
+
+  background: #fff;
+
+  border: 1px solid var(--border);
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 15px 35px rgba(0, 61, 91, 0.14);
+
+  animation: floatingCard 5s ease-in-out infinite;
+}
+
+.services-icon {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: #eef7f9;
+
+  color: var(--teal);
+}
+
+.services-icon i {
+  font-size: 16px;
+}
+
+.services-floating-card strong {
+  display: block;
+
+  color: var(--primary);
+
+  font-size: 18px;
+
+  line-height: 1;
+  font-weight: 800;
+}
+
+.services-floating-card span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: var(--text-light);
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   DESTINATION CARD
+========================================================= */
+
+.destination-card {
+  position: absolute;
+
+  z-index: 9;
+
+  left: -18px;
+  bottom: 45px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 8px 11px 8px 8px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border: 1px solid var(--border);
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 15px 35px rgba(0, 61, 91, 0.13);
+
+  backdrop-filter: blur(10px);
+
+  animation: destinationFloat 5.5s ease-in-out infinite;
+}
+
+.destination-card img {
+  width: 47px;
+  height: 47px;
+
+  flex-shrink: 0;
+
+  object-fit: cover;
+
+  border-radius: 9px;
+}
+
+.destination-card > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.destination-card span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  color: var(--teal);
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.destination-card span i {
+  font-size: 8px;
+}
+
+.destination-card strong {
+  color: var(--primary);
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   VISUAL CIRCLES
+========================================================= */
+
+.visual-circle {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.visual-circle.circle-one {
+  width: 90px;
+  height: 90px;
+
+  top: 20px;
+  right: 20px;
+
+  border: 1px solid rgba(0, 145, 150, 0.12);
+}
+
+.visual-circle.circle-two {
+  width: 55px;
+  height: 55px;
+
+  bottom: 10px;
+  right: 90px;
+
+  border: 1px solid rgba(0, 61, 91, 0.1);
+}
+
+
+/* =========================================================
+   SERVICE RIBBON
+========================================================= */
+
+.service-ribbon {
+  position: relative;
+
+  z-index: 3;
+
+  width: min(1200px, 94%);
+
+  margin: 20px auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 12px;
+
+  padding: 12px;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  border: 1px solid var(--border);
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 15px 40px rgba(0, 61, 91, 0.06);
+
+  backdrop-filter: blur(10px);
+}
+
+.ribbon-item {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 9px 11px;
+
+  border-radius: 10px;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.ribbon-item:hover {
+  background: rgba(0, 145, 150, 0.05);
+  transform: translateY(-2px);
+}
+
+.ribbon-icon {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: #eef7f9;
+
+  color: var(--teal);
+}
+
+.ribbon-icon i {
+  font-size: 14px;
+}
+
+.ribbon-item > div:last-child {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.ribbon-item strong {
+  color: var(--primary);
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.ribbon-item span {
+  color: var(--text-light);
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes contentReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes visualReveal {
+  from {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes clockFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes floatingCard {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes destinationFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(7px);
+  }
+}
+
+@keyframes badgePulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 145, 150, 0.04);
+  }
+
+  50% {
+    box-shadow: 0 0 0 6px rgba(0, 145, 150, 0.03);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .home-page {
+    padding: 45px 18px 35px;
+  }
+
+  .hero-section {
+    width: min(720px, 94%);
+
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+
+    gap: 35px;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .welcome-badge {
+    justify-content: center;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-info {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    min-height: 500px;
+  }
+
+  .travel-image {
+    width: min(620px, 100%);
+  }
+
+  .clock-floating-card {
+    left: 22px;
+  }
+
+  .services-floating-card {
+    right: 0;
+  }
+
+  .destination-card {
+    left: 0;
+  }
+
+  .service-ribbon {
+    width: min(720px, 94%);
+
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .home-page {
+    padding: 35px 12px 30px;
+  }
+
+  .hero-section {
+    width: 100%;
+
+    gap: 25px;
+  }
+
+  .hero-content h1 {
+    margin-top: 16px;
+
+    font-size: clamp(34px, 10vw, 48px);
+
+    letter-spacing: -1.5px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    gap: 9px;
+  }
+
+  .primary-button,
+  .secondary-button {
+    min-height: 43px;
+
+    padding: 0 14px;
+
+    font-size: 12px;
+  }
+
+  .hero-info {
+    gap: 18px;
+
+    margin-top: 23px;
+  }
+
+  .hero-visual {
+    min-height: 390px;
+  }
+
+  .travel-image {
+    width: calc(100% - 28px);
+    height: 330px;
+
+    border-radius: 20px;
+  }
+
+
+  /* CLOCK */
+
+  .clock-floating-card {
+    top: 12px;
+
+    left: max(
+      4px,
+      calc((100% - min(560px, calc(100% - 28px))) / 2 + 8px)
+    );
+
+    padding: 7px 9px;
+
+    gap: 8px;
+  }
+
+  .clock-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .clock-icon i {
+    font-size: 14px;
+  }
+
+  .clock-content {
+    min-width: 88px;
+  }
+
+  .clock-label {
+    font-size: 6.5px;
+  }
+
+  .clock-floating-card strong {
+    font-size: 13px;
+  }
+
+  .clock-date {
+    font-size: 7px;
+  }
+
+
+  /* 45+ SERVICES */
+
+  .services-floating-card {
+    top: 14px;
+    right: max(
+      4px,
+      calc((100% - min(560px, calc(100% - 28px))) / 2)
+    );
+
+    padding: 8px 10px;
+
+    gap: 7px;
+  }
+
+  .services-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .services-icon i {
+    font-size: 14px;
+  }
+
+  .services-floating-card strong {
+    font-size: 14px;
+  }
+
+  .services-floating-card span {
+    font-size: 7px;
+  }
+
+
+  /* DESTINATION */
+
+  .destination-card {
+    left: max(
+      4px,
+      calc((100% - min(560px, calc(100% - 28px))) / 2)
+    );
+
+    bottom: 18px;
+
+    padding: 6px 8px 6px 6px;
+
+    gap: 7px;
+  }
+
+  .destination-card img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .destination-card strong {
+    font-size: 12px;
+  }
+
+  .destination-card span {
+    font-size: 6px;
+  }
+
+
+  /* RIBBON */
+
+  .service-ribbon {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 6px;
+
+    padding: 8px;
+  }
+
+  .ribbon-item {
+    padding: 8px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .home-page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .hero-visual {
+    min-height: 365px;
+  }
+
+  .travel-image {
+    height: 305px;
+  }
+
+
+  /* CLOCK */
+
+  .clock-floating-card {
+    top: 10px;
+
+    padding: 6px 8px;
+
+    gap: 7px;
+  }
+
+  .clock-icon {
+    width: 29px;
+    height: 29px;
+  }
+
+  .clock-icon i {
+    font-size: 13px;
+  }
+
+  .clock-content {
+    min-width: 82px;
+  }
+
+  .clock-label {
+    font-size: 6px;
+  }
+
+  .clock-floating-card strong {
+    font-size: 12px;
+  }
+
+  .clock-date {
+    font-size: 6.5px;
+  }
+
+
+  /* SERVICES */
+
+  .services-floating-card {
+    padding: 7px 8px;
+
+    gap: 6px;
+  }
+
+  .services-icon {
+    width: 29px;
+    height: 29px;
+  }
+
+  .services-icon i {
+    font-size: 13px;
+  }
+
+  .services-floating-card strong {
+    font-size: 13px;
+  }
+
+  .services-floating-card span {
+    font-size: 6.5px;
+  }
+
+
+  /* DESTINATION */
+
+  .destination-card {
+    bottom: 15px;
+  }
+
+  .destination-card img {
+    width: 37px;
+    height: 37px;
+  }
+
+  .destination-card strong {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .hero-visual {
+    min-height: 340px;
+  }
+
+  .travel-image {
+    height: 280px;
+  }
+
+
+  /* CLOCK */
+
+  .clock-floating-card {
+    top: 9px;
+
+    padding: 5px 7px;
+
+    gap: 6px;
+  }
+
+  .clock-icon {
+    width: 27px;
+    height: 27px;
+  }
+
+  .clock-icon i {
+    font-size: 12px;
+  }
+
+  .clock-content {
+    min-width: 75px;
+  }
+
+  .clock-label {
+    font-size: 5.5px;
+  }
+
+  .clock-floating-card strong {
+    font-size: 11px;
+  }
+
+  .clock-date {
+    font-size: 6px;
+  }
+
+
+  /* SERVICES */
+
+  .services-floating-card {
+    padding: 6px 7px;
+
+    gap: 5px;
+  }
+
+  .services-icon {
+    width: 27px;
+    height: 27px;
+  }
+
+  .services-icon i {
+    font-size: 12px;
+  }
+
+  .services-floating-card strong {
+    font-size: 12px;
+  }
+
+  .services-floating-card span {
+    font-size: 6px;
+  }
+
+
+  /* DESTINATION */
+
+  .destination-card {
+    bottom: 12px;
+  }
+
+  .destination-card img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .destination-card strong {
+    font-size: 10px;
+  }
+
+  .destination-card span {
+    font-size: 5.5px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 340px) {
+
+  .hero-visual {
+    min-height: 320px;
+  }
+
+  .travel-image {
+    height: 260px;
+  }
+
+
+  /* CLOCK */
+
+  .clock-floating-card {
+    top: 7px;
+    left: 5px;
+
+    padding: 5px 6px;
+
+    gap: 5px;
+  }
+
+  .clock-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .clock-icon i {
+    font-size: 11px;
+  }
+
+  .clock-content {
+    min-width: 68px;
+  }
+
+  .clock-label {
+    font-size: 5px;
+  }
+
+  .clock-floating-card strong {
+    font-size: 10px;
+  }
+
+  .clock-date {
+    font-size: 5.5px;
+  }
+
+
+  /* SERVICES */
+
+  .services-floating-card {
+    top: 7px;
+    right: 5px;
+
+    padding: 5px 6px;
+
+    gap: 5px;
+  }
+
+  .services-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .services-icon i {
+    font-size: 11px;
+  }
+
+  .services-floating-card strong {
+    font-size: 11px;
+  }
+
+  .services-floating-card span {
+    font-size: 5.5px;
+  }
+
+
+  /* DESTINATION */
+
+  .destination-card {
+    left: 5px;
+    bottom: 10px;
+  }
+
+  .destination-card img {
+    width: 31px;
+    height: 31px;
+  }
+
+  .destination-card strong {
+    font-size: 9px;
+  }
+
+  .destination-card span {
+    font-size: 5px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .clock-floating-card,
+  .services-floating-card,
+  .destination-card,
+  .welcome-badge {
+    animation: none;
+  }
+
+  .hero-content,
+  .hero-visual {
+    animation: none;
+  }
+
+  .travel-image img,
+  .primary-button,
+  .secondary-button,
+  .ribbon-item {
+    transition: none;
+  }
+}

@@ -1,0 +1,2875 @@
+/* =========================================================
+   HAMZA TRAVELS — GLOBAL THEME
+   Light + Professional Dark Mode
+   ========================================================= */
+
+
+/* =========================================================
+   LIGHT THEME
+   ========================================================= */
+
+:root {
+
+  --primary: #003d5b;
+  --secondary: #30638e;
+  --teal: #00798c;
+  --accent: #edae49;
+  --danger: #d1495b;
+
+  --background: #f7fafb;
+  --surface: #ffffff;
+  --surface-soft: #f1f6f8;
+
+  --text: #243746;
+  --text-light: #60717d;
+  --text-muted: #71838d;
+
+  --border: #dce5e9;
+  --border-soft: #e8eef1;
+
+}
+
+
+/* =========================================================
+   DARK THEME
+   ========================================================= */
+
+body.dark-mode {
+
+  /*
+    Deep blue-black.
+    Pure black avoid kiya gaya hai taaki eyes par harsh na lage.
+  */
+
+  --background: #0b151c;
+
+  /*
+    Main cards / navbar / forms
+  */
+
+  --surface: #14252f;
+
+  /*
+    Secondary cards / inputs / subtle surfaces
+  */
+
+  --surface-soft: #1b303b;
+
+
+  /*
+    Main text
+    Warm white — pure #fff se thoda softer.
+  */
+
+  --text: #f3f7f8;
+
+  /*
+    Paragraph / secondary text
+  */
+
+  --text-light: #c4d1d7;
+
+  /*
+    Small / muted text
+  */
+
+  --text-muted: #9cafb8;
+
+
+  /*
+    Brand colors
+  */
+
+  --primary: #f3f7f8;
+
+  --secondary: #9fc2d2;
+
+  --teal: #42d1d8;
+
+  --accent: #f3c15b;
+
+  --danger: #ff7b88;
+
+
+  /*
+    Borders
+  */
+
+  --border: #304954;
+
+  --border-soft: #253b45;
+
+
+  color-scheme: dark;
+}
+
+
+/* =========================================================
+   GLOBAL RESET
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  background: var(--background);
+  color: var(--text);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+
+body {
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   FORM ELEMENTS
+   ========================================================= */
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+
+/* =========================================================
+   TEXT SYSTEM
+   ========================================================= */
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+
+  color: #f3f7f8;
+}
+
+
+body.dark-mode p {
+
+  color: #c4d1d7;
+}
+
+
+body.dark-mode span {
+
+  /*
+    Sirf generic spans ko force nahi karenge.
+    Important brand / icon spans ko unke component
+    color ke through control hone denge.
+  */
+
+  transition: color 0.25s ease;
+}
+
+
+body.dark-mode label {
+
+  color: #c4d1d7;
+}
+
+
+body.dark-mode strong,
+body.dark-mode b {
+
+  color: #f3f7f8;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+body.dark-mode a {
+
+  color: #42d1d8;
+}
+
+
+body.dark-mode a:hover {
+
+  color: #72e2e7;
+}
+
+
+/* =========================================================
+   INPUTS / TEXTAREAS / SELECTS
+   ========================================================= */
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+
+  background-color: #14252f;
+
+  color: #f3f7f8;
+
+  border-color: #304954;
+
+  caret-color: #42d1d8;
+}
+
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+
+  color: #91a5ae;
+}
+
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus,
+body.dark-mode select:focus {
+
+  border-color: #42d1d8;
+
+  outline: none;
+
+  box-shadow:
+    0 0 0 3px rgba(66, 209, 216, 0.12);
+}
+
+
+/* =========================================================
+   OPTION / SELECT TEXT
+   ========================================================= */
+
+body.dark-mode option {
+
+  background: #14252f;
+
+  color: #f3f7f8;
+}
+
+
+/* =========================================================
+   BUTTON TEXT
+   ========================================================= */
+
+body.dark-mode button {
+
+  color: inherit;
+}
+
+
+/* =========================================================
+   =========================================================
+   HOME PAGE
+   =========================================================
+   ========================================================= */
+
+
+/* Main page */
+
+body.dark-mode .home-page {
+
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(66, 209, 216, 0.055),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 10% 85%,
+      rgba(243, 193, 91, 0.045),
+      transparent 30%
+    ),
+    #0b151c;
+
+  color: #f3f7f8;
+}
+
+
+/* Hero gradient */
+
+body.dark-mode .hero-gradient {
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(66, 209, 216, 0.055),
+      transparent 42%,
+      rgba(66, 209, 216, 0.035)
+    );
+}
+
+
+/* Hero grid */
+
+body.dark-mode .hero-grid {
+
+  opacity: 0.14;
+
+  background-image:
+
+    linear-gradient(
+      rgba(66, 209, 216, 0.14) 1px,
+      transparent 1px
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(66, 209, 216, 0.14) 1px,
+      transparent 1px
+    );
+}
+
+
+/* Hero glows */
+
+body.dark-mode .glow-left {
+
+  background:
+    rgba(243, 193, 91, 0.07);
+}
+
+
+body.dark-mode .glow-right {
+
+  background:
+    rgba(66, 209, 216, 0.08);
+}
+
+
+/* Welcome badge */
+
+body.dark-mode .welcome-badge {
+
+  background: #14252f;
+
+  border-color: #304954;
+
+  color: #42d1d8;
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.24);
+}
+
+
+/* Welcome badge dot */
+
+body.dark-mode .welcome-badge span {
+
+  background: #f3c15b;
+
+  box-shadow:
+    0 0 0 4px rgba(243, 193, 91, 0.10);
+}
+
+
+/* Main heading */
+
+body.dark-mode .hero-content h1 {
+
+  color: #f3f7f8;
+}
+
+
+body.dark-mode .hero-content h1 strong {
+
+  color: #42d1d8;
+}
+
+
+/* Description */
+
+body.dark-mode .hero-description {
+
+  color: #c4d1d7;
+}
+
+
+/* =========================================================
+   HOME BUTTONS
+   ========================================================= */
+
+body.dark-mode .primary-button {
+
+  background: #42d1d8;
+
+  color: #071419;
+
+  box-shadow:
+    0 12px 30px rgba(66, 209, 216, 0.16);
+}
+
+
+body.dark-mode .primary-button:hover {
+
+  background: #63dce2;
+
+  color: #071419;
+
+  box-shadow:
+    0 16px 34px rgba(66, 209, 216, 0.22);
+}
+
+
+body.dark-mode .secondary-button {
+
+  background: #14252f;
+
+  color: #f3f7f8;
+
+  border-color: #304954;
+}
+
+
+body.dark-mode .secondary-button:hover {
+
+  background: #1b303b;
+
+  color: #42d1d8;
+
+  border-color: #42d1d8;
+}
+
+
+/* Hero information */
+
+body.dark-mode .info-item strong {
+
+  color: #f3f7f8;
+}
+
+
+body.dark-mode .info-item span {
+
+  color: #9cafb8;
+}
+
+
+/* =========================================================
+   TRAVEL IMAGE
+   ========================================================= */
+
+body.dark-mode .travel-image {
+
+  box-shadow:
+    0 30px 65px rgba(0, 0, 0, 0.42);
+}
+
+
+body.dark-mode .travel-image:hover {
+
+  box-shadow:
+    0 35px 75px rgba(0, 0, 0, 0.52);
+}
+
+
+/* Image overlay */
+
+body.dark-mode .travel-overlay {
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(4, 25, 34, 0.38),
+      transparent 48%,
+      rgba(0, 121, 140, 0.20)
+    );
+}
+
+
+/* Plane */
+
+body.dark-mode .plane-decoration {
+
+  background:
+    rgba(20, 37, 47, 0.94);
+
+  color: #42d1d8;
+
+  border: 1px solid #304954;
+
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.34);
+}
+
+
+/* =========================================================
+   FLOATING SERVICE CARD
+   ========================================================= */
+
+body.dark-mode .services-floating-card {
+
+  background: #14252f;
+
+  border-color: #304954;
+
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.34);
+}
+
+
+body.dark-mode .services-icon {
+
+  background:
+    rgba(66, 209, 216, 0.10);
+
+  color: #42d1d8;
+}
+
+
+body.dark-mode .services-floating-card strong {
+
+  color: #f3f7f8;
+}
+
+
+body.dark-mode .services-floating-card span {
+
+  color: #9cafb8;
+}
+
+
+/* =========================================================
+   DESTINATION CARDS
+   ========================================================= */
+
+body.dark-mode .destination-card {
+
+  background:
+    rgba(20, 37, 47, 0.96);
+
+  border-color: #304954;
+
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.34);
+}
+
+
+body.dark-mode .destination-card span {
+
+  color: #9cafb8;
+}
+
+
+body.dark-mode .destination-card span i {
+
+  color: #42d1d8;
+}
+
+
+body.dark-mode .destination-card strong {
+
+  color: #f3f7f8;
+}
+
+
+/* =========================================================
+   SERVICE RIBBON
+   ========================================================= */
+
+body.dark-mode .service-ribbon {
+
+  background: #14252f;
+
+  border-color: #304954;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.28);
+}
+
+
+body.dark-mode .ribbon-item {
+
+  border-color: #304954;
+}
+
+
+body.dark-mode .ribbon-item:hover {
+
+  background: #1b303b;
+}
+
+
+body.dark-mode .ribbon-icon {
+
+  background:
+    rgba(66, 209, 216, 0.10);
+
+  color: #42d1d8;
+}
+
+
+body.dark-mode .ribbon-item strong {
+
+  color: #f3f7f8;
+}
+
+
+body.dark-mode .ribbon-item span {
+
+  color: #9cafb8;
+}
+
+
+/* =========================================================
+   DECORATIVE CIRCLES
+   ========================================================= */
+
+body.dark-mode .circle-one {
+
+  border-color:
+    rgba(66, 209, 216, 0.15);
+}
+
+
+body.dark-mode .circle-two {
+
+  border-color:
+    rgba(243, 193, 91, 0.16);
+}
+
+
+/* =========================================================
+   =========================================================
+   NAVBAR
+   =========================================================
+   ========================================================= */
+
+body.dark-mode .navbar {
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(14, 29, 38, 0.98),
+      rgba(14, 29, 38, 0.94)
+    );
+
+  border-bottom-color:
+    rgba(66, 209, 216, 0.13);
+
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.30);
+}
+
+
+/* Logo */
+
+body.dark-mode .logo {
+
+  color: #f3f7f8;
+}
+
+
+body.dark-mode .logo:hover {
+
+  color: #42d1d8;
+}
+
+
+/* Logo image */
+
+body.dark-mode .logo-image {
+
+  filter:
+    brightness(0)
+    saturate(100%)
+    invert(82%)
+    sepia(20%)
+    saturate(800%)
+    hue-rotate(140deg)
+    brightness(95%)
+    contrast(95%);
+}
+
+
+/* =========================================================
+   NAVBAR SEARCH
+   ========================================================= */
+
+body.dark-mode .search-box {
+
+  background:
+    rgba(20, 37, 47, 0.94);
+
+  border-color:
+    rgba(159, 194, 210, 0.18);
+
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+
+body.dark-mode .search-box:hover {
+
+  border-color:
+    rgba(66, 209, 216, 0.38);
+}
+
+
+body.dark-mode .search-box:focus-within {
+
+  background: #14252f;
+
+  border-color: #42d1d8;
+
+  box-shadow:
+    0 0 0 3px rgba(66, 209, 216, 0.11),
+    0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+body.dark-mode .search-box input {
+
+  color: #f3f7f8;
+}
+
+
+body.dark-mode .search-box input::placeholder {
+
+  color: #91a5ae;
+}
+
+
+body.dark-mode .search-icon {
+
+  color: #42d1d8;
+}
+
+
+/* Voice */
+
+body.dark-mode .voice-search {
+
+  color: #42d1d8;
+}
+
+
+body.dark-mode .voice-search:hover {
+
+  background:
+    rgba(66, 209, 216, 0.10);
+
+  color: #72e2e7;
+}
+
+
+/* Voice status */
+
+body.dark-mode .voice-status {
+
+  background: #14252f;
+
+  border-color: #304954;
+
+  color: #f3f7f8;
+
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.32);
+}
+
+
+/* Clear */
+
+body.dark-mode .clear-search {
+
+  background:
+    rgba(66, 209, 216, 0.10);
+
+  color: #42d1d8;
+}
+
+
+body.dark-mode .clear-search:hover {
+
+  background: #42d1d8;
+
+  color: #071419;
+}
+
+
+/* =========================================================
+   SEARCH RESULTS
+   ========================================================= */
+
+body.dark-mode .search-results {
+
+  background:
+    rgba(20, 37, 47, 0.98);
+
+  border-color: #304954;
+
+  box-shadow:
+    0 20px 42px rgba(0, 0, 0, 0.40);
+}
+
+
+body.dark-mode .search-result {
+
+  border-bottom-color:
+    rgba(159, 194, 210, 0.12);
+}
+
+
+body.dark-mode .search-result:hover {
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(66, 209, 216, 0.11),
+      rgba(66, 209, 216, 0.025)
+    );
+}
+
+
+body.dark-mode .search-result-content strong {
+
+  color: #f3f7f8;
+}
+
+
+body.dark-mode .search-result-content span {
+
+  color: #42d1d8;
+}
+
+
+body.dark-mode .search-arrow {
+
+  color: #9fc2d2;
+}
+
+
+body.dark-mode .no-results {
+
+  color: #9cafb8;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+body.dark-mode .nav-links {
+
+  background:
+    rgba(20, 37, 47, 0.82);
+
+  border-color:
+    rgba(159, 194, 210, 0.13);
+}
+
+
+body.dark-mode .nav-links a {
+
+  color: #c4d1d7;
+}
+
+
+body.dark-mode .nav-links a:hover {
+
+  color: #42d1d8;
+
+  background:
+    rgba(66, 209, 216, 0.08);
+}
+
+
+body.dark-mode .nav-links a.active {
+
+  color: #f3f7f8;
+
+  background:
+    rgba(66, 209, 216, 0.10);
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.14);
+}
+
+
+body.dark-mode .nav-links a.active:hover {
+
+  color: #42d1d8;
+
+  background:
+    rgba(66, 209, 216, 0.13);
+}
+
+
+/* =========================================================
+   MENU BUTTON
+   ========================================================= */
+
+body.dark-mode .menu-button {
+
+  background: #14252f;
+
+  border-color: #304954;
+
+  box-shadow:
+    0 5px 14px rgba(0, 0, 0, 0.24);
+}
+
+
+body.dark-mode .menu-button:hover {
+
+  background: #1b303b;
+
+  border-color: #42d1d8;
+}
+
+
+body.dark-mode .menu-button span {
+
+  background: #f3f7f8;
+}
+
+
+body.dark-mode .menu-button:hover span {
+
+  background: #42d1d8;
+}
+
+
+/* =========================================================
+   THEME TOGGLE
+   ========================================================= */
+
+body.dark-mode .theme-toggle {
+
+  background: #14252f;
+
+  border-color: #304954;
+
+  color: #f3c15b;
+
+  box-shadow:
+    0 5px 14px rgba(0, 0, 0, 0.24);
+}
+
+
+body.dark-mode .theme-toggle:hover {
+
+  background: #1b303b;
+
+  border-color: #42d1d8;
+
+  color: #42d1d8;
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  body.dark-mode .nav-links {
+
+    background:
+      rgba(20, 37, 47, 0.98);
+
+    border-color:
+      rgba(159, 194, 210, 0.15);
+
+    box-shadow:
+      0 20px 38px rgba(0, 0, 0, 0.40);
+  }
+
+
+  body.dark-mode .nav-links a.active {
+
+    color: #42d1d8;
+
+    background:
+      linear-gradient(
+        135deg,
+        rgba(66, 209, 216, 0.10),
+        rgba(243, 193, 91, 0.055)
+      );
+
+    border-left-color: #42d1d8;
+  }
+
+}
+
+
+/* =========================================================
+   =========================================================
+   GENERIC CARD / FORM SUPPORT
+   =========================================================
+   ========================================================= */
+
+/*
+   Ye selectors intentionally broad nahi hain.
+   Sirf common component naming patterns ko target
+   karte hain taaki images / decorative elements
+   accidentally dark na ho jayein.
+*/
+
+
+body.dark-mode [class*="card"] {
+  color: #42d1d8 !important;
+}
+
+
+body.dark-mode [class*="card"] p {
+
+  color: #c4d1d7;
+}
+
+
+body.dark-mode [class*="card"] strong {
+
+  color: #f3f7f8;
+}
+
+
+body.dark-mode [class*="card"] span {
+
+  color: #c4d1d7;
+}
+
+
+/* Form containers */
+
+body.dark-mode [class*="form-container"],
+body.dark-mode [class*="form-card"],
+body.dark-mode [class*="form-section"] {
+
+  color: #f3f7f8;
+}
+
+
+/* Form headings */
+
+body.dark-mode [class*="form-container"] h1,
+body.dark-mode [class*="form-container"] h2,
+body.dark-mode [class*="form-container"] h3,
+body.dark-mode [class*="form-card"] h1,
+body.dark-mode [class*="form-card"] h2,
+body.dark-mode [class*="form-card"] h3 {
+
+  color: #f3f7f8;
+}
+
+
+/* Form descriptions */
+
+body.dark-mode [class*="form-container"] p,
+body.dark-mode [class*="form-card"] p {
+
+  color: #c4d1d7;
+}
+
+
+/* Form labels */
+
+body.dark-mode [class*="form-container"] label,
+body.dark-mode [class*="form-card"] label {
+
+  color: #c4d1d7;
+}
+
+
+/* =========================================================
+   BORDERS
+   ========================================================= */
+
+body.dark-mode hr {
+
+  border-color: #304954;
+}
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+body.dark-mode ::selection {
+
+  background: rgba(66, 209, 216, 0.25);
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+body.dark-mode::-webkit-scrollbar {
+
+  width: 9px;
+}
+
+
+body.dark-mode::-webkit-scrollbar-track {
+
+  background: #0b151c;
+}
+
+
+body.dark-mode::-webkit-scrollbar-thumb {
+
+  background: #304954;
+
+  border-radius: 10px;
+}
+
+
+body.dark-mode::-webkit-scrollbar-thumb:hover {
+
+  background: #42d1d8;
+}
+
+/* =========================================================
+   DARK MODE — SHARED COMPONENT COLORS
+   Single consolidated layer for all non-home pages.
+   Layout / spacing / sizing are intentionally untouched.
+   ========================================================= */
+
+/* Shared surfaces */
+body.dark-mode .service-card,
+body.dark-mode .destination-card,
+body.dark-mode .services-floating-card,
+body.dark-mode .service-ribbon,
+body.dark-mode .application-form-container,
+body.dark-mode .application-form-card,
+body.dark-mode .form-card,
+body.dark-mode .details-card,
+body.dark-mode .document-card,
+body.dark-mode .info-card,
+body.dark-mode .white-card,
+body.dark-mode .content-card,
+body.dark-mode .info-box,
+body.dark-mode .details-box,
+body.dark-mode .document-box,
+body.dark-mode .requirements-box,
+body.dark-mode .section-card,
+body.dark-mode .section-box {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+}
+
+/* Common card text */
+body.dark-mode .service-card h1,
+body.dark-mode .service-card h2,
+body.dark-mode .service-card h3,
+body.dark-mode .service-card h4,
+body.dark-mode .destination-card h1,
+body.dark-mode .destination-card h2,
+body.dark-mode .destination-card h3,
+body.dark-mode .destination-card h4,
+body.dark-mode .services-floating-card h1,
+body.dark-mode .services-floating-card h2,
+body.dark-mode .services-floating-card h3,
+body.dark-mode .services-floating-card h4,
+body.dark-mode .application-form-container h1,
+body.dark-mode .application-form-container h2,
+body.dark-mode .application-form-container h3,
+body.dark-mode .application-form-card h1,
+body.dark-mode .application-form-card h2,
+body.dark-mode .application-form-card h3,
+body.dark-mode .form-card h1,
+body.dark-mode .form-card h2,
+body.dark-mode .form-card h3,
+body.dark-mode .details-card h1,
+body.dark-mode .details-card h2,
+body.dark-mode .details-card h3,
+body.dark-mode .document-card h1,
+body.dark-mode .document-card h2,
+body.dark-mode .document-card h3,
+body.dark-mode .info-card h1,
+body.dark-mode .info-card h2,
+body.dark-mode .info-card h3 {
+  color: var(--text) !important;
+}
+
+body.dark-mode .service-card p,
+body.dark-mode .destination-card p,
+body.dark-mode .services-floating-card p,
+body.dark-mode .application-form-container p,
+body.dark-mode .application-form-card p,
+body.dark-mode .form-card p,
+body.dark-mode .details-card p,
+body.dark-mode .document-card p,
+body.dark-mode .info-card p {
+  color: var(--text-light) !important;
+}
+
+body.dark-mode .service-card small,
+body.dark-mode .destination-card small,
+body.dark-mode .services-floating-card small,
+body.dark-mode .application-form-container small,
+body.dark-mode .application-form-card small,
+body.dark-mode .form-card small,
+body.dark-mode .details-card small,
+body.dark-mode .document-card small,
+body.dark-mode .info-card small {
+  color: var(--text-muted) !important;
+}
+
+/* Services page */
+body.dark-mode .services-page,
+body.dark-mode .services-section,
+body.dark-mode .services-container {
+  color: var(--text);
+}
+
+body.dark-mode .services-page .service-category,
+body.dark-mode .services-page .service-category h1,
+body.dark-mode .services-page .service-category h2,
+body.dark-mode .services-page .service-category h3,
+body.dark-mode .services-page .service-category h4 {
+  color: var(--teal) !important;
+}
+
+body.dark-mode .services-page .service-box,
+body.dark-mode .services-page .category-card,
+body.dark-mode .services-page .services-card {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+}
+
+body.dark-mode .services-page .service-box h1,
+body.dark-mode .services-page .service-box h2,
+body.dark-mode .services-page .service-box h3,
+body.dark-mode .services-page .service-box h4,
+body.dark-mode .services-page .category-card h1,
+body.dark-mode .services-page .category-card h2,
+body.dark-mode .services-page .category-card h3,
+body.dark-mode .services-page .category-card h4,
+body.dark-mode .services-page .services-card h1,
+body.dark-mode .services-page .services-card h2,
+body.dark-mode .services-page .services-card h3,
+body.dark-mode .services-page .services-card h4 {
+  color: var(--text) !important;
+}
+
+body.dark-mode .services-page .service-box p,
+body.dark-mode .services-page .category-card p,
+body.dark-mode .services-page .services-card p {
+  color: var(--text-light) !important;
+}
+
+/* Services: View Details only. Charge text remains its existing light/dark color. */
+body.dark-mode .services-page .service-card .service-footer a.details-button {
+  background: var(--teal) !important;
+  color: #071419 !important;
+  -webkit-text-fill-color: #071419 !important;
+  border-color: var(--teal) !important;
+}
+
+body.dark-mode .services-page .service-card .service-footer a.details-button i {
+  color: #071419 !important;
+  -webkit-text-fill-color: #071419 !important;
+}
+
+body.dark-mode .services-page .service-card .service-footer a.details-button:hover {
+  background: #63dce2 !important;
+  color: #071419 !important;
+  -webkit-text-fill-color: #071419 !important;
+  border-color: #63dce2 !important;
+}
+
+body.dark-mode .services-page .service-card .service-footer a.details-button:hover i {
+  color: #071419 !important;
+  -webkit-text-fill-color: #071419 !important;
+}
+
+/* Service ribbon */
+body.dark-mode .service-ribbon {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+}
+
+body.dark-mode .ribbon-item {
+  border-color: var(--border) !important;
+}
+
+body.dark-mode .ribbon-item:hover {
+  background: var(--surface-soft) !important;
+}
+
+body.dark-mode .ribbon-icon {
+  background: rgba(66, 209, 216, 0.10);
+  color: var(--teal) !important;
+}
+
+body.dark-mode .ribbon-item strong {
+  color: var(--text) !important;
+}
+
+body.dark-mode .ribbon-item span {
+  color: var(--text-muted) !important;
+}
+
+/* Destination card */
+body.dark-mode .destination-card span {
+  color: var(--text-muted) !important;
+}
+
+body.dark-mode .destination-card span i {
+  color: var(--teal) !important;
+}
+
+body.dark-mode .destination-card strong {
+  color: var(--text) !important;
+}
+
+/* Forms / application pages */
+body.dark-mode .application-form-container,
+body.dark-mode .application-form-card,
+body.dark-mode .form-card {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+}
+
+body.dark-mode .application-form-container label,
+body.dark-mode .application-form-card label,
+body.dark-mode .form-card label {
+  color: var(--text-light) !important;
+}
+
+body.dark-mode .application-form-container input,
+body.dark-mode .application-form-container textarea,
+body.dark-mode .application-form-container select,
+body.dark-mode .application-form-card input,
+body.dark-mode .application-form-card textarea,
+body.dark-mode .application-form-card select,
+body.dark-mode .form-card input,
+body.dark-mode .form-card textarea,
+body.dark-mode .form-card select {
+  background: #0f2029 !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+}
+
+body.dark-mode .application-form-container input::placeholder,
+body.dark-mode .application-form-container textarea::placeholder,
+body.dark-mode .application-form-card input::placeholder,
+body.dark-mode .application-form-card textarea::placeholder,
+body.dark-mode .form-card input::placeholder,
+body.dark-mode .form-card textarea::placeholder {
+  color: #8198a3 !important;
+}
+
+/* About */
+body.dark-mode .about-page .about-card,
+body.dark-mode .about-page .info-card,
+body.dark-mode .about-page .content-card,
+body.dark-mode .about-page .about-box,
+body.dark-mode .about-page .feature-card,
+body.dark-mode .about-page .about-content {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+}
+
+body.dark-mode .about-page .about-card h1,
+body.dark-mode .about-page .about-card h2,
+body.dark-mode .about-page .about-card h3,
+body.dark-mode .about-page .about-card h4,
+body.dark-mode .about-page .info-card h1,
+body.dark-mode .about-page .info-card h2,
+body.dark-mode .about-page .info-card h3,
+body.dark-mode .about-page .info-card h4,
+body.dark-mode .about-page .content-card h1,
+body.dark-mode .about-page .content-card h2,
+body.dark-mode .about-page .content-card h3,
+body.dark-mode .about-page .content-card h4 {
+  color: var(--text) !important;
+}
+
+body.dark-mode .about-page .about-card p,
+body.dark-mode .about-page .info-card p,
+body.dark-mode .about-page .content-card p {
+  color: var(--text-light) !important;
+}
+
+/* Contact */
+body.dark-mode .contact-page .contact-card,
+body.dark-mode .contact-page .info-card,
+body.dark-mode .contact-page .contact-box,
+body.dark-mode .contact-page .form-card,
+body.dark-mode .contact-page .contact-form {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+}
+
+body.dark-mode .contact-page .contact-card h1,
+body.dark-mode .contact-page .contact-card h2,
+body.dark-mode .contact-page .contact-card h3,
+body.dark-mode .contact-page .contact-card h4,
+body.dark-mode .contact-page .info-card h1,
+body.dark-mode .contact-page .info-card h2,
+body.dark-mode .contact-page .info-card h3,
+body.dark-mode .contact-page .info-card h4,
+body.dark-mode .contact-page .contact-box h1,
+body.dark-mode .contact-page .contact-box h2,
+body.dark-mode .contact-page .contact-box h3,
+body.dark-mode .contact-page .contact-box h4 {
+  color: var(--text) !important;
+}
+
+body.dark-mode .contact-page .contact-card p,
+body.dark-mode .contact-page .info-card p,
+body.dark-mode .contact-page .contact-box p {
+  color: var(--text-light) !important;
+}
+
+/* Explore */
+body.dark-mode .explore-page .explore-card,
+body.dark-mode .explore-page .destination-card,
+body.dark-mode .explore-page .place-card,
+body.dark-mode .explore-page .info-card,
+body.dark-mode .explore-page .content-card,
+body.dark-mode .explore-page .explore-box {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+}
+
+body.dark-mode .explore-page .explore-card h1,
+body.dark-mode .explore-page .explore-card h2,
+body.dark-mode .explore-page .explore-card h3,
+body.dark-mode .explore-page .explore-card h4,
+body.dark-mode .explore-page .destination-card h1,
+body.dark-mode .explore-page .destination-card h2,
+body.dark-mode .explore-page .destination-card h3,
+body.dark-mode .explore-page .destination-card h4,
+body.dark-mode .explore-page .place-card h1,
+body.dark-mode .explore-page .place-card h2,
+body.dark-mode .explore-page .place-card h3,
+body.dark-mode .explore-page .place-card h4 {
+  color: var(--text) !important;
+}
+
+body.dark-mode .explore-page .explore-card p,
+body.dark-mode .explore-page .destination-card p,
+body.dark-mode .explore-page .place-card p {
+  color: var(--text-light) !important;
+}
+
+/* Footer */
+body.dark-mode footer {
+  background: linear-gradient(180deg, #101f28 0%, var(--background) 100%) !important;
+  color: var(--text-light) !important;
+  border-top-color: var(--border) !important;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.20);
+}
+
+body.dark-mode footer h1,
+body.dark-mode footer h2,
+body.dark-mode footer h3,
+body.dark-mode footer h4,
+body.dark-mode footer h5 {
+  color: var(--text) !important;
+}
+
+body.dark-mode footer p,
+body.dark-mode footer span {
+  color: #aebfc7 !important;
+}
+
+body.dark-mode footer a {
+  color: #b9cbd2 !important;
+}
+
+body.dark-mode footer a:hover {
+  color: var(--teal) !important;
+}
+
+body.dark-mode footer i {
+  color: var(--teal) !important;
+}
+
+body.dark-mode footer hr {
+  border-color: var(--border) !important;
+}
+
+body.dark-mode footer small {
+  color: #8198a3 !important;
+}
+
+/* Keep existing card shadow treatment consistent in dark mode. */
+body.dark-mode .service-card,
+body.dark-mode .destination-card,
+body.dark-mode .services-floating-card,
+body.dark-mode .application-form-container,
+body.dark-mode .application-form-card,
+body.dark-mode .form-card {
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.28);
+}
+
+@media (max-width: 700px) {
+  body.dark-mode footer {
+    background: linear-gradient(180deg, #101f28, var(--background)) !important;
+  }
+}
+
+/* =========================================================
+   SERVICES HEADING HIGHLIGHTS — DARK MODE FIX
+   ========================================================= */
+
+body.dark-mode .services-page .heading-highlight {
+  background: var(--teal) !important;
+  color: #071419 !important;
+  border-color: var(--teal) !important;
+}
+
+body.dark-mode .services-page .heading-highlight i {
+  color: #071419 !important;
+}
+
+body.dark-mode .services-page .heading-highlight:hover {
+  background: #63dce2 !important;
+  color: #071419 !important;
+  border-color: #63dce2 !important;
+  box-shadow: 0 8px 18px rgba(66, 209, 216, 0.16);
+}
+
+body.dark-mode .services-page .heading-highlight:hover i {
+  color: #071419 !important;
+}
+/* =========================================================
+   ABOUT PAGE — DARK MODE FINAL FIX
+   SECTION HEADING + PAYMENT SECTION + CTA
+========================================================= */
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+body.dark-mode .about-page .section-heading {
+  background: linear-gradient(
+    135deg,
+    #142a35 0%,
+    #10232d 100%
+  ) !important;
+
+  border: 1px solid #304d59 !important;
+
+  box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+  color: #f3f7f8;
+}
+
+body.dark-mode .about-page .section-heading::before {
+  background: rgba(66, 209, 216, 0.08) !important;
+}
+
+body.dark-mode .about-page .section-heading::after {
+  background: rgba(243, 193, 91, 0.07) !important;
+}
+
+body.dark-mode .about-page .section-heading > span {
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .about-page .section-heading h2 {
+  color: #f3f7f8 !important;
+}
+
+body.dark-mode .about-page .section-heading h2 span {
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .about-page .section-heading p {
+  color: #b9cbd2 !important;
+}
+
+body.dark-mode .about-page .heading-line {
+  background: linear-gradient(
+    90deg,
+    #42d1d8,
+    #f3c15b
+  ) !important;
+}
+
+body.dark-mode .about-page .heading-line::before,
+body.dark-mode .about-page .heading-line::after {
+  background: #42d1d8 !important;
+}
+
+
+/* =========================================================
+   PAYMENT SECTION
+========================================================= */
+
+body.dark-mode .about-page .payment-section {
+  background: linear-gradient(
+    135deg,
+    #142a35 0%,
+    #10232d 100%
+  ) !important;
+
+  border: 1px solid #304d59 !important;
+
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.30),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+  color: #f3f7f8;
+}
+
+body.dark-mode .about-page .payment-section::before {
+  background: rgba(243, 193, 91, 0.065) !important;
+}
+
+body.dark-mode .about-page .payment-content {
+  color: #f3f7f8;
+}
+
+body.dark-mode .about-page .payment-tag {
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .about-page .payment-content h2 {
+  color: #f3f7f8 !important;
+}
+
+body.dark-mode .about-page .payment-content h2 span {
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .about-page .payment-content p {
+  color: #b9cbd2 !important;
+}
+
+
+/* Payment individual steps */
+
+body.dark-mode .about-page .payment-step {
+  background: rgba(27, 48, 59, 0.90) !important;
+
+  border: 1px solid #304d59 !important;
+
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.18);
+}
+
+body.dark-mode .about-page .payment-step:hover {
+  border-color: rgba(66, 209, 216, 0.45) !important;
+
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.28);
+}
+
+body.dark-mode .about-page .payment-number {
+  background: linear-gradient(
+    135deg,
+    rgba(66, 209, 216, 0.15),
+    rgba(243, 193, 91, 0.12)
+  ) !important;
+
+  color: #42d1d8 !important;
+
+  border: 1px solid rgba(66, 209, 216, 0.14);
+}
+
+body.dark-mode .about-page .payment-step h3 {
+  color: #f3f7f8 !important;
+}
+
+body.dark-mode .about-page .payment-step p {
+  color: #aebfc7 !important;
+}
+
+body.dark-mode .about-page .payment-line {
+  background: linear-gradient(
+    90deg,
+    #42d1d8,
+    #f3c15b
+  ) !important;
+}
+
+body.dark-mode .about-page .payment-note {
+  background: rgba(66, 209, 216, 0.055) !important;
+
+  border: 1px solid rgba(66, 209, 216, 0.12) !important;
+
+  color: #b9cbd2 !important;
+}
+
+body.dark-mode .about-page .payment-note i {
+  color: #42d1d8 !important;
+}
+
+
+/* =========================================================
+   ABOUT CTA
+========================================================= */
+
+body.dark-mode .about-page .about-cta {
+  background: linear-gradient(
+    135deg,
+    #003d5b 0%,
+    #005b73 55%,
+    #006d7d 100%
+  ) !important;
+
+  border: 1px solid rgba(66, 209, 216, 0.22) !important;
+
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  color: #ffffff !important;
+}
+
+body.dark-mode .about-page .about-cta::after {
+  background: rgba(255, 255, 255, 0.045) !important;
+}
+
+body.dark-mode .about-page .about-cta span {
+  color: #8fe1e9 !important;
+}
+
+body.dark-mode .about-page .about-cta h2 {
+  color: #ffffff !important;
+}
+
+body.dark-mode .about-page .about-cta p {
+  color: #d8e7eb !important;
+}
+
+
+/* CTA BUTTON */
+
+body.dark-mode .about-page .cta-button {
+  background: #f3c15b !important;
+
+  color: #003d5b !important;
+
+  border: 1px solid #f3c15b !important;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+body.dark-mode .about-page .cta-button:hover {
+  background: #f6ca73 !important;
+
+  color: #003d5b !important;
+
+  border-color: #f6ca73 !important;
+
+  box-shadow:
+    0 12px 25px rgba(0, 0, 0, 0.28);
+}
+/* =========================================================
+   ABOUT BUTTON — DARK MODE FIX
+========================================================= */
+
+body.dark-mode .about-page .about-button {
+  background: #42d1d8 !important;
+  color: #071419 !important;
+  border-color: #42d1d8 !important;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+body.dark-mode .about-page .about-button i {
+  color: #071419 !important;
+}
+
+body.dark-mode .about-page .about-button:hover {
+  background: #63dce2 !important;
+  color: #071419 !important;
+  border-color: #63dce2 !important;
+
+  box-shadow:
+    0 12px 26px rgba(0, 0, 0, 0.28);
+}
+
+body.dark-mode .about-page .about-button:hover i {
+  color: #071419 !important;
+}
+/* =========================================================
+   EXPLORE PAGE — DARK MODE FINAL FIX
+   HERO + CTA BUTTON
+========================================================= */
+
+
+/* =========================================================
+   EXPLORE HERO
+========================================================= */
+
+body.dark-mode .explore-page .explore-hero {
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(66, 209, 216, 0.08),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(243, 193, 91, 0.055),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #10232d 0%,
+      #142a35 55%,
+      #0e2029 100%
+    ) !important;
+
+  border-color: #304d59 !important;
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.30),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+  color: #f3f7f8 !important;
+}
+
+
+/* Hero decorative elements */
+
+body.dark-mode .explore-page .explore-hero::before {
+  background: rgba(66, 209, 216, 0.07) !important;
+}
+
+body.dark-mode .explore-page .explore-hero::after {
+  background: rgba(243, 193, 91, 0.055) !important;
+}
+
+
+/* Hero heading */
+
+body.dark-mode .explore-page .explore-hero h1,
+body.dark-mode .explore-page .explore-hero h2,
+body.dark-mode .explore-page .explore-hero h3 {
+  color: #f3f7f8 !important;
+}
+
+
+/* Highlight / accent text inside hero */
+
+body.dark-mode .explore-page .explore-hero span,
+body.dark-mode .explore-page .explore-hero strong {
+  color: #42d1d8 !important;
+}
+
+
+/* Hero paragraph */
+
+body.dark-mode .explore-page .explore-hero p {
+  color: #c4d1d7 !important;
+}
+
+
+/* Hero icons */
+
+body.dark-mode .explore-page .explore-hero i {
+  color: #42d1d8;
+}
+
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+
+body.dark-mode .explore-page .cta-button {
+  background: #f3c15b !important;
+
+  color: #003d5b !important;
+
+  border-color: #f3c15b !important;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.20);
+}
+
+body.dark-mode .explore-page .cta-button i {
+  color: #003d5b !important;
+}
+
+body.dark-mode .explore-page .cta-button:hover {
+  background: #f6ca73 !important;
+
+  color: #003d5b !important;
+
+  border-color: #f6ca73 !important;
+
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.30);
+
+  transform: translateY(-2px);
+}
+
+body.dark-mode .explore-page .cta-button:hover i {
+  color: #003d5b !important;
+}
+/* =========================================================
+   EXPLORE INTRO — DARK MODE FINAL FIX
+========================================================= */
+
+body.dark-mode .explore-page .explore-intro {
+  background: linear-gradient(
+    135deg,
+    #142a35 0%,
+    #10232d 100%
+  ) !important;
+
+  border-color: #304d59 !important;
+
+  box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+  color: #f3f7f8 !important;
+}
+
+
+/* Decorative elements */
+
+body.dark-mode .explore-page .explore-intro::before {
+  background: rgba(66, 209, 216, 0.07) !important;
+}
+
+body.dark-mode .explore-page .explore-intro::after {
+  background: rgba(243, 193, 91, 0.055) !important;
+}
+
+
+/* Intro heading */
+
+body.dark-mode .explore-page .explore-intro h1,
+body.dark-mode .explore-page .explore-intro h2,
+body.dark-mode .explore-page .explore-intro h3 {
+  color: #f3f7f8 !important;
+}
+
+
+/* Intro highlighted text */
+
+body.dark-mode .explore-page .explore-intro span,
+body.dark-mode .explore-page .explore-intro strong {
+  color: #42d1d8 !important;
+}
+
+
+/* Intro paragraph */
+
+body.dark-mode .explore-page .explore-intro p {
+  color: #c4d1d7 !important;
+}
+
+
+/* Intro icons */
+
+body.dark-mode .explore-page .explore-intro i {
+  color: #42d1d8 !important;
+}
+/* =========================================================
+   CONTACT PAGE — DARK MODE FINAL FIX
+   Heading + Owner Contact + WhatsApp + Address + Help
+   Documents + Payment + QR + Documents Payment Section
+========================================================= */
+
+
+/* =========================================
+   CONTACT HEADING
+========================================= */
+
+body.dark-mode .contact-page .contact-heading {
+  color: #f3f7f8 !important;
+}
+
+body.dark-mode .contact-page .contact-heading > span {
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .contact-page .contact-heading h1 {
+  color: #f3f7f8 !important;
+}
+
+body.dark-mode .contact-page .contact-heading h1 span {
+  color: #f3c15b !important;
+}
+
+body.dark-mode .contact-page .contact-heading p {
+  color: #b9cbd2 !important;
+}
+
+
+/* =========================================
+   OWNER CONTACT BUTTONS
+========================================= */
+
+body.dark-mode .contact-page .owner-contact a:first-child {
+  background: #42d1d8 !important;
+  border-color: #42d1d8 !important;
+  color: #071419 !important;
+}
+
+body.dark-mode .contact-page .owner-contact a:first-child i {
+  color: #071419 !important;
+}
+
+body.dark-mode .contact-page .owner-contact a:first-child:hover {
+  background: #63dce2 !important;
+  border-color: #63dce2 !important;
+  color: #071419 !important;
+}
+
+body.dark-mode .contact-page .owner-contact a:first-child:hover i {
+  color: #071419 !important;
+}
+
+
+body.dark-mode .contact-page .owner-contact a:last-child {
+  background: #142a35 !important;
+  border-color: #42d1d8 !important;
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .contact-page .owner-contact a:last-child i {
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .contact-page .owner-contact a:last-child:hover {
+  background: #42d1d8 !important;
+  border-color: #42d1d8 !important;
+  color: #071419 !important;
+}
+
+body.dark-mode .contact-page .owner-contact a:last-child:hover i {
+  color: #071419 !important;
+}
+
+
+/* =========================================
+   OWNER CARD
+========================================= */
+
+body.dark-mode .contact-page .shop-owner {
+  background: #142a35 !important;
+  border-color: #304d59 !important;
+  box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+  color: #f3f7f8 !important;
+}
+
+body.dark-mode .contact-page .owner-label {
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .contact-page .owner-top h2 {
+  color: #f3f7f8 !important;
+}
+
+body.dark-mode .contact-page .owner-role,
+body.dark-mode .contact-page .owner-description {
+  color: #b9cbd2 !important;
+}
+
+body.dark-mode .contact-page .owner-avatar {
+  background: rgba(243, 193, 91, 0.12) !important;
+  color: #f3c15b !important;
+}
+
+
+/* =========================================
+   TALK HAMZA CARD
+========================================= */
+
+body.dark-mode .contact-page .talk-hamza-card {
+  background:
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(66, 209, 216, 0.10),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #003d5b 0%,
+      #005b73 55%,
+      #006d7d 100%
+    ) !important;
+
+  border: 1px solid rgba(66, 209, 216, 0.20) !important;
+
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  color: #ffffff !important;
+}
+
+body.dark-mode .contact-page .talk-hamza-card::after {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+body.dark-mode .contact-page .talk-icon {
+  background: rgba(66, 209, 216, 0.14) !important;
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .contact-page .talk-hamza-card > span {
+  color: #f3c15b !important;
+}
+
+body.dark-mode .contact-page .talk-hamza-card h2 {
+  color: #ffffff !important;
+}
+
+body.dark-mode .contact-page .talk-hamza-card > p {
+  color: #d8e7eb !important;
+}
+
+body.dark-mode .contact-page .talk-points div {
+  color: #d8e7eb !important;
+}
+
+body.dark-mode .contact-page .talk-points i {
+  color: #f3c15b !important;
+}
+
+
+/* =========================================
+   WHATSAPP BUTTON
+========================================= */
+
+body.dark-mode .contact-page .whatsapp-button {
+  background: #f3c15b !important;
+  color: #003d5b !important;
+  border-color: #f3c15b !important;
+}
+
+body.dark-mode .contact-page .whatsapp-button i {
+  color: #003d5b !important;
+}
+
+body.dark-mode .contact-page .whatsapp-button:hover {
+  background: #f6ca73 !important;
+  color: #003d5b !important;
+  border-color: #f6ca73 !important;
+}
+
+
+/* =========================================
+   SHOP ADDRESS
+========================================= */
+
+body.dark-mode .contact-page .shop-address {
+  background: #142a35 !important;
+  border-color: #304d59 !important;
+  color: #f3f7f8 !important;
+}
+
+body.dark-mode .contact-page .shop-address h1,
+body.dark-mode .contact-page .shop-address h2,
+body.dark-mode .contact-page .shop-address h3,
+body.dark-mode .contact-page .shop-address h4 {
+  color: #f3f7f8 !important;
+}
+
+body.dark-mode .contact-page .shop-address p,
+body.dark-mode .contact-page .shop-address span {
+  color: #b9cbd2 !important;
+}
+
+body.dark-mode .contact-page .shop-address i {
+  color: #42d1d8 !important;
+}
+
+
+/* =========================================
+   CONTACT HELP
+========================================= */
+
+body.dark-mode .contact-page .contact-help {
+  background: #142a35 !important;
+  border-color: #304d59 !important;
+  color: #f3f7f8 !important;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.20);
+}
+
+body.dark-mode .contact-page .help-icon {
+  background: rgba(243, 193, 91, 0.12) !important;
+  color: #f3c15b !important;
+}
+
+body.dark-mode .contact-page .contact-help h3 {
+  color: #f3f7f8 !important;
+}
+
+body.dark-mode .contact-page .contact-help p {
+  color: #b9cbd2 !important;
+}
+
+
+/* =========================================
+   DOCUMENTS & PAYMENT SECTION
+========================================= */
+
+body.dark-mode .contact-page .documents-payment-section {
+  background:
+    linear-gradient(
+      135deg,
+      #142a35 0%,
+      #10232d 100%
+    ) !important;
+
+  border-color: #304d59 !important;
+
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.30),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+  color: #f3f7f8 !important;
+}
+
+body.dark-mode .contact-page .documents-payment-section::before {
+  background: linear-gradient(
+    90deg,
+    #42d1d8,
+    #f3c15b
+  ) !important;
+}
+
+
+/* =========================================
+   DOCUMENTS & PAYMENT HEADING
+========================================= */
+
+body.dark-mode .contact-page .documents-payment-heading > span {
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .contact-page .documents-payment-heading h2 {
+  color: #f3f7f8 !important;
+}
+
+body.dark-mode .contact-page .documents-payment-heading p {
+  color: #b9cbd2 !important;
+}
+
+
+/* =========================================
+   DOCUMENT SHARE + PAYMENT CARDS
+========================================= */
+
+body.dark-mode .contact-page .document-share-card,
+body.dark-mode .contact-page .payment-card {
+  background: #172c37 !important;
+  border-color: #304d59 !important;
+  color: #f3f7f8 !important;
+
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.20);
+}
+
+body.dark-mode .contact-page .document-share-card:hover,
+body.dark-mode .contact-page .payment-card:hover {
+  border-color: rgba(66, 209, 216, 0.45) !important;
+
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, 0.28);
+}
+
+body.dark-mode .contact-page .document-share-icon,
+body.dark-mode .contact-page .payment-icon {
+  background: rgba(66, 209, 216, 0.10) !important;
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .contact-page .document-share-label,
+body.dark-mode .contact-page .payment-label {
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .contact-page .document-share-card h3,
+body.dark-mode .contact-page .payment-card h3 {
+  color: #f3f7f8 !important;
+}
+
+body.dark-mode .contact-page .document-share-card > p,
+body.dark-mode .contact-page .payment-card > p {
+  color: #b9cbd2 !important;
+}
+
+
+/* =========================================
+   DOCUMENT EMAIL BUTTON
+========================================= */
+
+body.dark-mode .contact-page .document-email-button {
+  background: #142a35 !important;
+  border-color: #405b67 !important;
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .contact-page .document-email-button i {
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .contact-page .document-email-button:hover {
+  background: #42d1d8 !important;
+  border-color: #42d1d8 !important;
+  color: #071419 !important;
+}
+
+body.dark-mode .contact-page .document-email-button:hover i {
+  color: #071419 !important;
+}
+
+
+/* =========================================
+   DOCUMENT WHATSAPP BUTTON
+========================================= */
+
+body.dark-mode .contact-page .document-whatsapp-button {
+  background: #42d1d8 !important;
+  border-color: #42d1d8 !important;
+  color: #071419 !important;
+}
+
+body.dark-mode .contact-page .document-whatsapp-button i {
+  color: #071419 !important;
+}
+
+body.dark-mode .contact-page .document-whatsapp-button:hover {
+  background: #63dce2 !important;
+  border-color: #63dce2 !important;
+  color: #071419 !important;
+}
+
+
+/* =========================================
+   UPI PAYMENT BOX
+========================================= */
+
+body.dark-mode .contact-page .upi-payment-box {
+  background: rgba(243, 193, 91, 0.07) !important;
+  border-color: rgba(243, 193, 91, 0.28) !important;
+}
+
+body.dark-mode .contact-page .upi-icon {
+  background: #f3c15b !important;
+  color: #003d5b !important;
+}
+
+body.dark-mode .contact-page .upi-details > span {
+  color: #aebfc7 !important;
+}
+
+body.dark-mode .contact-page .upi-details strong {
+  color: #f3f7f8 !important;
+}
+
+body.dark-mode .contact-page .upi-details small {
+  color: #aebfc7 !important;
+}
+
+
+/* =========================================
+   UPI BUTTONS
+========================================= */
+
+body.dark-mode .contact-page .upi-pay-button {
+  background: #42d1d8 !important;
+  border-color: #42d1d8 !important;
+  color: #071419 !important;
+}
+
+body.dark-mode .contact-page .upi-pay-button i {
+  color: #071419 !important;
+}
+
+body.dark-mode .contact-page .upi-pay-button:hover {
+  background: #63dce2 !important;
+  border-color: #63dce2 !important;
+  color: #071419 !important;
+}
+
+body.dark-mode .contact-page .upi-copy-button {
+  background: #142a35 !important;
+  border-color: #42d1d8 !important;
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .contact-page .upi-copy-button i {
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .contact-page .upi-copy-button:hover {
+  background: #42d1d8 !important;
+  border-color: #42d1d8 !important;
+  color: #071419 !important;
+}
+
+body.dark-mode .contact-page .upi-copy-button:hover i {
+  color: #071419 !important;
+}
+
+
+/* =========================================
+   PAYMENT INFORMATION ROWS
+========================================= */
+
+body.dark-mode .contact-page .payment-info-row {
+  background: #142a35 !important;
+  border-color: #304d59 !important;
+}
+
+body.dark-mode .contact-page .payment-info-row > i {
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .contact-page .payment-info-row strong {
+  color: #f3f7f8 !important;
+}
+
+body.dark-mode .contact-page .payment-info-row span {
+  color: #aebfc7 !important;
+}
+
+
+/* =========================================
+   PAYMENT WHATSAPP BUTTON
+========================================= */
+
+body.dark-mode .contact-page .payment-whatsapp-button {
+  background: #42d1d8 !important;
+  border-color: #42d1d8 !important;
+  color: #071419 !important;
+}
+
+body.dark-mode .contact-page .payment-whatsapp-button i {
+  color: #071419 !important;
+}
+
+body.dark-mode .contact-page .payment-whatsapp-button:hover {
+  background: #63dce2 !important;
+  border-color: #63dce2 !important;
+  color: #071419 !important;
+}
+
+
+/* =========================================
+   PAYMENT NOTE
+========================================= */
+
+body.dark-mode .contact-page .documents-payment-section .payment-note {
+  background: rgba(66, 209, 216, 0.055) !important;
+  border-color: rgba(66, 209, 216, 0.14) !important;
+}
+
+body.dark-mode .contact-page .documents-payment-section .payment-note > i {
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .contact-page .documents-payment-section .payment-note p {
+  color: #b9cbd2 !important;
+}
+
+
+/* =========================================
+   QR PAYMENT BOX
+========================================= */
+
+body.dark-mode .contact-page .qr-payment-box {
+  background: #142a35 !important;
+  border-color: #304d59 !important;
+  color: #f3f7f8 !important;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.20);
+}
+
+body.dark-mode .contact-page .qr-payment-box .qr-label {
+  color: #f3f7f8 !important;
+}
+
+body.dark-mode .contact-page .qr-payment-box p {
+  color: #b9cbd2 !important;
+}
+
+body.dark-mode .contact-page .upi-qr-code {
+  background: #ffffff !important;
+  border-color: #405b67 !important;
+}
+
+
+/* =========================================
+   CONTACT BOTTOM BUTTON
+========================================= */
+
+body.dark-mode .contact-page .bottom-whatsapp {
+  background: #f3c15b !important;
+  color: #003d5b !important;
+}
+
+body.dark-mode .contact-page .bottom-whatsapp i {
+  color: #003d5b !important;
+}
+
+body.dark-mode .contact-page .bottom-whatsapp:hover {
+  background: #f6ca73 !important;
+  color: #003d5b !important;
+}
+/* =========================================================
+   CONTACT PAGE — HEADING + BOTTOM CTA
+   DARK MODE FINAL FIX
+========================================================= */
+
+
+/* =========================================
+   CONTACT HEADING
+========================================= */
+
+body.dark-mode .contact-page .contact-heading {
+  color: #f3f7f8 !important;
+}
+
+body.dark-mode .contact-page .contact-heading > span {
+  color: #42d1d8 !important;
+  -webkit-text-fill-color: #42d1d8 !important;
+}
+
+body.dark-mode .contact-page .contact-heading h1 {
+  color: #f3f7f8 !important;
+  -webkit-text-fill-color: #f3f7f8 !important;
+}
+
+body.dark-mode .contact-page .contact-heading h1 span {
+  color: #42d1d8 !important;
+  -webkit-text-fill-color: #42d1d8 !important;
+}
+
+body.dark-mode .contact-page .contact-heading p {
+  color: #b9cbd2 !important;
+  -webkit-text-fill-color: #b9cbd2 !important;
+}
+
+
+/* =========================================
+   CONTACT BOTTOM CTA
+========================================= */
+
+body.dark-mode .contact-page .contact-bottom {
+  background:
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(66, 209, 216, 0.10),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #003d5b 0%,
+      #005b73 55%,
+      #006d7d 100%
+    ) !important;
+
+  border: 1px solid rgba(66, 209, 216, 0.22) !important;
+
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+
+  color: #ffffff !important;
+}
+
+
+/* Small label */
+
+body.dark-mode .contact-page .contact-bottom span {
+  color: #f3c15b !important;
+  -webkit-text-fill-color: #f3c15b !important;
+}
+
+
+/* Main heading */
+
+body.dark-mode .contact-page .contact-bottom h2 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+
+/* Description */
+
+body.dark-mode .contact-page .contact-bottom p {
+  color: #d8e7eb !important;
+  -webkit-text-fill-color: #d8e7eb !important;
+}
+
+
+/* Bottom WhatsApp button */
+
+body.dark-mode .contact-page .contact-bottom .bottom-whatsapp {
+  background: #f3c15b !important;
+  border-color: #f3c15b !important;
+  color: #003d5b !important;
+  -webkit-text-fill-color: #003d5b !important;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.20) !important;
+}
+
+body.dark-mode .contact-page .contact-bottom .bottom-whatsapp i {
+  color: #003d5b !important;
+  -webkit-text-fill-color: #003d5b !important;
+}
+
+body.dark-mode .contact-page .contact-bottom .bottom-whatsapp:hover {
+  background: #f6ca73 !important;
+  border-color: #f6ca73 !important;
+  color: #003d5b !important;
+  -webkit-text-fill-color: #003d5b !important;
+
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.30) !important;
+}
+
+body.dark-mode .contact-page .contact-bottom .bottom-whatsapp:hover i {
+  color: #003d5b !important;
+  -webkit-text-fill-color: #003d5b !important;
+}
+/* =========================================
+   DARK MODE - CONTACT HEADING FIX
+========================================= */
+
+body.dark-mode .contact-page .contact-heading {
+  background: #14252f !important;
+  background-image: none !important;
+  border-color: #304954 !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22) !important;
+}
+
+body.dark-mode .contact-page .contact-heading::before {
+  background: linear-gradient(
+    90deg,
+    #42d1d8,
+    #f3c15b
+  ) !important;
+}
+
+body.dark-mode .contact-page .contact-heading::after {
+  border-color: rgba(66, 209, 216, 0.12) !important;
+}
+
+body.dark-mode .contact-page .heading-badge {
+  background: rgba(66, 209, 216, 0.10) !important;
+  border-color: rgba(66, 209, 216, 0.22) !important;
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .contact-page .contact-heading h1 {
+  color: #f3f7f8 !important;
+  background: none !important;
+  background-image: none !important;
+  -webkit-text-fill-color: #f3f7f8 !important;
+}
+
+body.dark-mode .contact-page .contact-heading h1 strong {
+  color: #42d1d8 !important;
+  
+  background-image: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  -webkit-text-fill-color: #42d1d8 !important;
+}
+
+body.dark-mode .contact-page .heading-line span {
+  background: linear-gradient(
+    90deg,
+    #42d1d8,
+    #f3c15b
+  ) !important;
+}
+
+body.dark-mode .contact-page .heading-line span::before,
+body.dark-mode .contact-page .heading-line span::after {
+  background: #f3c15b !important;
+}
+
+body.dark-mode .contact-page .contact-heading p {
+  color: #b9cbd2 !important;
+}
+/* =========================================================
+   DARK MODE - APPLY BUTTON
+   ========================================================= */
+
+body.dark-mode .apply-button {
+  background: var(--teal) !important;
+  color: #082027 !important;
+  border-color: var(--teal) !important;
+
+  box-shadow:
+    0 6px 16px rgba(66, 209, 216, 0.16);
+}
+
+body.dark-mode .apply-button:hover {
+  background: #62dfe4 !important;
+  color: #082027 !important;
+  border-color: #62dfe4 !important;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 20px rgba(66, 209, 216, 0.22);
+}
+
+body.dark-mode .apply-button:active {
+  background: var(--teal) !important;
+  color: #082027 !important;
+
+  transform: translateY(0);
+
+  box-shadow:
+    0 4px 10px rgba(66, 209, 216, 0.14);
+}
+/* =========================================================
+   HOME LIVE CLOCK CARD — DARK MODE FIX
+   ========================================================= */
+
+body.dark-mode .home-page .clock-floating-card {
+  background: #14252f !important;
+  border-color: #304954 !important;
+  color: #f3f7f8 !important;
+
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.34) !important;
+}
+
+
+/* Clock icon */
+
+body.dark-mode .home-page .clock-floating-card .clock-icon {
+  background: rgba(66, 209, 216, 0.10) !important;
+  color: #42d1d8 !important;
+}
+
+
+body.dark-mode .home-page .clock-floating-card .clock-icon i {
+  color: #42d1d8 !important;
+}
+
+
+/* LIVE TIME label */
+
+body.dark-mode .home-page .clock-floating-card .clock-label {
+  color: #42d1d8 !important;
+}
+
+
+/* Actual time */
+
+body.dark-mode .home-page .clock-floating-card strong {
+  color: #f3f7f8 !important;
+}
+
+
+/* Date */
+
+body.dark-mode .home-page .clock-floating-card .clock-date {
+  color: #9cafb8 !important;
+}
+
+
+/* Extra protection against global card rules */
+
+body.dark-mode .home-page .clock-floating-card span {
+  color: #9cafb8 !important;
+}
+
+
+/* Keep LIVE TIME teal */
+
+body.dark-mode .home-page .clock-floating-card .clock-label {
+  color: #42d1d8 !important;
+}
+
+
+/* Hover */
+
+body.dark-mode .home-page .clock-floating-card:hover {
+  border-color: rgba(66, 209, 216, 0.40) !important;
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.40) !important;
+}
+/* =========================================================
+   DARK SUBMIT BUTTON
+========================================================= */
+
+body.dark-mode .submit-button {
+  background: linear-gradient(
+    135deg,
+    #42d1d8,
+    #2aaeb8
+  );
+
+  color: #082027;
+
+  box-shadow:
+    0 8px 20px rgba(66, 209, 216, 0.16);
+}
+
+body.dark-mode .submit-button:hover {
+  background: linear-gradient(
+    135deg,
+    #62dfe4,
+    #42d1d8
+  );
+
+  color: #071a20;
+
+  box-shadow:
+    0 11px 25px rgba(66, 209, 216, 0.22);
+}
+
+
+/* =========================================================
+   DARK BACK TO SERVICE
+========================================================= */
+
+body.dark-mode .back-to-service-button {
+  border-color: #304954;
+
+  background: #14252f;
+
+  color: #42d1d8;
+
+  box-shadow:
+    0 7px 16px rgba(0, 0, 0, 0.22);
+}
+
+body.dark-mode .back-to-service-button:hover {
+  border-color: #42d1d8;
+
+  background: #1b303b;
+
+  color: #62dfe4;
+
+  box-shadow:
+    0 9px 20px rgba(66, 209, 216, 0.12);
+}

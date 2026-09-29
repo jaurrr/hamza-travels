@@ -1,0 +1,955 @@
+/* =========================================================
+   HAMZA TRAVELS
+   PREMIUM SPLASH SCREEN
+========================================================= */
+
+
+/* =========================================================
+   SPLASH SCREEN
+========================================================= */
+
+.splash-screen {
+
+  position: fixed;
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  z-index: 999999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at 80% 20%,
+      rgba(0, 121, 140, 0.22),
+      transparent 34%),
+    radial-gradient(circle at 15% 85%,
+      rgba(237, 174, 73, 0.13),
+      transparent 30%),
+    linear-gradient(135deg,
+      #003d5b 0%,
+      #005b73 52%,
+      #00798c 100%);
+}
+
+
+/* =========================================================
+   DECORATIVE CIRCLES
+========================================================= */
+
+.splash-screen::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 430px;
+  height: 430px;
+
+  top: -250px;
+  right: -120px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.11);
+
+  border-radius: 50%;
+
+  animation:
+    splashRotate 14s linear infinite;
+}
+
+
+.splash-screen::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  bottom: -350px;
+  left: -190px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 50%;
+
+  animation:
+    splashRotateReverse 18s linear infinite;
+}
+
+
+/* =========================================================
+   SPLASH CONTENT
+========================================================= */
+
+.splash-content {
+
+  position: relative;
+
+  z-index: 2;
+
+  width: min(90%, 650px);
+
+  text-align: center;
+
+  color: #ffffff;
+
+  animation:
+    splashContentIn 0.8s ease both;
+}
+
+
+/* =========================================================
+   BRAND ORBIT AREA
+   DESKTOP / LAPTOP
+========================================================= */
+
+.brand-orbit {
+
+  position: relative;
+
+  width: 460px;
+  height: 150px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  isolation: isolate;
+}
+
+
+
+/* =========================================================
+   BRAND TEXT
+========================================================= */
+
+.brand-orbit h1 {
+
+  position: relative;
+
+  z-index: 3;
+
+  margin: 0;
+
+  display: flex;
+
+  align-items: baseline;
+  justify-content: center;
+
+  gap: 8px;
+
+  font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size:
+    clamp(40px, 3.5vw, 50px);
+
+  font-weight: 800;
+
+  letter-spacing: -1.5px;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  filter:
+    drop-shadow(0 8px 22px rgba(0, 0, 0, 0.22));
+}
+
+
+/* =========================================================
+   HAMZA
+========================================================= */
+
+.brand-main {
+
+  color: #ffffff;
+
+  font-weight: 800;
+
+  text-shadow:
+    0 2px 12px rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================================================
+   TRAVELS
+========================================================= */
+
+.brand-highlight {
+
+  position: relative;
+
+  font-weight: 800;
+
+  background:
+    linear-gradient(110deg,
+      #ffe7b6 0%,
+      #edae49 28%,
+      #fff3d0 48%,
+      #edae49 68%,
+      #ffe7b6 100%);
+
+  background-size: 180% auto;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  animation:
+    splashTextShine 5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   PREMIUM UNDERLINE
+========================================================= */
+
+.brand-highlight::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 5%;
+  right: 5%;
+
+  bottom: -7px;
+
+  height: 2px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(90deg,
+      transparent,
+      rgba(237, 174, 73, 0.65),
+      transparent);
+
+  opacity: 0.6;
+}
+
+
+/* =========================================================
+   PLANE ORBIT TRACK
+========================================================= */
+
+.brand-orbit-track {
+
+  position: absolute;
+
+  inset: 12px 0;
+  animation:
+    planeOrbit 5s linear infinite;
+
+}
+
+
+/* =========================================================
+   SMALL FLYING PLANE
+========================================================= */
+
+.brand-orbit-track i {
+
+  position: absolute;
+
+  top: 50%;
+  right: -8px;
+
+  width: 18px;
+  height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #edae49;
+
+  font-size: 17px;
+
+  transform:
+    translateY(-50%) rotate(90deg);
+
+  filter:
+    drop-shadow(0 3px 7px rgba(0, 0, 0, 0.42));
+}
+
+
+/* =========================================================
+   TAGLINE
+========================================================= */
+
+.splash-tagline {
+
+  margin: 3px 0 0;
+
+  color:
+    rgba(255, 255, 255, 0.72);
+
+  font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  animation:
+    taglineFade 1s ease 0.35s both;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.splash-services {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  max-width: 600px;
+
+  margin:
+    27px auto 0;
+
+  animation:
+    servicesFade 1s ease 0.5s both;
+}
+
+
+/* =========================================================
+   SERVICE CHIP
+========================================================= */
+
+.splash-services span {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding:
+    8px 12px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.13);
+
+  border-radius: 30px;
+
+  background:
+    rgba(255, 255, 255, 0.075);
+
+  backdrop-filter: blur(7px);
+
+  -webkit-backdrop-filter: blur(7px);
+
+  color:
+    rgba(255, 255, 255, 0.82);
+
+  font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.2px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+/* =========================================================
+   SERVICE CHIP HOVER
+========================================================= */
+
+.splash-services span:hover {
+
+  background:
+    rgba(255, 255, 255, 0.12);
+
+  border-color:
+    rgba(237, 174, 73, 0.35);
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================================================
+   SERVICE ICON
+========================================================= */
+
+.splash-services i {
+
+  color: #edae49;
+
+  font-size: 10px;
+
+  filter:
+    drop-shadow(0 2px 4px rgba(237, 174, 73, 0.2));
+}
+
+
+/* =========================================================
+   LOADING BAR
+========================================================= */
+
+.splash-loader {
+
+  position: relative;
+
+  width: 125px;
+  height: 2px;
+
+  margin:
+    29px auto 0;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255, 255, 255, 0.13);
+
+  animation:
+    loaderAppear 1s ease 0.7s both;
+}
+
+
+/* =========================================================
+   LOADING PROGRESS
+========================================================= */
+
+.splash-loader span {
+
+  display: block;
+
+  width: 32%;
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(90deg,
+      #edae49,
+      #ffe5ae);
+
+  box-shadow:
+    0 0 8px rgba(237, 174, 73, 0.45);
+
+  animation:
+    splashLoading 1.4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes splashContentIn {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(20px) scale(0.96);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0) scale(1);
+  }
+}
+
+
+@keyframes splashTextShine {
+
+  0% {
+
+    background-position: 0% center;
+  }
+
+  100% {
+
+    background-position: 180% center;
+  }
+}
+
+
+@keyframes planeOrbit {
+
+  from {
+
+    transform:
+      rotate(0deg);
+  }
+
+  to {
+
+    transform:
+      rotate(360deg);
+  }
+}
+
+
+@keyframes splashLoading {
+
+  0% {
+
+    transform:
+      translateX(-130%);
+  }
+
+  100% {
+
+    transform:
+      translateX(420%);
+  }
+}
+
+
+@keyframes splashRotate {
+
+  from {
+
+    transform:
+      rotate(0deg);
+  }
+
+  to {
+
+    transform:
+      rotate(360deg);
+  }
+}
+
+
+@keyframes splashRotateReverse {
+
+  from {
+
+    transform:
+      rotate(360deg);
+  }
+
+  to {
+
+    transform:
+      rotate(0deg);
+  }
+}
+
+
+@keyframes taglineFade {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(6px);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+@keyframes servicesFade {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(8px);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+@keyframes loaderAppear {
+
+  from {
+
+    opacity: 0;
+  }
+
+  to {
+
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   WHATSAPP + INSTAGRAM
+========================================================= */
+
+.whatsapp-float,
+.instagram-float {
+
+  position: fixed;
+
+  right: 16px;
+
+  z-index: 9999;
+
+  width: 43px;
+  height: 43px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+.whatsapp-float {
+
+  bottom: 16px;
+
+  background: #25d366;
+
+  box-shadow:
+    0 5px 13px rgba(37, 211, 102, 0.24);
+}
+
+
+/* =========================================================
+   INSTAGRAM
+========================================================= */
+
+.instagram-float {
+
+  bottom: 67px;
+
+  background: #e1306c;
+
+  box-shadow:
+    0 5px 13px rgba(225, 48, 108, 0.23);
+}
+
+
+/* =========================================================
+   SOCIAL HOVER
+========================================================= */
+
+.whatsapp-float:hover,
+.instagram-float:hover {
+
+  transform:
+    translateY(-2px) scale(1.04);
+}
+
+
+.whatsapp-float:active,
+.instagram-float:active {
+
+  transform:
+    scale(0.96);
+}
+
+
+/* =========================================================
+   SOCIAL ICONS
+========================================================= */
+
+.whatsapp-icon,
+.instagram-icon {
+
+  width: 20px;
+  height: 20px;
+
+  display: block;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .whatsapp-float,
+  .instagram-float {
+
+    right: 13px;
+
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .whatsapp-float {
+
+    bottom: 14px;
+  }
+
+
+  .instagram-float {
+
+    bottom: 61px;
+  }
+
+
+  .whatsapp-icon,
+  .instagram-icon {
+
+    width: 19px;
+    height: 19px;
+  }
+
+
+  /* =======================================================
+     MOBILE SPLASH
+  ======================================================= */
+
+  .brand-orbit {
+
+    width: 290px;
+    height: 125px;
+  }
+
+
+  .brand-orbit h1 {
+
+    gap: 7px;
+
+    font-size: 32px;
+
+    letter-spacing: -1.2px;
+  }
+
+
+  .brand-orbit-track i {
+
+    right: -7px;
+
+    font-size: 15px;
+  }
+
+
+  .splash-tagline {
+
+    margin-top: 2px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .splash-services {
+
+    max-width: 310px;
+
+    margin-top: 23px;
+
+    gap: 7px;
+  }
+
+
+  .splash-services span {
+
+    padding:
+      7px 9px;
+
+    font-size: 8px;
+  }
+
+
+  .splash-services i {
+
+    font-size: 9px;
+  }
+
+
+  .splash-loader {
+
+    width: 110px;
+
+    margin-top: 25px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .brand-orbit {
+
+    width: 250px;
+    height: 108px;
+  }
+
+
+  .brand-orbit h1 {
+
+    gap: 5px;
+
+    font-size: 28px;
+
+    letter-spacing: -1px;
+  }
+
+
+  .brand-orbit-track i {
+
+    right: -6px;
+
+    font-size: 13px;
+  }
+
+
+  .splash-tagline {
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+  }
+
+
+  .splash-services {
+
+    max-width: 290px;
+
+    gap: 6px;
+  }
+
+
+  .splash-services span {
+
+    padding:
+      6px 8px;
+
+    font-size: 7.5px;
+  }
+
+
+  .splash-loader {
+
+    width: 100px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 340px) {
+
+  .brand-orbit {
+
+    width: 220px;
+    height: 95px;
+  }
+
+
+  .brand-orbit h1 {
+
+    font-size: 24px;
+
+    letter-spacing: -0.8px;
+  }
+
+
+  .brand-orbit-track i {
+
+    font-size: 12px;
+  }
+
+
+  .splash-tagline {
+
+    font-size: 7px;
+
+    letter-spacing: 1.2px;
+  }
+
+
+  .splash-services {
+
+    max-width: 270px;
+  }
+
+
+  .splash-services span {
+
+    padding:
+      5px 7px;
+
+    font-size: 7px;
+  }
+}

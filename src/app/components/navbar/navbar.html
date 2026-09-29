@@ -1,0 +1,177 @@
+<nav class="navbar">
+
+  <div class="navbar-container">
+
+    <!-- Logo -->
+    <a
+      routerLink="/"
+      class="logo"
+      (click)="closeMenu()">
+
+      <img
+        src="/images/hamza-travels-logo.png"
+        alt="Hamza Travels Logo"
+        class="logo-image"
+      />
+
+      <span>Hamza Travels</span>
+
+    </a>
+
+
+    <!-- Global Search -->
+    <div class="service-search">
+
+      <div class="search-box">
+
+        <span class="search-icon">⌕</span>
+
+        <input
+          type="text"
+          placeholder="Search services..."
+          [value]="searchText"
+          (input)="searchText = $any($event.target).value"
+          aria-label="Search services"
+        />
+
+        <button
+          type="button"
+          class="voice-search"
+          [class.listening]="isListening"
+          (click)="startVoiceSearch()"
+          aria-label="Voice search">
+          <i class="fa-solid fa-microphone"></i>
+        </button>
+
+        <button
+          *ngIf="searchText"
+          type="button"
+          class="clear-search"
+          (click)="clearSearch()"
+          aria-label="Clear search">
+          ×
+        </button>
+
+      </div>
+
+
+      <!-- Search Results -->
+      <div
+        class="search-results"
+        *ngIf="searchText.trim()">
+
+        <button
+          *ngFor="let service of searchResults"
+          type="button"
+          class="search-result"
+          (click)="openService(service)">
+
+          <div class="search-result-content">
+
+            <strong>
+              {{ service.name }}
+            </strong>
+
+            <span>
+              {{ service.category }}
+            </span>
+
+          </div>
+
+          <span class="search-arrow">→</span>
+
+        </button>
+
+
+        <!-- No Result -->
+        <div
+          class="no-results"
+          *ngIf="searchResults.length === 0">
+
+          No service found
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Dark Mode Button -->
+    <button
+      type="button"
+      class="theme-toggle"
+      (click)="toggleTheme()"
+      [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'"
+      [attr.title]="isDarkMode ? 'Light mode' : 'Dark mode'">
+
+      <i
+        class="fa-solid"
+        [class.fa-moon]="!isDarkMode"
+        [class.fa-sun]="isDarkMode">
+      </i>
+
+    </button>
+
+
+    <!-- Mobile Menu Button -->
+    <button
+      type="button"
+      class="menu-button"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen"
+      aria-label="Toggle navigation menu">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+
+    <!-- Navigation Links -->
+    <div
+      class="nav-links"
+      [class.menu-open]="menuOpen">
+
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="closeMenu()">
+        Home
+      </a>
+
+      <a
+        routerLink="/services"
+        routerLinkActive="active"
+        (click)="closeMenu()">
+        Services
+      </a>
+
+      <a
+        routerLink="/about"
+        routerLinkActive="active"
+        (click)="closeMenu()">
+        About
+      </a>
+
+      <a
+        routerLink="/explore"
+        routerLinkActive="active"
+        (click)="closeMenu()">
+        Explore
+      </a>
+
+      <a
+        routerLink="/contact"
+        routerLinkActive="active"
+        (click)="closeMenu()">
+        Contact
+      </a>
+
+    </div>
+
+  </div>
+
+</nav>

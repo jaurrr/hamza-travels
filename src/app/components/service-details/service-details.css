@@ -1,0 +1,254 @@
+.service-details-page {
+  min-height: calc(100vh - 72px);
+  padding: 35px 20px 55px;
+  background: var(--background);
+}
+
+.service-details-container {
+  width: min(1000px, 92%);
+  margin: 0 auto;
+}
+
+/* =========================
+   BACK LINK
+========================= */
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 22px;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--teal);
+}
+
+/* =========================
+   SERVICE HEADER
+========================= */
+
+.service-details-heading {
+  max-width: 760px;
+  margin-bottom: 30px;
+}
+
+.service-details-heading span {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: var(--teal);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.service-details-heading h1 {
+  margin: 0 0 10px;
+  color: var(--primary);
+  font-size: 36px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.service-details-heading p {
+  max-width: 680px;
+  margin: 0;
+  color: var(--text-light);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+/* =========================
+   DETAILS GRID
+========================= */
+
+.service-details-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* =========================
+   INFO / ACTION CARDS
+========================= */
+
+.service-info-card,
+.service-action-card {
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 61, 91, 0.04);
+}
+
+.service-info-card h2,
+.service-action-card h2 {
+  margin: 0 0 16px;
+  color: var(--primary);
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+/* =========================
+   REQUIREMENTS
+========================= */
+
+.service-info-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-info-card li {
+  margin-bottom: 10px;
+  color: var(--text-light);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.service-info-card li:last-child {
+  margin-bottom: 0;
+}
+
+.service-info-card li::before {
+  content: "✓";
+  margin-right: 9px;
+  color: var(--teal);
+  font-weight: 700;
+}
+
+/* =========================
+   ACTION CARD
+========================= */
+
+.service-action-card p {
+  margin: 0 0 20px;
+  color: var(--text-light);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* =========================
+   APPLY BUTTON
+========================= */
+
+.apply-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 20px;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.apply-button:hover {
+  background: var(--secondary);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 16px rgba(0, 61, 91, 0.14);
+}
+
+.apply-button:active {
+  transform: translateY(0);
+}
+
+/* =========================
+   NOT FOUND
+========================= */
+
+.not-found {
+  padding: 35px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.not-found h2 {
+  margin: 0 0 10px;
+  color: var(--primary);
+}
+
+.not-found p {
+  margin: 0 0 18px;
+  color: var(--text-light);
+}
+
+.not-found a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* =========================
+   TABLET / MOBILE
+========================= */
+
+@media (max-width: 700px) {
+  .service-details-page {
+    padding: 28px 18px 45px;
+  }
+
+  .service-details-container {
+    width: 100%;
+  }
+
+  .back-link {
+    margin-bottom: 18px;
+    font-size: 13px;
+  }
+
+  .service-details-heading {
+    margin-bottom: 24px;
+  }
+
+  .service-details-heading span {
+    font-size: 10px;
+    letter-spacing: 1.2px;
+  }
+
+  .service-details-heading h1 {
+    margin-bottom: 8px;
+    font-size: 30px;
+  }
+
+  .service-details-heading p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .service-details-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .service-info-card,
+  .service-action-card {
+    padding: 20px;
+  }
+
+  .service-info-card h2,
+  .service-action-card h2 {
+    font-size: 19px;
+  }
+
+  .service-action-card .apply-button {
+    width: 100%;
+  }
+}

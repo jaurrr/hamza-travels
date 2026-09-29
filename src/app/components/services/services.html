@@ -1,0 +1,498 @@
+<section class="services-page">
+
+  <div class="services-container">
+
+    <!-- =================================================
+         PAGE HEADER
+    ================================================== -->
+
+    <div class="services-heading">
+
+      <span class="heading-badge">
+        <i class="fa-solid fa-compass"></i>
+        OUR SERVICES
+      </span>
+
+      <h1>
+        Services We Provide
+        <strong>Everything In One Place.</strong>
+      </h1>
+
+      <p>
+        Choose the service you need from our wide range of
+        travel, government, document and online services.
+      </p>
+
+      <div class="heading-highlights">
+
+        <div class="heading-highlight">
+          <i class="fa-solid fa-plane"></i>
+          <span>Travel Services</span>
+        </div>
+
+        <div class="heading-highlight">
+          <i class="fa-solid fa-file-lines"></i>
+          <span>Document Services</span>
+        </div>
+
+        <div class="heading-highlight">
+          <i class="fa-solid fa-globe"></i>
+          <span>Online Services</span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =================================================
+         TRAVEL SERVICES
+    ================================================== -->
+
+    <section class="service-section">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          TRAVEL SERVICES
+        </span>
+
+        <h2>
+          Travel & Booking
+        </h2>
+
+        <div class="heading-line">
+          <span></span>
+        </div>
+
+        <p>
+          Flight, train, bus, hotel, visa and other travel services.
+        </p>
+
+      </div>
+
+
+      <div class="services-grid">
+
+        <div
+          class="service-card"
+          *ngFor="let service of travelServices"
+        >
+
+          <div class="service-card-top">
+
+            <div class="service-icon">
+              <i [class]="getServiceIcon(service.id)"></i>
+            </div>
+
+          </div>
+
+
+          <div class="service-card-content">
+
+            <span class="service-category">
+              {{ service.category }}
+            </span>
+
+            <h3>
+              {{ service.name }}
+            </h3>
+
+            <p>
+              {{ service.description }}
+            </p>
+
+
+            <div class="service-documents">
+
+              <strong>
+                <i class="fa-solid fa-circle-check"></i>
+                Required
+              </strong>
+
+              <ul>
+
+                <li
+                  *ngFor="let requirement of service.requirements"
+                >
+                  {{ requirement }}
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+
+          <div class="service-footer">
+
+            <span class="service-charge">
+              {{ service.charge }}
+            </span>
+
+            <a
+              [routerLink]="['/service', service.id]"
+              class="details-button"
+            >
+              <span>View Details</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         GOVERNMENT & DOCUMENT SERVICES
+    ================================================== -->
+
+    <section class="service-section">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          GOVERNMENT & DOCUMENT SERVICES
+        </span>
+
+        <h2>
+          Government & Documents
+        </h2>
+
+        <div class="heading-line">
+          <span></span>
+        </div>
+
+        <p>
+          Government documents, certificates, cards, pension and
+          other important document services.
+        </p>
+
+      </div>
+
+
+      <div class="services-grid">
+
+        <div
+          class="service-card"
+          *ngFor="let service of governmentServices"
+        >
+
+          <div class="service-card-top">
+
+            <div class="service-icon">
+              <i [class]="getServiceIcon(service.id)"></i>
+            </div>
+
+          </div>
+
+
+          <div class="service-card-content">
+
+            <span class="service-category">
+              {{ service.category }}
+            </span>
+
+            <h3>
+              {{ service.name }}
+            </h3>
+
+            <p>
+              {{ service.description }}
+            </p>
+
+
+            <div class="service-documents">
+
+              <strong>
+                <i class="fa-solid fa-circle-check"></i>
+                Required
+              </strong>
+
+              <ul>
+
+                <li
+                  *ngFor="let requirement of service.requirements"
+                >
+                  {{ requirement }}
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+
+          <div class="service-footer">
+
+            <span class="service-charge">
+              {{ service.charge }}
+            </span>
+
+            <a
+              [routerLink]="['/service', service.id]"
+              class="details-button"
+            >
+              <span>View Details</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         INSURANCE & VEHICLE SERVICES
+    ================================================== -->
+
+    <section class="service-section">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          INSURANCE & VEHICLE SERVICES
+        </span>
+
+        <h2>
+          Insurance & Vehicle
+        </h2>
+
+        <div class="heading-line">
+          <span></span>
+        </div>
+
+        <p>
+          Insurance, vehicle renewal and transport related services.
+        </p>
+
+      </div>
+
+
+      <div class="services-grid">
+
+        <div
+          class="service-card"
+          *ngFor="let service of insuranceVehicleServices"
+        >
+
+          <div class="service-card-top">
+
+            <div class="service-icon">
+              <i [class]="getServiceIcon(service.id)"></i>
+            </div>
+
+          </div>
+
+
+          <div class="service-card-content">
+
+            <span class="service-category">
+              {{ service.category }}
+            </span>
+
+            <h3>
+              {{ service.name }}
+            </h3>
+
+            <p>
+              {{ service.description }}
+            </p>
+
+
+            <div class="service-documents">
+
+              <strong>
+                <i class="fa-solid fa-circle-check"></i>
+                Required
+              </strong>
+
+              <ul>
+
+                <li
+                  *ngFor="let requirement of service.requirements"
+                >
+                  {{ requirement }}
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+
+          <div class="service-footer">
+
+            <span class="service-charge">
+              {{ service.charge }}
+            </span>
+
+            <a
+              [routerLink]="['/service', service.id]"
+              class="details-button"
+            >
+              <span>View Details</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         OTHER SERVICES
+    ================================================== -->
+
+    <section class="service-section">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          OTHER SERVICES
+        </span>
+
+        <h2>
+          Other Services
+        </h2>
+
+        <div class="heading-line">
+          <span></span>
+        </div>
+
+        <p>
+          Business, education, document and other online services.
+        </p>
+
+      </div>
+
+
+      <div class="services-grid">
+
+        <div
+          class="service-card"
+          *ngFor="let service of otherServices"
+        >
+
+          <div class="service-card-top">
+
+            <div class="service-icon">
+              <i [class]="getServiceIcon(service.id)"></i>
+            </div>
+
+          </div>
+
+
+          <div class="service-card-content">
+
+            <span class="service-category">
+              {{ service.category }}
+            </span>
+
+            <h3>
+              {{ service.name }}
+            </h3>
+
+            <p>
+              {{ service.description }}
+            </p>
+
+
+            <div class="service-documents">
+
+              <strong>
+                <i class="fa-solid fa-circle-check"></i>
+                Required
+              </strong>
+
+              <ul>
+
+                <li
+                  *ngFor="let requirement of service.requirements"
+                >
+                  {{ requirement }}
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+
+          <div class="service-footer">
+
+            <span class="service-charge">
+              {{ service.charge }}
+            </span>
+
+            <a
+              [routerLink]="['/service', service.id]"
+              class="details-button"
+            >
+              <span>View Details</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         BOTTOM CTA
+    ================================================== -->
+
+    <section class="services-bottom-cta">
+
+      <div class="cta-icon">
+        <i class="fa-solid fa-headset"></i>
+      </div>
+
+      <div class="cta-content">
+
+        <span>NEED HELP?</span>
+
+        <h2>
+          Not Sure Which Service You Need?
+        </h2>
+
+        <p>
+          Contact Hamza Travels and get personal assistance
+          for your application or travel requirements.
+        </p>
+
+      </div>
+
+      <a
+        routerLink="/contact"
+        class="cta-button"
+      >
+        Contact Us
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+    </section>
+
+  </div>
+
+</section>

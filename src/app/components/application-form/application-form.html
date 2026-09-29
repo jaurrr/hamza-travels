@@ -1,0 +1,218 @@
+<section class="application-form-page">
+
+  <div class="application-form-container">
+
+    <!-- INVALID SERVICE -->
+    <div
+      class="service-not-found"
+      *ngIf="serviceNotFound">
+
+      <h2>Service Not Found</h2>
+
+      <p>
+        The requested service does not exist.
+      </p>
+
+      <button
+        type="button"
+        class="back-to-service-button"
+        routerLink="/services">
+
+        Back to Services
+
+      </button>
+
+    </div>
+
+
+    <!-- NORMAL APPLICATION FORM PAGE -->
+    <ng-container
+      *ngIf="!applicationSubmitted && !serviceNotFound">
+
+      <!-- PAGE HEADING -->
+      <div class="form-heading">
+
+        <span>APPLICATION FORM</span>
+
+        <h1>{{ serviceName }}</h1>
+
+        <h1>Submit Your Details</h1>
+
+        <p>
+          Fill in your details correctly. Our team will review your
+          information and contact you for further processing.
+        </p>
+
+      </div>
+
+
+      <!-- BACK TO SERVICE -->
+      <button
+        type="button"
+        class="back-to-service-button"
+        [routerLink]="['/service', serviceId]">
+
+        ← Back to Service
+
+      </button>
+
+
+      <!-- APPLICATION FORM -->
+      <form
+        *ngIf="applicationForm"
+        [formGroup]="applicationForm"
+        (ngSubmit)="submitApplication()"
+        class="application-form">
+
+        <!-- DYNAMIC FORM FIELDS -->
+        <div
+          class="form-group"
+          *ngFor="let field of fields">
+
+          <!-- LABEL -->
+          <label [for]="field.name">
+
+            {{ field.label }}
+
+            <span *ngIf="field.required">*</span>
+
+          </label>
+
+
+          <!-- TEXT / TEL / EMAIL / DATE / NUMBER -->
+          <input
+            *ngIf="
+              field.type === 'text' ||
+              field.type === 'tel' ||
+              field.type === 'email' ||
+              field.type === 'date' ||
+              field.type === 'number'
+            "
+            [id]="field.name"
+            [type]="field.type"
+            [formControlName]="field.name"
+            [placeholder]="field.placeholder || ''"
+            [class.input-error]="isInvalid(field.name)"
+          />
+
+
+          <!-- TEXTAREA -->
+          <textarea
+            *ngIf="field.type === 'textarea'"
+            [id]="field.name"
+            [formControlName]="field.name"
+            [placeholder]="field.placeholder || ''"
+            rows="5"
+            [class.input-error]="isInvalid(field.name)"
+          ></textarea>
+
+
+          <!-- SELECT -->
+          <select
+            *ngIf="field.type === 'select'"
+            [id]="field.name"
+            [formControlName]="field.name"
+            [class.input-error]="isInvalid(field.name)">
+
+            <option value="">
+              Select an option
+            </option>
+
+            <option
+              *ngFor="let option of field.options"
+              [value]="option">
+
+              {{ option }}
+
+            </option>
+
+          </select>
+
+
+          <!-- REQUIRED ERROR -->
+          <small
+            class="error-message"
+            *ngIf="
+              isInvalid(field.name) &&
+              applicationForm.get(field.name)?.hasError('required')
+            ">
+
+            {{ field.label }} is required.
+
+          </small>
+
+
+          <!-- MOBILE ERROR -->
+          <small
+            class="error-message"
+            *ngIf="
+              isInvalid(field.name) &&
+              applicationForm.get(field.name)?.hasError('pattern')
+            ">
+
+            <span *ngIf="field.name === 'mobile'">
+
+              Please enter a valid 10-digit mobile number.
+
+            </span>
+
+          </small>
+
+        </div>
+
+
+        <!-- SUBMIT BUTTON -->
+        <div class="form-actions">
+
+          <button
+            type="submit"
+            class="submit-button">
+
+            Submit Application
+
+          </button>
+
+        </div>
+
+      </form>
+
+    </ng-container>
+
+
+    <!-- SUCCESS MESSAGE -->
+    <div
+      class="success-message"
+      *ngIf="applicationSubmitted">
+
+      <h2>Application Submitted Successfully!</h2>
+
+      <p>
+        Your details have been prepared for WhatsApp.
+        Our team will contact you shortly.
+      </p>
+
+
+      <button
+        type="button"
+        class="back-to-service-button"
+        [routerLink]="['/service', serviceId]">
+
+        Back to Service
+
+      </button>
+
+
+      <button
+        type="button"
+        class="new-application-button"
+        (click)="applicationSubmitted = false">
+
+        Submit Another Application
+
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
