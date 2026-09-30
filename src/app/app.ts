@@ -22,6 +22,6 @@ export class App implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
       this.showSplash.set(false);
-    }, 1800);
+    }, 2000);
   }
 }
