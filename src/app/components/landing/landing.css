@@ -1,0 +1,684 @@
+/* =========================================================
+   HAMZA TRAVELS — LANDING PAGE
+   Scroll-snap + scroll-spy friendly sections
+   ========================================================= */
+
+.landing-page {
+  width: 100%;
+}
+
+
+/* =========================================================
+   SHARED SECTION SCAFFOLD
+========================================================= */
+
+.landing-section {
+  padding: 64px 0;
+
+  scroll-margin-top: 70px;
+}
+
+.landing-hero {
+  scroll-margin-top: 0;
+}
+
+.landing-section-alt {
+  background: var(--surface-soft);
+
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.landing-container {
+  width: min(1600px, 94%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+.landing-tag {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: var(--teal);
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.landing-tag-soft {
+  margin-top: 34px;
+}
+
+.landing-title {
+  margin: 0 0 10px;
+
+  color: var(--primary);
+
+  font-size: clamp(24px, 3.4vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+
+  line-height: 1.25;
+}
+
+.landing-sub {
+  max-width: 720px;
+
+  margin: 0 0 28px;
+
+  color: var(--text-light);
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.view-all-link {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 26px;
+
+  color: var(--teal);
+
+  font-size: 13px;
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    gap 0.2s ease,
+    color 0.2s ease;
+}
+
+.view-all-link:hover {
+  gap: 12px;
+
+  color: var(--primary);
+}
+
+.view-all-link i {
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   POPULAR SERVICES
+========================================================= */
+
+.popular-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 16px;
+}
+
+.popular-card {
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 24px rgba(0, 61, 91, 0.05);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.popular-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(0, 121, 140, 0.28);
+
+  box-shadow:
+    0 14px 32px rgba(0, 61, 91, 0.10);
+}
+
+.popular-card h3 {
+  margin: 0 0 8px;
+
+  color: var(--primary);
+
+  font-size: 14.5px;
+  font-weight: 750;
+
+  line-height: 1.4;
+}
+
+.popular-card p {
+  flex: 1;
+
+  margin: 0 0 14px;
+
+  color: var(--text-light);
+
+  font-size: 11.5px;
+  line-height: 1.65;
+}
+
+.enquire-link {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  align-self: flex-start;
+
+  color: var(--teal);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  text-decoration: none;
+}
+
+.enquire-link:hover {
+  color: var(--primary);
+
+  text-decoration: underline;
+}
+
+.enquire-link i {
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   WHY POINTS
+========================================================= */
+
+.why-title {
+  margin: 0 0 22px;
+
+  color: var(--primary);
+
+  font-size: clamp(19px, 2.6vw, 26px);
+  font-weight: 800;
+
+  line-height: 1.3;
+}
+
+.why-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 16px;
+}
+
+.why-point {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 14px;
+
+  padding: 18px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 24px rgba(0, 61, 91, 0.05);
+}
+
+.why-icon {
+  width: 44px;
+  height: 44px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: rgba(0, 145, 150, 0.10);
+
+  color: var(--teal);
+
+  font-size: 18px;
+}
+
+.why-point strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--primary);
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.why-point span {
+  color: var(--text-light);
+
+  font-size: 11.5px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   EXPLORE MINI CARDS
+========================================================= */
+
+.dest-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 16px;
+}
+
+.dest-mini {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 12px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 8px 24px rgba(0, 61, 91, 0.05);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.dest-mini:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(0, 121, 140, 0.28);
+
+  box-shadow:
+    0 14px 32px rgba(0, 61, 91, 0.10);
+}
+
+.dest-mini img {
+  width: 84px;
+  height: 84px;
+
+  flex-shrink: 0;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+}
+
+.dest-mini-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.dest-mini-body strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--primary);
+
+  font-size: 13.5px;
+  font-weight: 750;
+}
+
+.dest-mini-body span {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  color: var(--text-light);
+
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.dest-mini-wa {
+  flex-shrink: 0;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #25d366;
+
+  color: #ffffff;
+
+  font-size: 19px;
+
+  transition: transform 0.2s ease;
+}
+
+.dest-mini:hover .dest-mini-wa {
+  transform: scale(1.1);
+}
+
+
+/* =========================================================
+   CONTACT BLOCK + BIG WHATSAPP CTA
+========================================================= */
+
+.contact-block {
+  max-width: 860px;
+
+  text-align: center;
+}
+
+.contact-block .landing-sub {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.whatsapp-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  margin: 10px 0 22px;
+  padding: 18px 44px;
+
+  background: #25d366;
+
+  border-radius: 60px;
+
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 800;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 16px 40px rgba(37, 211, 102, 0.35);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.whatsapp-cta:hover {
+  transform: translateY(-3px) scale(1.02);
+
+  box-shadow:
+    0 20px 48px rgba(37, 211, 102, 0.45);
+}
+
+.whatsapp-cta i {
+  font-size: 24px;
+}
+
+.contact-alt {
+  margin: 0;
+
+  color: var(--text-light);
+
+  font-size: 12px;
+}
+
+.contact-alt a {
+  color: var(--teal);
+
+  font-weight: 800;
+
+  text-decoration: none;
+}
+
+.contact-alt a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   TESTIMONIALS
+========================================================= */
+
+.testi-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 16px;
+}
+
+.testi-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 22px 20px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 24px rgba(0, 61, 91, 0.05);
+}
+
+.testi-badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+
+  gap: 6px;
+
+  margin-bottom: 12px;
+  padding: 5px 10px;
+
+  background: rgba(237, 174, 73, 0.16);
+
+  border: 1px dashed var(--accent);
+  border-radius: 20px;
+
+  color: var(--accent);
+
+  font-size: 8.5px;
+  font-weight: 800;
+
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.testi-stars {
+  display: flex;
+
+  gap: 3px;
+
+  margin-bottom: 12px;
+
+  color: var(--accent);
+
+  font-size: 12px;
+}
+
+.testi-text {
+  flex: 1;
+
+  margin: 0 0 16px;
+
+  color: var(--text);
+
+  font-size: 12.5px;
+  line-height: 1.7;
+}
+
+.testi-who strong {
+  display: block;
+
+  color: var(--primary);
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.testi-who span {
+  color: var(--text-light);
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .popular-card,
+body.dark-mode .why-point,
+body.dark-mode .dest-mini,
+body.dark-mode .testi-card {
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.30);
+}
+
+body.dark-mode .popular-card:hover,
+body.dark-mode .dest-mini:hover {
+  border-color: rgba(25, 185, 196, 0.30);
+
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, 0.40);
+}
+
+body.dark-mode .why-icon {
+  background: rgba(25, 185, 196, 0.12);
+}
+
+body.dark-mode .testi-badge {
+  background: rgba(243, 193, 91, 0.10);
+}
+
+body.dark-mode .whatsapp-cta {
+  box-shadow:
+    0 16px 40px rgba(37, 211, 102, 0.22);
+}
+
+body.dark-mode .whatsapp-cta:hover {
+  box-shadow:
+    0 20px 48px rgba(37, 211, 102, 0.32);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .popular-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dest-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testi-grid {
+    grid-template-columns: 1fr;
+
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 860px) {
+
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-section {
+    padding: 48px 0;
+  }
+}
+
+@media (max-width: 560px) {
+
+  .popular-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dest-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dest-mini img {
+    width: 72px;
+    height: 72px;
+  }
+
+  .whatsapp-cta {
+    width: 100%;
+    max-width: 360px;
+
+    padding: 16px 24px;
+
+    font-size: 15px;
+  }
+
+  .landing-section {
+    padding: 40px 0;
+  }
+}
+
+
+/* 360px safe */
+
+@media (max-width: 380px) {
+
+  .landing-container {
+    width: 94%;
+  }
+
+  .popular-card,
+  .why-point,
+  .dest-mini,
+  .testi-card {
+    padding: 14px;
+  }
+
+  .dest-mini img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .whatsapp-cta {
+    font-size: 14px;
+  }
+}

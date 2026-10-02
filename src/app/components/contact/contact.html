@@ -9,12 +9,12 @@
     <div class="contact-heading">
 
       <span class="heading-badge">
-        CONTACT HAMZA TRAVELS
+        {{ 'contact.badge' | translate:'CONTACT HAMZA TRAVELS' }}
       </span>
 
       <h1>
-        We're Here To
-        <strong>Help You.</strong>
+        {{ 'contact.title1' | translate:"We're Here To" }}
+        <strong>{{ 'contact.title2' | translate:'Help You.' }}</strong>
       </h1>
 
       <div class="heading-line">
@@ -22,9 +22,7 @@
       </div>
 
       <p>
-        Need help with an online service, document, certificate,
-        travel booking or any other application? Get in touch with us
-        and let us know what you need.
+        {{ 'contact.desc' | translate:'Need help with an online service, document, certificate, travel booking or any other application? Get in touch with us and let us know what you need.' }}
       </p>
 
     </div>
@@ -54,19 +52,54 @@
           <div class="contact-card-content">
 
             <span class="contact-label">
-              CALL US
+              {{ 'contact.callLabel' | translate:'CALL US' }}
             </span>
 
             <h3>
-              Speak With Us
+              {{ 'contact.callTitle' | translate:'Call Us Directly' }}
             </h3>
 
             <p>
-              Have a question or need quick assistance?
+              {{ 'contact.callDesc' | translate:'Talk to us about your service needs.' }}
             </p>
 
-            <a href="tel:+919935212224">
-              +91 99352 12224
+            <a [href]="businessTelLink">
+              {{ 'contact.callButton' | translate:'Call Now' }}
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- WHATSAPP CHAT -->
+
+        <div class="contact-card">
+
+          <div class="contact-icon">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+
+          <div class="contact-card-content">
+
+            <span class="contact-label">
+              {{ 'contact.chatLabel' | translate:'WHATSAPP' }}
+            </span>
+
+            <h3>
+              {{ 'contact.chatTitle' | translate:'Chat on WhatsApp' }}
+            </h3>
+
+            <p>
+              {{ 'contact.chatDesc' | translate:'Quick replies for all your enquiries.' }}
+            </p>
+
+            <a
+              [href]="generalWaLink"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ 'contact.chatButton' | translate:'Chat Now' }}
             </a>
 
           </div>
@@ -85,22 +118,22 @@
           <div class="contact-card-content">
 
             <span class="contact-label">
-              EMAIL US
+              {{ 'contact.emailLabel' | translate:'EMAIL' }}
             </span>
 
             <h3>
-              Send Your Enquiry
+              {{ 'contact.emailTitle' | translate:'Email Us' }}
             </h3>
 
             <p>
-              For service-related questions and enquiries.
+              {{ 'contact.emailDesc' | translate:'Send us your documents and queries.' }}
             </p>
 
             <a
-              href="mailto:hamzatravel992@gmail.com"
+              [href]="mailtoLink"
               (click)="openEmail($event)"
             >
-              hamzatravel992@gmail.com
+              {{ email }}
             </a>
 
           </div>
@@ -119,20 +152,20 @@
           <div class="contact-card-content">
 
             <span class="contact-label">
-              WORKING HOURS
+              {{ 'contact.hoursLabel' | translate:'WORKING HOURS' }}
             </span>
 
             <h3>
-              Monday - Saturday
+              {{ 'contact.hoursTitle' | translate:"When We're Available" }}
             </h3>
 
             <p>
-              Contact us for current service availability.
+              {{ 'contact.hoursDesc' | translate:'We try to respond as quickly as possible.' }}
             </p>
 
             <span class="availability">
               <i class="fa-solid fa-circle"></i>
-              Service assistance available
+              {{ 'contact.hoursNote' | translate:'Open all days' }}
             </span>
 
           </div>
@@ -151,15 +184,15 @@
           <div class="contact-card-content">
 
             <span class="contact-label">
-              OUR LOCATION
+              {{ 'contact.visitTag' | translate:'VISIT US' }}
             </span>
 
             <h3>
-              Hamza Travels
+              {{ 'contact.visitTitle' | translate:'Our Location' }}
             </h3>
 
             <p>
-              Visit us for direct assistance and service enquiries.
+              {{ 'contact.visitDesc' | translate:'You are welcome to visit us in person.' }}
             </p>
 
             <div class="shop-address">
@@ -167,19 +200,19 @@
               <i class="fa-solid fa-location-dot"></i>
 
               <span>
-                Jaigahan Bazar, Bilariyaganj Rd, Azamgarh - 276121
+                {{ 'contact.address' | translate:'Hamza Travels — contact us on WhatsApp or call for the shop address.' }}
               </span>
 
             </div>
 
             <a
-              href="https://maps.app.goo.gl/uQiyJZ2Kj3GvEPdeA?g_st=ac"
+              [href]="mapsUrl"
               target="_blank"
               rel="noopener noreferrer"
               class="location-link"
             >
               <i class="fa-solid fa-diamond-turn-right"></i>
-              Get Directions
+              {{ 'contact.visitButton' | translate:'Get Directions' }}
             </a>
 
           </div>
@@ -211,16 +244,12 @@
             <div>
 
               <span class="owner-label">
-                PROPRIETOR
+                {{ 'contact.ownerLabel' | translate:'TALK TO OWNER' }}
               </span>
 
               <h2>
-                Belal Shaikh
+                {{ 'contact.ownerName' | translate:'Belal Shaikh' }}
               </h2>
-
-              <p class="owner-role">
-                Proprietor, Hamza Travels
-              </p>
 
             </div>
 
@@ -228,25 +257,24 @@
 
 
           <p class="owner-description">
-            For direct assistance, service enquiries or any questions
-            regarding your application, you can contact us directly.
+            {{ 'contact.ownerDesc' | translate:'Founder, Hamza Travels. Talk directly to the owner for any help.' }}
           </p>
 
 
           <div class="owner-contact">
 
-            <a href="tel:+919682742861">
+            <a [href]="ownerTelLink">
               <i class="fa-solid fa-phone"></i>
-              Call
+              {{ 'common.call' | translate:'Call' }}
             </a>
 
             <a
-              href="https://wa.me/919682742861"
+              [href]="ownerWaLink"
               target="_blank"
               rel="noopener noreferrer"
             >
               <i class="fa-brands fa-whatsapp"></i>
-              WhatsApp
+              {{ 'common.whatsapp' | translate:'WhatsApp' }}
             </a>
 
           </div>
@@ -265,45 +293,44 @@
           </div>
 
           <span>
-            NEED ASSISTANCE?
+            {{ 'contact.helpTag' | translate:'WHY CONTACT US' }}
           </span>
 
           <h2>
-            Talk To Hamza Travels
+            {{ 'contact.helpTitle' | translate:"We're Here To Help" }}
           </h2>
 
           <p>
-            Tell us what service you need, share your requirements
-            and get guidance on the documents, process and next steps.
+            {{ 'contact.helpDesc' | translate:'Get personal assistance for all your service needs.' }}
           </p>
 
           <div class="talk-points">
 
             <div>
               <i class="fa-solid fa-check"></i>
-              <span>Quick Assistance</span>
+              <span>{{ 'contact.help1' | translate:'Quick Assistance' }}</span>
             </div>
 
             <div>
               <i class="fa-solid fa-check"></i>
-              <span>Clear Information</span>
+              <span>{{ 'contact.help2' | translate:'Clear Information' }}</span>
             </div>
 
             <div>
               <i class="fa-solid fa-check"></i>
-              <span>Easy Communication</span>
+              <span>{{ 'contact.help3' | translate:'Easy Communication' }}</span>
             </div>
 
           </div>
 
           <a
-            href="https://wa.me/919935212224"
+            [href]="generalWaLink"
             target="_blank"
             rel="noopener noreferrer"
             class="whatsapp-button"
           >
             <i class="fa-brands fa-whatsapp"></i>
-            Chat With Us on WhatsApp
+            {{ 'contact.chatButton' | translate:'Chat Now' }}
           </a>
 
         </div>
@@ -322,12 +349,11 @@
           <div>
 
             <h3>
-              Not Sure Which Service You Need?
+              {{ 'contact.helpCardTitle' | translate:'Not Sure Which Service You Need?' }}
             </h3>
 
             <p>
-              Don't worry. Just contact us and explain your requirement.
-              We'll guide you toward the appropriate service.
+              {{ 'contact.helpCardDesc' | translate:"Don't worry. Just contact us and explain your requirement. We'll guide you toward the appropriate service." }}
             </p>
 
           </div>
@@ -348,17 +374,15 @@
       <div class="documents-payment-heading">
 
         <span>
-          DOCUMENTS & PAYMENTS
+          {{ 'contact.docsTag' | translate:'DOCUMENTS & PAYMENTS' }}
         </span>
 
         <h2>
-          Send Documents & Complete Your Payment Easily
+          {{ 'contact.docsTitle' | translate:'Send Documents & Complete Your Payment Easily' }}
         </h2>
 
         <p>
-          Once your service is confirmed, you can share the required
-          documents with us through WhatsApp or email and complete
-          your applicable payment through the available payment option.
+          {{ 'contact.docsDesc' | translate:'Once your service is confirmed, you can share the required documents with us through WhatsApp or email and complete your applicable payment through the available payment option.' }}
         </p>
 
       </div>
@@ -376,39 +400,37 @@
           </div>
 
           <span class="document-share-label">
-            SEND YOUR DOCUMENTS
+            {{ 'contact.shareTag' | translate:'SHARE DOCUMENTS' }}
           </span>
 
           <h3>
-            Share Your Required Documents
+            {{ 'contact.shareTitle' | translate:'Send Documents Easily' }}
           </h3>
 
           <p>
-            Send your required documents along with your service
-            details. You can choose WhatsApp for quick communication
-            or email for document sharing.
+            {{ 'contact.shareDesc' | translate:'You can share photos of your documents directly on WhatsApp — no need to visit us.' }}
           </p>
 
 
           <div class="document-options">
 
             <a
-              href="https://wa.me/919935212224"
+              [href]="documentsWaLink"
               target="_blank"
               rel="noopener noreferrer"
               class="document-whatsapp-button"
             >
               <i class="fa-brands fa-whatsapp"></i>
-              Send on WhatsApp
+              {{ 'contact.chatButton' | translate:'Chat Now' }}
             </a>
 
             <a
-              href="mailto:hamzatravel992@gmail.com"
+              [href]="mailtoLink"
               (click)="openEmail($event)"
               class="document-email-button"
             >
               <i class="fa-solid fa-envelope"></i>
-              Send by Email
+              {{ 'contact.emailButton' | translate:'Send Email' }}
             </a>
 
           </div>
@@ -425,16 +447,15 @@
           </div>
 
           <span class="payment-label">
-            PAYMENT
+            {{ 'contact.payTag' | translate:'PAYMENT' }}
           </span>
 
           <h3>
-            Complete Your Payment
+            {{ 'contact.payTitle' | translate:'Easy UPI Payment' }}
           </h3>
 
           <p>
-            After your service is confirmed, make the applicable
-            payment using our available payment option.
+            {{ 'contact.payDesc' | translate:'Pay securely using any UPI app.' }}
           </p>
 
           <div class="upi-payment-box">
@@ -446,27 +467,23 @@
             <div class="upi-details">
 
               <span>
-                UPI PAYMENT
+                {{ 'contact.upiIdLabel' | translate:'UPI ID' }}
               </span>
 
               <a
-                href="upi://pay?pa=paytm.s2boq6c@pty&pn=Hamza%20Travels"
+                [href]="upiPayLink"
                 (click)="openUpi($event)"
                 class="upi-id-link"
               >
-                paytm.s2boq6c@pty
+                {{ upiId }}
               </a>
 
               <span
                 class="upi-copied-message"
                 *ngIf="upiCopied"
               >
-                ✓ UPI ID copied successfully
+                ✓ {{ 'contact.copied' | translate:'Copied!' }}
               </span>
-
-              <small>
-                Use this UPI ID to make your payment.
-              </small>
 
 
               <!-- QR CODE -->
@@ -474,17 +491,17 @@
               <div class="qr-payment-box">
 
                 <span class="qr-label">
-                  SCAN TO PAY
+                  {{ 'contact.qrLabel' | translate:'Scan to Pay' }}
                 </span>
 
                 <img
                   src="/images/qr-code.jpeg"
-                  alt="Hamza Travels UPI QR Code"
+                  alt="{{ 'contact.qrAlt' | translate:'Hamza Travels UPI QR Code' }}"
                   class="upi-qr-code"
                 >
 
                 <p>
-                  Scan this QR code using any UPI app to complete your payment.
+                  {{ 'contact.qrDesc' | translate:'Scan this QR code using any UPI app to complete your payment.' }}
                 </p>
 
               </div>
@@ -498,18 +515,27 @@
 
             <div class="payment-info-row">
 
-              <i class="fa-solid fa-shield-halved"></i>
+              <i class="fa-solid fa-1"></i>
 
               <div>
 
                 <strong>
-                  Payment Confirmation
+                  {{ 'contact.payStep1' | translate:'Open your UPI app' }}
                 </strong>
 
-                <span>
-                  After payment, send the payment screenshot
-                  to us on WhatsApp for confirmation.
-                </span>
+              </div>
+
+            </div>
+
+            <div class="payment-info-row">
+
+              <i class="fa-solid fa-2"></i>
+
+              <div>
+
+                <strong>
+                  {{ 'contact.payStep2' | translate:'Scan the QR code or use our UPI ID' }}
+                </strong>
 
               </div>
 
@@ -522,13 +548,8 @@
               <div>
 
                 <strong>
-                  Share Payment Screenshot
+                  {{ 'contact.payStep3' | translate:'Share the payment screenshot on WhatsApp' }}
                 </strong>
-
-                <span>
-                  Please include your name or service details
-                  with the payment screenshot.
-                </span>
 
               </div>
 
@@ -538,13 +559,13 @@
 
 
           <a
-            href="https://wa.me/919935212224"
+            [href]="paymentWaLink"
             target="_blank"
             rel="noopener noreferrer"
             class="payment-whatsapp-button"
           >
             <i class="fa-brands fa-whatsapp"></i>
-            Send Payment Screenshot
+            {{ 'contact.payWhatsappButton' | translate:'Send Payment Screenshot' }}
           </a>
 
         </div>
@@ -559,9 +580,7 @@
         <i class="fa-solid fa-circle-info"></i>
 
         <p>
-          Payment requirements and applicable charges may vary depending
-          on the service. Please confirm the payment amount and available
-          payment method with Hamza Travels before making a payment.
+          {{ 'contact.payNote' | translate:'Payment requirements and applicable charges may vary depending on the service. Please confirm the payment amount and available payment method with Hamza Travels before making a payment.' }}
         </p>
 
       </div>
@@ -578,28 +597,27 @@
       <div>
 
         <span>
-          READY TO GET STARTED?
+          {{ 'contact.ctaTag' | translate:'READY TO GET STARTED?' }}
         </span>
 
         <h2>
-          Let Us Help You Get It Done
+          {{ 'contact.ctaTitle' | translate:'Let Us Help You Get It Done' }}
         </h2>
 
         <p>
-          From documents and online applications to travel services,
-          we're here to make the process simpler for you.
+          {{ 'contact.ctaDesc' | translate:"From documents and online applications to travel services, we're here to make the process simpler for you." }}
         </p>
 
       </div>
 
       <a
-        href="https://wa.me/919935212224"
+        [href]="generalWaLink"
         target="_blank"
         rel="noopener noreferrer"
         class="bottom-whatsapp"
       >
         <i class="fa-brands fa-whatsapp"></i>
-        Contact Us
+        {{ 'contact.ctaButton' | translate:'Contact Us' }}
       </a>
 
     </div>

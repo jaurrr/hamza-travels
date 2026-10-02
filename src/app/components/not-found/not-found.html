@@ -1,0 +1,40 @@
+<section class="not-found-page">
+
+  <div class="not-found-container">
+
+    <div class="not-found-code">
+      404
+    </div>
+
+    <span class="not-found-eyebrow">
+      {{ 'notfound.eyebrow' | translate:'PAGE NOT FOUND' }}
+    </span>
+
+    <h1>
+      {{ 'notfound.title' | translate:"Oops! This Page Doesn't Exist." }}
+    </h1>
+
+    <p>
+      {{ 'notfound.desc' | translate:'The page you are looking for may have been moved or deleted.' }}
+    </p>
+
+    <div class="not-found-actions">
+
+      <a routerLink="/" class="primary-button">
+        <i class="fa-solid fa-house"></i>
+        {{ 'notfound.home' | translate:'Go to Home' }}
+      </a>
+
+      <a routerLink="/services" class="secondary-button">
+        {{ 'notfound.services' | translate:'View Services' }}
+      </a>
+
+      <a routerLink="/contact" class="secondary-button">
+        {{ 'notfound.contact' | translate:'Contact Us' }}
+      </a>
+
+    </div>
+
+  </div>
+
+</section>

@@ -28,10 +28,10 @@
 
         <input
           type="text"
-          placeholder="Search services..."
+          [placeholder]="'nav.searchPlaceholder' | translate"
           [value]="searchText"
           (input)="searchText = $any($event.target).value"
-          aria-label="Search services"
+          [attr.aria-label]="'nav.searchAria' | translate"
         />
 
         <button
@@ -39,7 +39,7 @@
           class="voice-search"
           [class.listening]="isListening"
           (click)="startVoiceSearch()"
-          aria-label="Voice search">
+          [attr.aria-label]="'nav.voiceAria' | translate">
           <i class="fa-solid fa-microphone"></i>
         </button>
 
@@ -48,9 +48,21 @@
           type="button"
           class="clear-search"
           (click)="clearSearch()"
-          aria-label="Clear search">
+          [attr.aria-label]="'nav.clearSearch' | translate">
           ×
         </button>
+
+      </div>
+
+
+      <!-- Voice error (replaces the old raw alert) -->
+      <div
+        class="voice-error"
+        *ngIf="voiceError"
+        role="alert">
+
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        {{ voiceError }}
 
       </div>
 
@@ -69,11 +81,11 @@
           <div class="search-result-content">
 
             <strong>
-              {{ service.name }}
+              {{ translationService.serviceName(service.id, service.name) }}
             </strong>
 
             <span>
-              {{ service.category }}
+              {{ translationService.serviceCategory(service.category) }}
             </span>
 
           </div>
@@ -88,7 +100,7 @@
           class="no-results"
           *ngIf="searchResults.length === 0">
 
-          No service found
+          {{ 'nav.noResults' | translate }}
 
         </div>
 
@@ -97,13 +109,29 @@
     </div>
 
 
+    <!-- Language Toggle -->
+<button
+  type="button"
+  class="theme-toggle lang-toggle"
+  (click)="translationService.setLang(translationService.lang() === 'hi' ? 'en' : 'hi')"
+  [attr.aria-label]="'nav.langToggle' | translate"
+  [attr.title]="'nav.langToggle' | translate">
+
+  <span class="lang-letter">
+    {{ translationService.lang() === 'hi' ? 'अ' : 'A' }}
+  </span>
+
+</button>
+
+
+
     <!-- Dark Mode Button -->
     <button
       type="button"
       class="theme-toggle"
       (click)="toggleTheme()"
-      [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'"
-      [attr.title]="isDarkMode ? 'Light mode' : 'Dark mode'">
+      [attr.aria-label]="(isDarkMode ? 'nav.themeLight' : 'nav.themeDark') | translate"
+      [attr.title]="(isDarkMode ? 'nav.themeLight' : 'nav.themeDark') | translate">
 
       <i
         class="fa-solid"
@@ -120,7 +148,7 @@
       class="menu-button"
       (click)="toggleMenu()"
       [attr.aria-expanded]="menuOpen"
-      aria-label="Toggle navigation menu">
+      [attr.aria-label]="'nav.menuToggle' | translate">
 
       <span></span>
       <span></span>
@@ -136,38 +164,37 @@
 
       <a
         routerLink="/"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        (click)="closeMenu()">
-        Home
+        [class.active]="navActive('home')"
+        (click)="goTo($event, 'home', '/')">
+        {{ 'nav.home' | translate }}
       </a>
 
       <a
         routerLink="/services"
-        routerLinkActive="active"
-        (click)="closeMenu()">
-        Services
+        [class.active]="navActive('services')"
+        (click)="goTo($event, 'services', '/services')">
+        {{ 'nav.services' | translate }}
       </a>
 
       <a
         routerLink="/about"
-        routerLinkActive="active"
-        (click)="closeMenu()">
-        About
+        [class.active]="navActive('about')"
+        (click)="goTo($event, 'about', '/about')">
+        {{ 'nav.about' | translate }}
       </a>
 
       <a
         routerLink="/explore"
-        routerLinkActive="active"
-        (click)="closeMenu()">
-        Explore
+        [class.active]="navActive('explore')"
+        (click)="goTo($event, 'explore', '/explore')">
+        {{ 'nav.explore' | translate }}
       </a>
 
       <a
         routerLink="/contact"
-        routerLinkActive="active"
-        (click)="closeMenu()">
-        Contact
+        [class.active]="navActive('contact')"
+        (click)="goTo($event, 'contact', '/contact')">
+        {{ 'nav.contact' | translate }}
       </a>
 
     </div>

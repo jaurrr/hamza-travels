@@ -2134,3 +2134,402 @@
     font-size: 10.5px !important;
   }
 }
+
+/* =========================================================
+   DARK MODE — CONTACT PAGE (component-level overrides)
+   Works together with the global contact dark-mode layer
+   in styles.css. Layout / spacing untouched.
+   ========================================================= */
+
+body.dark-mode .contact-page {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(243, 193, 91, 0.06),
+      transparent 35%
+    ),
+    var(--background);
+  color: var(--text);
+}
+
+
+/* ---- Heading ---- */
+
+body.dark-mode .contact-heading {
+  background:
+    linear-gradient(
+      135deg,
+      #142a35,
+      #10232d
+    ) !important;
+  border-color: #304d59 !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+}
+
+body.dark-mode .heading-badge {
+  background: rgba(66, 209, 216, 0.10);
+  border-color: rgba(66, 209, 216, 0.18);
+  color: #42d1d8;
+}
+
+body.dark-mode .contact-heading h1 {
+  color: #f3f7f8;
+}
+
+body.dark-mode .contact-heading p {
+  color: #b9cbd2;
+}
+
+
+/* ---- Contact cards ---- */
+
+body.dark-mode .contact-card {
+  background: #14252f !important;
+  border-color: #304954 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+}
+
+body.dark-mode .contact-card:hover {
+  border-color: rgba(66, 209, 216, 0.40);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.30);
+}
+
+body.dark-mode .contact-icon {
+  background: rgba(66, 209, 216, 0.10);
+  color: #42d1d8;
+}
+
+body.dark-mode .contact-label {
+  color: #42d1d8;
+}
+
+body.dark-mode .contact-card-content h3 {
+  color: #f3f7f8;
+}
+
+body.dark-mode .contact-card-content p {
+  color: #b9cbd2;
+}
+
+body.dark-mode .contact-card-content a {
+  color: #42d1d8;
+}
+
+body.dark-mode .contact-card-content a:hover {
+  color: #72e2e7;
+}
+
+body.dark-mode .availability {
+  color: #42d1d8;
+}
+
+
+/* ---- Address / location ---- */
+
+body.dark-mode .shop-address {
+  background: #142a35 !important;
+  border-color: #304d59 !important;
+  color: #b9cbd2 !important;
+}
+
+body.dark-mode .shop-address span {
+  color: #b9cbd2 !important;
+}
+
+body.dark-mode .shop-address i {
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .location-link {
+  background: #14252f !important;
+  border-color: #42d1d8 !important;
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .location-link:hover {
+  background: #42d1d8 !important;
+  color: #071419 !important;
+}
+
+body.dark-mode .location-link i {
+  color: inherit;
+}
+
+
+/* ---- Owner card ---- */
+
+body.dark-mode .shop-owner {
+  background: #14252f !important;
+  border-color: #304954 !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.26);
+}
+
+body.dark-mode .owner-label {
+  color: #42d1d8;
+}
+
+body.dark-mode .owner-top h2 {
+  color: #f3f7f8;
+}
+
+body.dark-mode .owner-description {
+  color: #b9cbd2;
+}
+
+body.dark-mode .owner-avatar {
+  background: rgba(243, 193, 91, 0.12);
+  color: #f3c15b;
+}
+
+body.dark-mode .owner-contact a:first-child {
+  background: #42d1d8 !important;
+  border-color: #42d1d8 !important;
+  color: #071419 !important;
+}
+
+body.dark-mode .owner-contact a:first-child i {
+  color: #071419 !important;
+}
+
+body.dark-mode .owner-contact a:last-child {
+  background: #142a35 !important;
+  border-color: #42d1d8 !important;
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .owner-contact a:last-child:hover {
+  background: #42d1d8 !important;
+  color: #071419 !important;
+}
+
+
+/* ---- Talk / help cards ---- */
+
+body.dark-mode .talk-hamza-card {
+  background:
+    linear-gradient(
+      135deg,
+      #003d5b 0%,
+      #005b73 60%,
+      #006d7d 100%
+    ) !important;
+  border: 1px solid rgba(66, 209, 216, 0.20);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.34);
+}
+
+body.dark-mode .contact-help {
+  background: #14252f !important;
+  border-color: #304954 !important;
+}
+
+body.dark-mode .help-icon {
+  background: rgba(243, 193, 91, 0.12);
+  color: #f3c15b;
+}
+
+body.dark-mode .contact-help h3 {
+  color: #f3f7f8;
+}
+
+body.dark-mode .contact-help p {
+  color: #b9cbd2;
+}
+
+body.dark-mode .whatsapp-button {
+  background: #f3c15b !important;
+  color: #003d5b !important;
+}
+
+body.dark-mode .whatsapp-button i {
+  color: #003d5b !important;
+}
+
+
+/* ---- Documents & payment ---- */
+
+body.dark-mode .documents-payment-section {
+  background:
+    linear-gradient(
+      135deg,
+      #142a35,
+      #10232d
+    ) !important;
+  border-color: #304d59 !important;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.30);
+}
+
+body.dark-mode .documents-payment-heading > span {
+  color: #42d1d8;
+}
+
+body.dark-mode .documents-payment-heading h2 {
+  color: #f3f7f8;
+}
+
+body.dark-mode .documents-payment-heading p {
+  color: #b9cbd2;
+}
+
+body.dark-mode .document-share-card,
+body.dark-mode .payment-card {
+  background: #172c37 !important;
+  border-color: #304d59 !important;
+}
+
+body.dark-mode .document-share-card:hover,
+body.dark-mode .payment-card:hover {
+  border-color: rgba(66, 209, 216, 0.45);
+}
+
+body.dark-mode .document-share-icon,
+body.dark-mode .payment-icon {
+  background: rgba(66, 209, 216, 0.10);
+  color: #42d1d8;
+}
+
+body.dark-mode .document-share-label,
+body.dark-mode .payment-label {
+  color: #42d1d8;
+}
+
+body.dark-mode .document-share-card h3,
+body.dark-mode .payment-card h3 {
+  color: #f3f7f8;
+}
+
+body.dark-mode .document-share-card > p,
+body.dark-mode .payment-card > p {
+  color: #b9cbd2;
+}
+
+body.dark-mode .document-whatsapp-button {
+  background: #42d1d8 !important;
+  border-color: #42d1d8 !important;
+  color: #071419 !important;
+}
+
+body.dark-mode .document-whatsapp-button i {
+  color: #071419 !important;
+}
+
+body.dark-mode .document-email-button {
+  background: #142a35 !important;
+  border-color: #405b67 !important;
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .document-email-button:hover {
+  background: #42d1d8 !important;
+  border-color: #42d1d8 !important;
+  color: #071419 !important;
+}
+
+body.dark-mode .upi-payment-box {
+  background: rgba(243, 193, 91, 0.07) !important;
+  border-color: rgba(243, 193, 91, 0.28) !important;
+}
+
+body.dark-mode .upi-icon {
+  background: #f3c15b;
+  color: #003d5b;
+}
+
+body.dark-mode .upi-details > span,
+body.dark-mode .upi-details small {
+  color: #aebfc7;
+}
+
+body.dark-mode .upi-id-link {
+  color: #f3f7f8 !important;
+}
+
+body.dark-mode .upi-id-link:hover {
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .upi-copied-message {
+  color: #6fdc8c;
+}
+
+body.dark-mode .qr-payment-box {
+  background: #142a35 !important;
+  border-color: #304d59 !important;
+}
+
+body.dark-mode .qr-label {
+  color: #f3f7f8;
+}
+
+body.dark-mode .qr-payment-box p {
+  color: #aebfc7;
+}
+
+body.dark-mode .payment-info-row {
+  background: #142a35 !important;
+  border-color: #304d59 !important;
+}
+
+body.dark-mode .payment-info-row > i {
+  color: #42d1d8 !important;
+}
+
+body.dark-mode .payment-info-row strong {
+  color: #f3f7f8 !important;
+}
+
+body.dark-mode .payment-whatsapp-button {
+  background: #42d1d8 !important;
+  border-color: #42d1d8 !important;
+  color: #071419 !important;
+}
+
+body.dark-mode .payment-whatsapp-button i {
+  color: #071419 !important;
+}
+
+body.dark-mode .documents-payment-section .payment-note {
+  background: rgba(66, 209, 216, 0.055) !important;
+  border-color: rgba(66, 209, 216, 0.14) !important;
+}
+
+body.dark-mode .documents-payment-section .payment-note p {
+  color: #b9cbd2 !important;
+}
+
+body.dark-mode .documents-payment-section .payment-note > i {
+  color: #42d1d8 !important;
+}
+
+
+/* ---- Bottom CTA ---- */
+
+body.dark-mode .contact-bottom {
+  background:
+    linear-gradient(
+      135deg,
+      #003d5b 0%,
+      #00516f 100%
+    ) !important;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.34);
+}
+
+body.dark-mode .contact-bottom span {
+  color: #f3c15b;
+}
+
+body.dark-mode .contact-bottom h2 {
+  color: #ffffff;
+}
+
+body.dark-mode .contact-bottom p {
+  color: #d8e7eb;
+}
+
+body.dark-mode .bottom-whatsapp {
+  background: #f3c15b !important;
+  color: #003d5b !important;
+}
+
+body.dark-mode .bottom-whatsapp i {
+  color: #003d5b !important;
+}

@@ -134,7 +134,7 @@
    BRAND TEXT
 ========================================================= */
 
-.brand-orbit h1 {
+.brand-orbit .brand-name {
 
   position: relative;
 
@@ -779,7 +779,7 @@
   }
 
 
-  .brand-orbit h1 {
+  .brand-orbit .brand-name {
 
     gap: 7px;
 
@@ -854,7 +854,7 @@
   }
 
 
-  .brand-orbit h1 {
+  .brand-orbit .brand-name {
 
     gap: 5px;
 
@@ -917,7 +917,7 @@
   }
 
 
-  .brand-orbit h1 {
+  .brand-orbit .brand-name {
 
     font-size: 24px;
 

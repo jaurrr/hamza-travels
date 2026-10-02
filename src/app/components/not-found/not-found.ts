@@ -4,9 +4,10 @@ import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '../../core/translate.pipe';
 
 @Component({
-  selector: 'app-about',
+  selector: 'app-not-found',
+  standalone: true,
   imports: [RouterLink, TranslatePipe],
-  templateUrl: './about.html',
-  styleUrl: './about.css'
+  templateUrl: './not-found.html',
+  styleUrl: './not-found.css'
 })
-export class About {}
+export class NotFound {}

@@ -136,6 +136,8 @@
    ========================================================= */
 
 .form-group {
+  grid-column: 1 / -1;
+
   min-width: 0;
   margin: 0;
 }
@@ -284,6 +286,16 @@
 /* =========================================================
    SUBMIT ACTIONS
    ========================================================= */
+
+.privacy-note {
+  grid-column: 1 / -1;
+
+  margin: 2px 0 0;
+
+  color: var(--text-light);
+  font-size: 13px;
+  line-height: 1.5;
+}
 
 .form-actions {
   grid-column: 1 / -1;

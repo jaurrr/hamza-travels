@@ -1337,3 +1337,198 @@
     transition: none;
   }
 }
+
+
+/* =========================================================
+   CLICKABLE RIBBON CARDS (with sub-links)
+========================================================= */
+
+.ribbon-card {
+  display: flex;
+  flex-direction: column;
+
+  padding: 10px 12px;
+
+  border-radius: 12px;
+  border: 1px solid transparent;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.ribbon-card:hover {
+  background: rgba(0, 145, 150, 0.05);
+  transform: translateY(-2px);
+
+  border-color: rgba(0, 121, 140, 0.18);
+
+  box-shadow:
+    0 8px 22px rgba(0, 61, 91, 0.08);
+}
+
+.ribbon-head {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  text-decoration: none;
+
+  color: inherit;
+}
+
+.ribbon-text {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+
+  flex: 1;
+  min-width: 0;
+}
+
+.ribbon-text strong {
+  color: var(--primary);
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.ribbon-text span {
+  color: var(--text-light);
+
+  font-size: 10px;
+}
+
+.ribbon-arrow {
+  color: var(--teal);
+
+  font-size: 11px;
+
+  opacity: 0;
+  transform: translateX(-4px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.ribbon-card:hover .ribbon-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ribbon-sub {
+  list-style: none;
+
+  margin: 8px 0 0;
+  padding: 8px 0 0;
+
+  border-top: 1px dashed var(--border-soft);
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 6px 14px;
+}
+
+.ribbon-sub li {
+  margin: 0;
+  padding: 0;
+}
+
+.ribbon-sub a {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  color: var(--teal);
+
+  font-size: 10.5px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    text-decoration 0.2s ease;
+}
+
+.ribbon-sub a:hover {
+  color: var(--primary);
+
+  text-decoration: underline;
+}
+
+.ribbon-sub a i {
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   DARK MODE — HOME
+========================================================= */
+
+body.dark-mode .service-ribbon {
+  background: rgba(20, 37, 47, 0.72);
+}
+
+body.dark-mode .ribbon-card:hover {
+  background: rgba(25, 185, 196, 0.07);
+
+  border-color: rgba(25, 185, 196, 0.25);
+
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.28);
+}
+
+body.dark-mode .ribbon-icon {
+  background: var(--surface-soft);
+}
+
+body.dark-mode .welcome-badge {
+  background: rgba(20, 37, 47, 0.75);
+
+  border-color: rgba(25, 185, 196, 0.25);
+}
+
+body.dark-mode .secondary-button {
+  background: rgba(20, 37, 47, 0.85);
+
+  border-color: var(--border);
+}
+
+body.dark-mode .clock-floating-card,
+body.dark-mode .services-floating-card,
+body.dark-mode .destination-card {
+  background: rgba(20, 37, 47, 0.94);
+
+  border-color: var(--border);
+}
+
+
+/* =========================================================
+   RIBBON CARD — RESPONSIVE
+========================================================= */
+
+@media (max-width: 960px) {
+
+  .ribbon-sub {
+    gap: 5px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .ribbon-card {
+    padding: 8px;
+  }
+
+  .ribbon-sub a {
+    font-size: 10px;
+  }
+}

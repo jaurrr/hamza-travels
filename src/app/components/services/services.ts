@@ -7,11 +7,15 @@ import {
   Service
 } from '../../data/services.data';
 
+import { TranslatePipe } from '../../core/translate.pipe';
+import { TranslationService } from '../../core/translation.service';
+
 @Component({
   selector: 'app-services',
   imports: [
     CommonModule,
-    RouterLink
+    RouterLink,
+    TranslatePipe
   ],
   templateUrl: './services.html',
   styleUrl: './services.css'
@@ -19,6 +23,10 @@ import {
 export class Services {
 
   services: Service[] = SERVICES;
+
+  constructor(
+    public i18n: TranslationService
+  ) {}
 
   get travelServices(): Service[] {
     return this.services.filter(

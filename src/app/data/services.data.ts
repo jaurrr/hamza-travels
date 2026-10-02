@@ -311,7 +311,7 @@ export const SERVICES: Service[] = [
 
   {
     id: 'ayushman-card',
-    name: 'Ayushman Card & All Benificary Cards',
+    name: 'Ayushman Card & All Beneficiary Cards',
     category: 'Government & Document Services',
     description: 'Assistance with Ayushman Card related services.',
     requirements: [
@@ -446,7 +446,7 @@ export const SERVICES: Service[] = [
 
   {
     id: 'bike-paper-renewal',
-    name: 'Bike Document Renewal /RC',
+    name: 'Bike Document Renewal / RC',
     category: 'Insurance & Vehicle Services',
     description: 'Assistance with bike documents and paper renewal related services.',
     requirements: [
@@ -459,7 +459,7 @@ export const SERVICES: Service[] = [
 
   {
     id: 'car-paper-renewal',
-    name: 'Car Document Renewal /RC',
+    name: 'Car Document Renewal / RC',
     category: 'Insurance & Vehicle Services',
     description: 'Assistance with car documents and paper renewal related services.',
     requirements: [
@@ -644,7 +644,7 @@ export const SERVICES: Service[] = [
 
   {
     id: 'village-camping-all-work',
-    name: 'Village Camping / All Types of Services',
+    name: 'Village Camp / All Types of Services',
     category: 'Online Services',
     description: 'Assistance with various online, government and document related work.',
     requirements: [
