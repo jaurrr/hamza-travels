@@ -7,14 +7,14 @@
 
       <img
         src="/images/hamza-travels-logo.png"
-        alt="Hamza Travels Logo"
+        alt="{{ 'footer.logoAlt' | translate:'Hamza Travels Logo' }}"
         class="footer-logo"
       />
 
       <h2>Hamza Travels</h2>
 
       <p>
-        Your trusted partner for online, document and travel services.
+        {{ 'footer.tagline' | translate:'Your trusted partner for online, document and travel services.' }}
       </p>
 
     </div>
@@ -23,22 +23,22 @@
     <!-- QUICK LINKS -->
     <div class="footer-links">
 
-      <h3>Quick Links</h3>
+      <h3>{{ 'footer.quickLinks' | translate:'Quick Links' }}</h3>
 
       <a routerLink="/">
-        Home
+        {{ 'nav.home' | translate:'Home' }}
       </a>
 
       <a routerLink="/services">
-        Services
+        {{ 'nav.services' | translate:'Services' }}
       </a>
 
       <a routerLink="/about">
-        About Us
+        {{ 'nav.about' | translate:'About' }}
       </a>
 
       <a routerLink="/contact">
-        Contact Us
+        {{ 'nav.contact' | translate:'Contact' }}
       </a>
 
     </div>
@@ -47,12 +47,27 @@
     <!-- SERVICES -->
     <div class="footer-services">
 
-      <h3>Our Services</h3>
+      <h3>{{ 'footer.ourServices' | translate:'Our Services' }}</h3>
 
-      <span>Government Documents</span>
-      <span>Certificates</span>
-      <span>Travel Services</span>
-      <span>Online Applications</span>
+      <a routerLink="/services">
+        {{ 'footer.svc.travel' | translate:'Travel Services' }}
+      </a>
+
+      <a routerLink="/services">
+        {{ 'footer.svc.documents' | translate:'Government Documents' }}
+      </a>
+
+      <a routerLink="/services">
+        {{ 'footer.svc.insurance' | translate:'Insurance & Vehicle' }}
+      </a>
+
+      <a routerLink="/services">
+        {{ 'footer.svc.online' | translate:'Online Applications' }}
+      </a>
+
+      <a routerLink="/services">
+        {{ 'footer.svc.education' | translate:'Education Services' }}
+      </a>
 
     </div>
 
@@ -60,38 +75,38 @@
     <!-- CONTACT -->
     <div class="footer-contact">
 
-      <h3>Contact Us</h3>
+      <h3>{{ 'footer.contactUs' | translate:'Contact Us' }}</h3>
 
-      <a href="tel:+919935212224">
+      <a [href]="businessTelLink">
         <fa-icon [icon]="faPhone"></fa-icon>
-        +91 99352 12224
+        {{ businessPhoneDisplay }}
       </a>
 
       <a
-        href="https://wa.me/919935212224"
+        [href]="businessWaLink"
         target="_blank"
         rel="noopener noreferrer"
       >
         <fa-icon [icon]="faWhatsapp"></fa-icon>
-        WhatsApp
+        {{ 'footer.whatsapp' | translate:'WhatsApp' }}
       </a>
 
       <a
-        href="https://www.instagram.com/hamzatravel98/"
+        [href]="instagramUrl"
         target="_blank"
         rel="noopener noreferrer"
       >
         <fa-icon [icon]="faInstagram"></fa-icon>
-        Instagram
+        {{ 'footer.instagram' | translate:'Instagram' }}
       </a>
 
       <a
-        href="https://whatsapp.com/channel/0029VbAvdHU9cDDUqacMmx0U"
+        [href]="whatsappChannelUrl"
         target="_blank"
         rel="noopener noreferrer"
       >
         <fa-icon [icon]="faLink"></fa-icon>
-        WhatsApp Channel
+        {{ 'footer.whatsappChannel' | translate:'WhatsApp Channel' }}
       </a>
 
     </div>
@@ -100,22 +115,22 @@
     <!-- OWNER -->
     <div class="footer-owner">
 
-      <h3>Talk To Owner</h3>
+      <h3>{{ 'footer.talkToOwner' | translate:'Talk To Owner' }}</h3>
 
-      <strong>Belal Shaikh</strong>
+      <strong>{{ 'footer.ownerName' | translate:'Belal Shaikh' }}</strong>
 
-      <a href="tel:+919682742861">
+      <a [href]="ownerTelLink">
         <fa-icon [icon]="faPhone"></fa-icon>
-        Call
+        {{ 'footer.call' | translate:'Call' }}
       </a>
 
       <a
-        href="https://wa.me/919682742861"
+        [href]="ownerWaLink"
         target="_blank"
         rel="noopener noreferrer"
       >
         <fa-icon [icon]="faWhatsapp"></fa-icon>
-        WhatsApp
+        {{ 'footer.whatsapp' | translate:'WhatsApp' }}
       </a>
 
     </div>
@@ -127,7 +142,7 @@
   <div class="footer-bottom">
 
     <p>
-      © 2026 Hamza Travels. All rights reserved.
+      © {{ year }} Hamza Travels. {{ 'footer.rights' | translate:'All rights reserved.' }}
     </p>
 
   </div>

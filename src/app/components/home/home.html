@@ -28,19 +28,18 @@
 
       <div class="welcome-badge">
         <span></span>
-        Welcome to Hamza Travels
+        {{ 'home.badge' | translate }}
       </div>
 
 
       <h1>
-        Your Journey
-        <strong>Starts Here.</strong>
+        {{ 'home.title1' | translate }}
+        <strong>{{ 'home.title2' | translate }}</strong>
       </h1>
 
 
       <p class="hero-description">
-        From travel bookings to essential online and document services,
-        we make everyday work simple, convenient and reliable.
+        {{ 'home.description' | translate }}
       </p>
 
 
@@ -50,7 +49,7 @@
           routerLink="/services"
           class="primary-button">
 
-          Explore Services
+          {{ 'home.exploreServices' | translate }}
 
           <i class="fa-solid fa-arrow-right"></i>
 
@@ -63,7 +62,7 @@
 
           <i class="fa-regular fa-message"></i>
 
-          Contact Us
+          {{ 'home.contactUs' | translate }}
 
         </a>
 
@@ -79,8 +78,8 @@
           <i class="fa-solid fa-circle-check"></i>
 
           <div>
-            <strong>Simple Process</strong>
-            <span>Easy & convenient</span>
+            <strong>{{ 'home.simpleProcess' | translate }}</strong>
+            <span>{{ 'home.simpleProcessSub' | translate }}</span>
           </div>
 
         </div>
@@ -91,8 +90,8 @@
           <i class="fa-solid fa-headset"></i>
 
           <div>
-            <strong>Personal Support</strong>
-            <span>We're here to help</span>
+            <strong>{{ 'home.personalSupport' | translate }}</strong>
+            <span>{{ 'home.personalSupportSub' | translate }}</span>
           </div>
 
         </div>
@@ -115,7 +114,7 @@
 
         <img
           src="/images/flight.jpg"
-          alt="Travel with Hamza Travels"
+          [alt]="'home.badge' | translate"
         >
 
         <div class="travel-overlay"></div>
@@ -131,7 +130,7 @@
   </div>
 
   <div class="clock-content">
-    <span class="clock-label">LIVE TIME</span>
+    <span class="clock-label">{{ 'home.liveTime' | translate }}</span>
     <strong>{{ currentTime }}</strong>
     <span class="clock-date">{{ currentDate }}</span>
   </div>
@@ -139,7 +138,7 @@
 </div>
 
 
-      <!-- 45+ Services -->
+      <!-- Services count -->
 
       <div class="services-floating-card">
 
@@ -148,8 +147,8 @@
         </div>
 
         <div>
-          <strong>45+</strong>
-          <span>Services Available</span>
+          <strong>{{ 'common.servicesCount' | translate }}</strong>
+          <span>{{ 'common.servicesCountLabel' | translate }}</span>
         </div>
 
       </div>
@@ -161,17 +160,17 @@
 
         <img
           src="/images/dubai.jpg"
-          alt="Dubai"
+          [alt]="'explore.dest.dubai.name' | translate"
         >
 
         <div>
 
           <span>
             <i class="fa-solid fa-location-dot"></i>
-            Popular Destination
+            {{ 'home.popularDestination' | translate }}
           </span>
 
-          <strong>Dubai</strong>
+          <strong>{{ 'explore.dest.dubai.name' | translate }}</strong>
 
         </div>
 
@@ -187,63 +186,179 @@
        SERVICE RIBBON
   ====================================== -->
 
-  <div class="service-ribbon">
+  <nav class="service-ribbon" [attr.aria-label]="'home.exploreServices' | translate">
 
-    <div class="ribbon-item">
+    <!-- TRAVEL -->
 
-      <div class="ribbon-icon">
-        <i class="fa-solid fa-plane"></i>
-      </div>
+    <div class="ribbon-card">
 
-      <div>
-        <strong>Travel</strong>
-        <span>Flight • Train • Hotel</span>
-      </div>
+      <a
+        routerLink="/services"
+        class="ribbon-head">
+
+        <div class="ribbon-icon">
+          <i class="fa-solid fa-plane"></i>
+        </div>
+
+        <div class="ribbon-text">
+          <strong>{{ 'home.card.travel.title' | translate }}</strong>
+          <span>{{ 'home.card.travel.desc' | translate }}</span>
+        </div>
+
+        <i class="fa-solid fa-arrow-right ribbon-arrow"></i>
+
+      </a>
+
+      <ul class="ribbon-sub">
+        <li>
+          <a routerLink="/service/flight-ticket">
+            {{ 'home.card.travel.i1' | translate }}
+          </a>
+        </li>
+        <li>
+          <a routerLink="/service/train-ticket">
+            {{ 'home.card.travel.i2' | translate }}
+          </a>
+        </li>
+        <li>
+          <a routerLink="/service/hotel-booking">
+            {{ 'home.card.travel.i3' | translate }}
+          </a>
+        </li>
+      </ul>
+
+    </div>
+
+
+    <!-- DOCUMENTS -->
+
+    <div class="ribbon-card">
+
+      <a
+        routerLink="/services"
+        class="ribbon-head">
+
+        <div class="ribbon-icon">
+          <i class="fa-solid fa-file-lines"></i>
+        </div>
+
+        <div class="ribbon-text">
+          <strong>{{ 'home.card.documents.title' | translate }}</strong>
+          <span>{{ 'home.card.documents.desc' | translate }}</span>
+        </div>
+
+        <i class="fa-solid fa-arrow-right ribbon-arrow"></i>
+
+      </a>
+
+      <ul class="ribbon-sub">
+        <li>
+          <a routerLink="/service/pan-card">
+            {{ 'home.card.documents.i1' | translate }}
+          </a>
+        </li>
+        <li>
+          <a routerLink="/service/passport">
+            {{ 'home.card.documents.i2' | translate }}
+          </a>
+        </li>
+        <li>
+          <a routerLink="/service/aadhaar">
+            {{ 'home.card.documents.i3' | translate }}
+          </a>
+        </li>
+      </ul>
 
     </div>
 
 
-    <div class="ribbon-item">
+    <!-- COLLEGE RELATED SERVICES -->
 
-      <div class="ribbon-icon">
-        <i class="fa-solid fa-file-lines"></i>
-      </div>
+    <div class="ribbon-card">
 
-      <div>
-        <strong>Documents</strong>
-        <span>PAN • Passport • Aadhaar</span>
-      </div>
+      <a
+        routerLink="/services"
+        class="ribbon-head">
+
+        <div class="ribbon-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+
+        <div class="ribbon-text">
+          <strong>{{ 'home.card.college.title' | translate }}</strong>
+          <span>{{ 'home.card.college.desc' | translate }}</span>
+        </div>
+
+        <i class="fa-solid fa-arrow-right ribbon-arrow"></i>
+
+      </a>
+
+      <ul class="ribbon-sub">
+        <li>
+          <a routerLink="/service/scholarship">
+            {{ 'home.card.college.i1' | translate }}
+          </a>
+        </li>
+        <li>
+          <a routerLink="/service/college-forms">
+            {{ 'home.card.college.i2' | translate }}
+          </a>
+        </li>
+        <li>
+          <a routerLink="/service/exam-form">
+            {{ 'home.card.college.i3' | translate }}
+          </a>
+        </li>
+      </ul>
 
     </div>
 
 
-    <div class="ribbon-item">
+    <!-- SUPPORT -->
 
-      <div class="ribbon-icon">
-        <i class="fa-solid fa-globe"></i>
-      </div>
+    <div class="ribbon-card">
 
-      <div>
-        <strong>Online Services</strong>
-        <span>Forms • Applications</span>
-      </div>
+      <a
+        routerLink="/contact"
+        class="ribbon-head">
+
+        <div class="ribbon-icon">
+          <i class="fa-solid fa-headset"></i>
+        </div>
+
+        <div class="ribbon-text">
+          <strong>{{ 'home.card.support.title' | translate }}</strong>
+          <span>{{ 'home.card.support.desc' | translate }}</span>
+        </div>
+
+        <i class="fa-solid fa-arrow-right ribbon-arrow"></i>
+
+      </a>
+
+      <ul class="ribbon-sub">
+        <li>
+          <a
+            [href]="whatsappHelp"
+            target="_blank"
+            rel="noopener">
+
+            <i class="fa-brands fa-whatsapp"></i>
+            {{ 'home.card.support.i1' | translate }}
+
+          </a>
+        </li>
+        <li>
+          <a [href]="callLink">
+
+            <i class="fa-solid fa-phone"></i>
+            {{ 'home.card.support.i2' | translate }}
+
+          </a>
+        </li>
+      </ul>
 
     </div>
 
-
-    <div class="ribbon-item">
-
-      <div class="ribbon-icon">
-        <i class="fa-solid fa-headset"></i>
-      </div>
-
-      <div>
-        <strong>Support</strong>
-        <span>Direct Assistance</span>
-      </div>
-
-    </div>
-
-  </div>
+  </nav>
 
 </section>

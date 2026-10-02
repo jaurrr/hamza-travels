@@ -5,13 +5,61 @@ import {
 
 import { CommonModule } from '@angular/common';
 
+import {
+  BUSINESS_EMAIL,
+  BUSINESS_PHONE,
+  OWNER_PHONE,
+  UPI_ID,
+  telLink,
+  upiLink,
+  waGeneralEnquiry,
+  waLink
+} from '../../core/contact.constants';
+
+import { TranslatePipe } from '../../core/translate.pipe';
+
 @Component({
   selector: 'app-contact',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './contact.html',
   styleUrl: './contact.css'
 })
 export class Contact {
+
+  // ---- Centralised contact details (single source of truth) ----
+
+  readonly businessPhone = BUSINESS_PHONE;
+  readonly ownerPhone = OWNER_PHONE;
+  readonly email = BUSINESS_EMAIL;
+  readonly upiId = UPI_ID;
+
+  // ---- Pre-built links ----
+
+  readonly businessTelLink = telLink();
+  readonly ownerTelLink = telLink(OWNER_PHONE);
+
+  readonly generalWaLink = waGeneralEnquiry();
+
+  readonly ownerWaLink = waLink(
+    'Hi! I want to talk to the owner of Hamza Travels.',
+    OWNER_PHONE
+  );
+
+  readonly documentsWaLink = waLink(
+    'Hi Hamza Travels! I have a question about sharing documents.'
+  );
+
+  readonly paymentWaLink = waLink(
+    'Hi Hamza Travels! I have a question about payment confirmation.'
+  );
+
+  readonly mailtoLink = `mailto:${BUSINESS_EMAIL}`;
+
+  readonly upiPayLink = upiLink();
+
+  readonly mapsUrl =
+    'https://maps.app.goo.gl/uQiyJZ2Kj3GvEPdeA?g_st=ac';
+
 
   upiCopied = false;
 
@@ -33,12 +81,12 @@ export class Contact {
     if (isMobile) {
 
       window.location.href =
-        'mailto:hamzatravel992@gmail.com';
+        this.mailtoLink;
 
     } else {
 
       window.open(
-        'https://mail.google.com/mail/?view=cm&fs=1&to=hamzatravel992@gmail.com',
+        `https://mail.google.com/mail/?view=cm&fs=1&to=${BUSINESS_EMAIL}`,
         '_blank'
       );
 
@@ -59,14 +107,14 @@ export class Contact {
     if (isMobile) {
 
       window.location.href =
-        'upi://pay?pa=paytm.s2boq6c@pty&pn=Hamza%20Travels';
+        this.upiPayLink;
 
       return;
     }
 
 
     navigator.clipboard
-      .writeText('paytm.s2boq6c@pty')
+      .writeText(UPI_ID)
       .then(() => {
 
         this.upiCopied = true;

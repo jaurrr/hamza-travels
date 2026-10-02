@@ -10,34 +10,33 @@
 
       <span class="heading-badge">
         <i class="fa-solid fa-compass"></i>
-        OUR SERVICES
+        {{ 'services.badge' | translate:'OUR SERVICES' }}
       </span>
 
       <h1>
-        Services We Provide
-        <strong>Everything In One Place.</strong>
+        {{ 'services.title1' | translate:'All Services,' }}
+        <strong>{{ 'services.title2' | translate:'One Place.' }}</strong>
       </h1>
 
       <p>
-        Choose the service you need from our wide range of
-        travel, government, document and online services.
+        {{ 'services.description' | translate:'Browse our complete range of travel, document, online and insurance services.' }}
       </p>
 
       <div class="heading-highlights">
 
         <div class="heading-highlight">
           <i class="fa-solid fa-plane"></i>
-          <span>Travel Services</span>
+          <span>{{ 'cat.Travel Services' | translate:'Travel Services' }}</span>
         </div>
 
         <div class="heading-highlight">
           <i class="fa-solid fa-file-lines"></i>
-          <span>Document Services</span>
+          <span>{{ 'cat.Document Services' | translate:'Document Services' }}</span>
         </div>
 
         <div class="heading-highlight">
           <i class="fa-solid fa-globe"></i>
-          <span>Online Services</span>
+          <span>{{ 'cat.Online Services' | translate:'Online Services' }}</span>
         </div>
 
       </div>
@@ -54,11 +53,11 @@
       <div class="section-heading">
 
         <span class="section-label">
-          TRAVEL SERVICES
+          {{ 'cat.Travel Services' | translate:'Travel Services' }}
         </span>
 
         <h2>
-          Travel & Booking
+          {{ 'services.group.travel' | translate:'Travel & Booking' }}
         </h2>
 
         <div class="heading-line">
@@ -66,7 +65,7 @@
         </div>
 
         <p>
-          Flight, train, bus, hotel, visa and other travel services.
+          {{ 'services.groupDesc.travel' | translate:'Flight, train, bus, hotel, visa and other travel services.' }}
         </p>
 
       </div>
@@ -91,15 +90,15 @@
           <div class="service-card-content">
 
             <span class="service-category">
-              {{ service.category }}
+              {{ ('cat.' + service.category) | translate:service.category }}
             </span>
 
             <h3>
-              {{ service.name }}
+              {{ ('svc.' + service.id + '.name') | translate:service.name }}
             </h3>
 
             <p>
-              {{ service.description }}
+              {{ ('svc.' + service.id + '.desc') | translate:service.description }}
             </p>
 
 
@@ -107,13 +106,13 @@
 
               <strong>
                 <i class="fa-solid fa-circle-check"></i>
-                Required
+                {{ 'services.required' | translate:'Required' }}
               </strong>
 
               <ul>
 
                 <li
-                  *ngFor="let requirement of service.requirements"
+                  *ngFor="let requirement of i18n.serviceRequirements(service.id, service.requirements)"
                 >
                   {{ requirement }}
                 </li>
@@ -128,14 +127,14 @@
           <div class="service-footer">
 
             <span class="service-charge">
-              {{ service.charge }}
+              {{ ('svc.' + service.id + '.charge') | translate:service.charge }}
             </span>
 
             <a
               [routerLink]="['/service', service.id]"
               class="details-button"
             >
-              <span>View Details</span>
+              <span>{{ 'common.viewDetails' | translate:'View Details' }}</span>
               <i class="fa-solid fa-arrow-right"></i>
             </a>
 
@@ -157,11 +156,11 @@
       <div class="section-heading">
 
         <span class="section-label">
-          GOVERNMENT & DOCUMENT SERVICES
+          {{ 'cat.Government & Document Services' | translate:'Government & Document Services' }}
         </span>
 
         <h2>
-          Government & Documents
+          {{ 'services.group.government' | translate:'Government & Documents' }}
         </h2>
 
         <div class="heading-line">
@@ -169,8 +168,7 @@
         </div>
 
         <p>
-          Government documents, certificates, cards, pension and
-          other important document services.
+          {{ 'services.groupDesc.government' | translate:'Government documents, certificates, cards, pension and other important document services.' }}
         </p>
 
       </div>
@@ -195,15 +193,15 @@
           <div class="service-card-content">
 
             <span class="service-category">
-              {{ service.category }}
+              {{ ('cat.' + service.category) | translate:service.category }}
             </span>
 
             <h3>
-              {{ service.name }}
+              {{ ('svc.' + service.id + '.name') | translate:service.name }}
             </h3>
 
             <p>
-              {{ service.description }}
+              {{ ('svc.' + service.id + '.desc') | translate:service.description }}
             </p>
 
 
@@ -211,13 +209,13 @@
 
               <strong>
                 <i class="fa-solid fa-circle-check"></i>
-                Required
+                {{ 'services.required' | translate:'Required' }}
               </strong>
 
               <ul>
 
                 <li
-                  *ngFor="let requirement of service.requirements"
+                  *ngFor="let requirement of i18n.serviceRequirements(service.id, service.requirements)"
                 >
                   {{ requirement }}
                 </li>
@@ -232,14 +230,14 @@
           <div class="service-footer">
 
             <span class="service-charge">
-              {{ service.charge }}
+              {{ ('svc.' + service.id + '.charge') | translate:service.charge }}
             </span>
 
             <a
               [routerLink]="['/service', service.id]"
               class="details-button"
             >
-              <span>View Details</span>
+              <span>{{ 'common.viewDetails' | translate:'View Details' }}</span>
               <i class="fa-solid fa-arrow-right"></i>
             </a>
 
@@ -261,11 +259,11 @@
       <div class="section-heading">
 
         <span class="section-label">
-          INSURANCE & VEHICLE SERVICES
+          {{ 'cat.Insurance & Vehicle Services' | translate:'Insurance & Vehicle Services' }}
         </span>
 
         <h2>
-          Insurance & Vehicle
+          {{ 'services.group.insurance' | translate:'Insurance & Vehicle' }}
         </h2>
 
         <div class="heading-line">
@@ -273,7 +271,7 @@
         </div>
 
         <p>
-          Insurance, vehicle renewal and transport related services.
+          {{ 'services.groupDesc.insurance' | translate:'Insurance, vehicle renewal and transport related services.' }}
         </p>
 
       </div>
@@ -298,15 +296,15 @@
           <div class="service-card-content">
 
             <span class="service-category">
-              {{ service.category }}
+              {{ ('cat.' + service.category) | translate:service.category }}
             </span>
 
             <h3>
-              {{ service.name }}
+              {{ ('svc.' + service.id + '.name') | translate:service.name }}
             </h3>
 
             <p>
-              {{ service.description }}
+              {{ ('svc.' + service.id + '.desc') | translate:service.description }}
             </p>
 
 
@@ -314,13 +312,13 @@
 
               <strong>
                 <i class="fa-solid fa-circle-check"></i>
-                Required
+                {{ 'services.required' | translate:'Required' }}
               </strong>
 
               <ul>
 
                 <li
-                  *ngFor="let requirement of service.requirements"
+                  *ngFor="let requirement of i18n.serviceRequirements(service.id, service.requirements)"
                 >
                   {{ requirement }}
                 </li>
@@ -335,14 +333,14 @@
           <div class="service-footer">
 
             <span class="service-charge">
-              {{ service.charge }}
+              {{ ('svc.' + service.id + '.charge') | translate:service.charge }}
             </span>
 
             <a
               [routerLink]="['/service', service.id]"
               class="details-button"
             >
-              <span>View Details</span>
+              <span>{{ 'common.viewDetails' | translate:'View Details' }}</span>
               <i class="fa-solid fa-arrow-right"></i>
             </a>
 
@@ -364,11 +362,11 @@
       <div class="section-heading">
 
         <span class="section-label">
-          OTHER SERVICES
+          {{ 'services.group.other' | translate:'Other Services' }}
         </span>
 
         <h2>
-          Other Services
+          {{ 'services.group.other' | translate:'Other Services' }}
         </h2>
 
         <div class="heading-line">
@@ -376,7 +374,7 @@
         </div>
 
         <p>
-          Business, education, document and other online services.
+          {{ 'services.groupDesc.other' | translate:'Business, education, document and other online services.' }}
         </p>
 
       </div>
@@ -401,15 +399,15 @@
           <div class="service-card-content">
 
             <span class="service-category">
-              {{ service.category }}
+              {{ ('cat.' + service.category) | translate:service.category }}
             </span>
 
             <h3>
-              {{ service.name }}
+              {{ ('svc.' + service.id + '.name') | translate:service.name }}
             </h3>
 
             <p>
-              {{ service.description }}
+              {{ ('svc.' + service.id + '.desc') | translate:service.description }}
             </p>
 
 
@@ -417,13 +415,13 @@
 
               <strong>
                 <i class="fa-solid fa-circle-check"></i>
-                Required
+                {{ 'services.required' | translate:'Required' }}
               </strong>
 
               <ul>
 
                 <li
-                  *ngFor="let requirement of service.requirements"
+                  *ngFor="let requirement of i18n.serviceRequirements(service.id, service.requirements)"
                 >
                   {{ requirement }}
                 </li>
@@ -438,14 +436,14 @@
           <div class="service-footer">
 
             <span class="service-charge">
-              {{ service.charge }}
+              {{ ('svc.' + service.id + '.charge') | translate:service.charge }}
             </span>
 
             <a
               [routerLink]="['/service', service.id]"
               class="details-button"
             >
-              <span>View Details</span>
+              <span>{{ 'common.viewDetails' | translate:'View Details' }}</span>
               <i class="fa-solid fa-arrow-right"></i>
             </a>
 
@@ -470,15 +468,14 @@
 
       <div class="cta-content">
 
-        <span>NEED HELP?</span>
+        <span>{{ 'services.ctaLabel' | translate:'NEED HELP?' }}</span>
 
         <h2>
-          Not Sure Which Service You Need?
+          {{ 'services.ctaTitle' | translate:'Not Sure Which Service You Need?' }}
         </h2>
 
         <p>
-          Contact Hamza Travels and get personal assistance
-          for your application or travel requirements.
+          {{ 'services.ctaText' | translate:'Contact Hamza Travels and get personal assistance for your application or travel requirements.' }}
         </p>
 
       </div>
@@ -487,7 +484,7 @@
         routerLink="/contact"
         class="cta-button"
       >
-        Contact Us
+        {{ 'home.contactUs' | translate:'Contact Us' }}
         <i class="fa-solid fa-arrow-right"></i>
       </a>
 

@@ -7,10 +7,10 @@
       class="service-not-found"
       *ngIf="serviceNotFound">
 
-      <h2>Service Not Found</h2>
+      <h2>{{ 'form.notFoundTitle' | translate:'Service Not Found' }}</h2>
 
       <p>
-        The requested service does not exist.
+        {{ 'form.notFoundDesc' | translate:'The requested service does not exist.' }}
       </p>
 
       <button
@@ -18,29 +18,26 @@
         class="back-to-service-button"
         routerLink="/services">
 
-        Back to Services
+        {{ 'form.backToServices' | translate:'Back to Services' }}
 
       </button>
 
     </div>
 
 
-    <!-- NORMAL APPLICATION FORM PAGE -->
+    <!-- ENQUIRY FORM -->
     <ng-container
-      *ngIf="!applicationSubmitted && !serviceNotFound">
+      *ngIf="!enquirySent && !serviceNotFound">
 
       <!-- PAGE HEADING -->
       <div class="form-heading">
 
-        <span>APPLICATION FORM</span>
+        <span>{{ 'form.eyebrow' | translate:'ENQUIRE NOW' }}</span>
 
-        <h1>{{ serviceName }}</h1>
-
-        <h1>Submit Your Details</h1>
+        <h1>{{ ('svc.' + serviceId + '.name') | translate:serviceName }}</h1>
 
         <p>
-          Fill in your details correctly. Our team will review your
-          information and contact you for further processing.
+          {{ 'form.subtitle' | translate:'Share your name (optional) and send us a quick enquiry on WhatsApp. Our team will contact you shortly.' }}
         </p>
 
       </div>
@@ -52,113 +49,40 @@
         class="back-to-service-button"
         [routerLink]="['/service', serviceId]">
 
-        ← Back to Service
+        ← {{ 'form.backToService' | translate:'Back to Service' }}
 
       </button>
 
 
-      <!-- APPLICATION FORM -->
+      <!-- ENQUIRY FORM -->
       <form
-        *ngIf="applicationForm"
-        [formGroup]="applicationForm"
-        (ngSubmit)="submitApplication()"
+        (ngSubmit)="submitEnquiry()"
         class="application-form">
 
-        <!-- DYNAMIC FORM FIELDS -->
-        <div
-          class="form-group"
-          *ngFor="let field of fields">
+        <!-- NAME FIELD -->
+        <div class="form-group">
 
-          <!-- LABEL -->
-          <label [for]="field.name">
+          <label for="customerName">
 
-            {{ field.label }}
-
-            <span *ngIf="field.required">*</span>
+            {{ 'form.nameLabel' | translate:'Your Name' }}
 
           </label>
 
-
-          <!-- TEXT / TEL / EMAIL / DATE / NUMBER -->
           <input
-            *ngIf="
-              field.type === 'text' ||
-              field.type === 'tel' ||
-              field.type === 'email' ||
-              field.type === 'date' ||
-              field.type === 'number'
-            "
-            [id]="field.name"
-            [type]="field.type"
-            [formControlName]="field.name"
-            [placeholder]="field.placeholder || ''"
-            [class.input-error]="isInvalid(field.name)"
+            id="customerName"
+            type="text"
+            name="customerName"
+            [(ngModel)]="customerName"
+            [placeholder]="'form.namePlaceholder' | translate:'Enter your name (optional)'"
           />
 
-
-          <!-- TEXTAREA -->
-          <textarea
-            *ngIf="field.type === 'textarea'"
-            [id]="field.name"
-            [formControlName]="field.name"
-            [placeholder]="field.placeholder || ''"
-            rows="5"
-            [class.input-error]="isInvalid(field.name)"
-          ></textarea>
-
-
-          <!-- SELECT -->
-          <select
-            *ngIf="field.type === 'select'"
-            [id]="field.name"
-            [formControlName]="field.name"
-            [class.input-error]="isInvalid(field.name)">
-
-            <option value="">
-              Select an option
-            </option>
-
-            <option
-              *ngFor="let option of field.options"
-              [value]="option">
-
-              {{ option }}
-
-            </option>
-
-          </select>
-
-
-          <!-- REQUIRED ERROR -->
-          <small
-            class="error-message"
-            *ngIf="
-              isInvalid(field.name) &&
-              applicationForm.get(field.name)?.hasError('required')
-            ">
-
-            {{ field.label }} is required.
-
-          </small>
-
-
-          <!-- MOBILE ERROR -->
-          <small
-            class="error-message"
-            *ngIf="
-              isInvalid(field.name) &&
-              applicationForm.get(field.name)?.hasError('pattern')
-            ">
-
-            <span *ngIf="field.name === 'mobile'">
-
-              Please enter a valid 10-digit mobile number.
-
-            </span>
-
-          </small>
-
         </div>
+
+
+        <!-- PRIVACY NOTE -->
+        <p class="privacy-note">
+          {{ 'form.privacyNote' | translate:'Your details are safe and used only for this enquiry.' }}
+        </p>
 
 
         <!-- SUBMIT BUTTON -->
@@ -168,7 +92,7 @@
             type="submit"
             class="submit-button">
 
-            Submit Application
+            {{ 'form.submit' | translate:'Send Enquiry on WhatsApp' }}
 
           </button>
 
@@ -182,13 +106,12 @@
     <!-- SUCCESS MESSAGE -->
     <div
       class="success-message"
-      *ngIf="applicationSubmitted">
+      *ngIf="enquirySent">
 
-      <h2>Application Submitted Successfully!</h2>
+      <h2>{{ 'form.successTitle' | translate:'Enquiry Sent!' }}</h2>
 
       <p>
-        Your details have been prepared for WhatsApp.
-        Our team will contact you shortly.
+        {{ 'form.successDesc' | translate:'WhatsApp has been opened with your enquiry message. Our team will contact you shortly.' }}
       </p>
 
 
@@ -197,7 +120,7 @@
         class="back-to-service-button"
         [routerLink]="['/service', serviceId]">
 
-        Back to Service
+        {{ 'form.backToService' | translate:'Back to Service' }}
 
       </button>
 
@@ -205,9 +128,9 @@
       <button
         type="button"
         class="new-application-button"
-        (click)="applicationSubmitted = false">
+        (click)="enquirySent = false">
 
-        Submit Another Application
+        {{ 'form.newEnquiry' | translate:'Send Another Enquiry' }}
 
       </button>
 

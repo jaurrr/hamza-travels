@@ -894,3 +894,84 @@
   }
 
 }
+
+/* =========================================================
+   TRAVEL CARD — CLICKABLE WHATSAPP LINK WRAPPER
+========================================================= */
+
+.travel-card-link {
+  display: block;
+
+  color: inherit;
+
+  text-decoration: none;
+}
+
+.travel-card-link .travel-card {
+  height: 100%;
+}
+
+.enquire-hint {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  margin-top: 9px;
+
+  color: var(--teal);
+
+  font-size: 9.5px;
+  font-weight: 700;
+
+  transition: color 0.2s ease;
+}
+
+.enquire-hint i {
+  font-size: 11px;
+}
+
+.travel-card-link:hover .enquire-hint {
+  color: var(--primary);
+
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   DARK MODE — EXPLORE
+========================================================= */
+
+body.dark-mode .explore-hero {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(20, 37, 47, 0.98),
+      rgba(14, 27, 36, 0.95)
+    );
+
+  border-color: rgba(111, 167, 199, 0.12);
+
+  box-shadow:
+    0 14px 38px rgba(0, 0, 0, 0.30);
+}
+
+body.dark-mode .explore-intro {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(20, 37, 47, 0.98),
+      rgba(16, 30, 39, 0.96)
+    );
+}
+
+body.dark-mode .travel-image {
+  background: var(--surface-soft);
+}
+
+body.dark-mode .cta-button {
+  background: var(--teal);
+  border-color: var(--teal);
+
+  color: #0b151c;
+}

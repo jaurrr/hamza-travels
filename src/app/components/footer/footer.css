@@ -178,3 +178,80 @@
     grid-column: auto;
   }
 }
+/* =========================================================
+   SERVICES — LINKED LIST
+   The "Our Services" column is a consistent list of links
+   to /services (one per service category).
+   ========================================================= */
+
+.footer-services a {
+  color: #d8e4e9;
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 1.4;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.footer-services a:hover {
+  color: var(--accent);
+  transform: translateX(2px);
+}
+
+
+/* =========================================================
+   DARK MODE — FOOTER (component-level overrides)
+   Works together with the global footer dark-mode layer
+   in styles.css. Layout / spacing untouched.
+   ========================================================= */
+
+body.dark-mode .footer {
+  background:
+    linear-gradient(
+      180deg,
+      #101f28 0%,
+      #0b151c 100%
+    ) !important;
+  color: #b9cbd2 !important;
+  border-top: 1px solid #304954;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.20);
+}
+
+body.dark-mode .footer-container h3 {
+  color: #f3c15b;
+}
+
+body.dark-mode .footer-brand h2 {
+  color: #f3f7f8;
+}
+
+body.dark-mode .footer-brand p {
+  color: #aebfc7;
+}
+
+body.dark-mode .footer-links a,
+body.dark-mode .footer-services a,
+body.dark-mode .footer-contact a,
+body.dark-mode .footer-owner a {
+  color: #b9cbd2;
+}
+
+body.dark-mode .footer-links a:hover,
+body.dark-mode .footer-services a:hover,
+body.dark-mode .footer-contact a:hover,
+body.dark-mode .footer-owner a:hover {
+  color: #42d1d8;
+}
+
+body.dark-mode .footer-owner strong {
+  color: #f3f7f8;
+}
+
+body.dark-mode .footer-bottom {
+  border-top-color: #304954;
+}
+
+body.dark-mode .footer-bottom p {
+  color: #8198a3;
+}

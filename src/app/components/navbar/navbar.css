@@ -644,6 +644,25 @@
 
   transform: scale(0.94);
 }
+/* =========================================================
+   LANGUAGE TOGGLE (same look as theme toggle)
+   ========================================================= */
+
+.lang-toggle .lang-letter {
+
+  font-size: 16px;
+
+  font-weight: 800;
+
+  font-family:
+    "Poppins",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  line-height: 1;
+}
+
 
 
 
@@ -1484,5 +1503,191 @@ body.dark-mode .theme-toggle:hover {
 
     box-shadow:
       0 6px 16px rgba(0, 0, 0, 0.24);
+  }
+}
+
+
+/* =========================================================
+   LANGUAGE TOGGLE PILL
+========================================================= */
+
+.lang-pill {
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  flex-shrink: 0;
+
+  padding: 5px 8px;
+
+  border: 1px solid rgba(0, 61, 91, 0.10);
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.82);
+
+  box-shadow:
+    0 4px 12px rgba(0, 61, 91, 0.05);
+}
+
+.lang-label {
+
+  color: var(--text-light);
+
+  font-size: 9.5px;
+  font-weight: 800;
+
+  letter-spacing: 0.4px;
+
+  text-transform: uppercase;
+}
+
+.lang-btn {
+
+  padding: 3px 9px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: transparent;
+
+  color: var(--text-light);
+
+  font-size: 11px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.lang-btn:hover {
+
+  color: var(--primary);
+}
+
+.lang-btn.active {
+
+  background: var(--teal);
+
+  color: #ffffff;
+}
+
+.lang-sep {
+
+  color: var(--border);
+
+  font-size: 10px;
+
+  user-select: none;
+}
+
+
+/* =========================================================
+   VOICE ERROR (replaces raw alert)
+========================================================= */
+
+.voice-error {
+
+  position: absolute;
+
+  top: calc(100% + 8px);
+
+  left: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 9px 12px;
+
+  background: rgba(209, 73, 91, 0.10);
+
+  border: 1px solid rgba(209, 73, 91, 0.35);
+  border-radius: 10px;
+
+  color: var(--danger);
+
+  font-size: 11.5px;
+  font-weight: 700;
+  line-height: 1.5;
+
+  box-shadow:
+    0 12px 28px rgba(0, 61, 91, 0.08);
+
+  z-index: 1100;
+}
+
+.voice-error i {
+
+  flex-shrink: 0;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   DARK MODE — LANGUAGE PILL + VOICE ERROR
+========================================================= */
+
+body.dark-mode .lang-pill {
+
+  background: rgba(18, 35, 46, 0.95);
+
+  border-color: rgba(111, 167, 199, 0.18);
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+body.dark-mode .lang-btn.active {
+
+  background: var(--teal);
+
+  color: #0b151c;
+}
+
+body.dark-mode .voice-error {
+
+  background: rgba(255, 123, 136, 0.10);
+
+  border-color: rgba(255, 123, 136, 0.35);
+
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.28);
+}
+
+
+/* =========================================================
+   LANGUAGE PILL — RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .lang-label {
+
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .lang-pill {
+
+    padding: 4px 6px;
+
+    gap: 4px;
+  }
+
+  .lang-btn {
+
+    padding: 3px 7px;
+
+    font-size: 10px;
   }
 }

@@ -3,19 +3,19 @@
   <div class="service-details-container">
 
     <a routerLink="/services" class="back-link">
-      ← Back to Services
+      ← {{ 'details.backToServices' | translate:'Back to Services' }}
     </a>
 
     <div *ngIf="service; else serviceNotFound">
 
       <div class="service-details-heading">
 
-        <span>{{ service.category }}</span>
+        <span>{{ ('cat.' + service.category) | translate:service.category }}</span>
 
-        <h1>{{ service.name }}</h1>
+        <h1>{{ ('svc.' + service.id + '.name') | translate:service.name }}</h1>
 
         <p>
-          {{ service.description }}
+          {{ ('svc.' + service.id + '.desc') | translate:service.description }}
         </p>
 
       </div>
@@ -25,10 +25,10 @@
         <!-- INFORMATION -->
         <div class="service-info-card">
 
-          <h2>Required Documents</h2>
+          <h2>{{ 'details.requiredDocuments' | translate:'Required Documents' }}</h2>
 
           <ul>
-            <li *ngFor="let requirement of service.requirements">
+            <li *ngFor="let requirement of i18n.serviceRequirements(service.id, service.requirements)">
               {{ requirement }}
             </li>
           </ul>
@@ -38,13 +38,13 @@
         <!-- ACTION -->
         <div class="service-action-card">
 
-          <h2>Service Charges</h2>
+          <h2>{{ 'details.serviceCharges' | translate:'Service Charges' }}</h2>
 
           <p>
-            {{ service.charge }}
+            {{ ('svc.' + service.id + '.charge') | translate:service.charge }}
           </p>
 
-       <a [routerLink]="['/apply',service.id]" class="apply-button"> Apply Now</a>
+       <a [routerLink]="['/apply',service.id]" class="apply-button">{{ 'common.enquireNow' | translate:'Enquire Now' }}</a>
 
 
         </div>
@@ -57,14 +57,14 @@
 
       <div class="not-found">
 
-        <h2>Service Not Found</h2>
+        <h2>{{ 'details.notFoundTitle' | translate:'Service Not Found' }}</h2>
 
         <p>
-          The service you are looking for does not exist.
+          {{ 'details.notFoundDesc' | translate:'The service you are looking for does not exist.' }}
         </p>
 
         <a routerLink="/services">
-          View All Services
+          {{ 'details.viewAllServices' | translate:'View All Services' }}
         </a>
 
       </div>

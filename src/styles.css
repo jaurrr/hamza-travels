@@ -2873,3 +2873,145 @@ body.dark-mode .back-to-service-button:hover {
   box-shadow:
     0 9px 20px rgba(66, 209, 216, 0.12);
 }
+
+
+/* =========================================================
+   =========================================================
+   CANONICAL BREAKPOINT SCALE
+   =========================================================
+   =========================================================
+
+   Use these breakpoints project-wide for all responsive
+   rules. Do not invent new ones — pick the nearest below.
+
+     360px   small phones ......... safety floor: no
+                                     horizontal overflow, floats
+                                     must not cover content
+     480px   large phones ......... stacked layouts, full-width
+                                     buttons
+     768px   tablets (portrait) ... 2-column grids collapse
+     1024px  small laptops /
+             tablets (landscape) .. nav + hero adjustments
+     1280px  desktops ............. default container widths
+     1600px+ large desktops ....... container widening pass
+                                     (see "LARGE DESKTOP" below)
+
+   Existing per-component media queries keep their own
+   values where already defined; the scale above is the
+   reference for anything new.
+   ========================================================= */
+
+
+/* =========================================================
+   360PX SAFETY — NO HORIZONTAL OVERFLOW
+   `clip` (not `hidden`) so it never breaks position: sticky.
+   ========================================================= */
+
+body {
+  overflow-x: clip;
+}
+
+
+/* =========================================================
+   =========================================================
+   LARGE DESKTOP PASS — min-width: 1600px
+   =========================================================
+   =========================================================
+
+   Widen the main page containers on very wide screens so
+   content doesn't sit in a narrow column. Selectors are
+   prefixed with `body` for specificity so they reliably
+   beat the component-level container rules. Layout and
+   spacing inside the containers are untouched.
+   ========================================================= */
+
+@media (min-width: 1600px) {
+
+  /* Home (landing) hero */
+  body .hero-section {
+    width: min(1400px, 94%);
+  }
+
+  /* Navbar */
+  body .navbar-container {
+    width: min(1400px, 94%);
+  }
+
+  /* Services page */
+  body .services-container {
+    width: min(1440px, 94%);
+  }
+
+  /* Service details page */
+  body .service-details-container {
+    width: min(1200px, 92%);
+  }
+
+  /* Application form page */
+  body .application-form-container {
+    width: min(1000px, 96%);
+  }
+
+  /* About page */
+  body .about-container {
+    max-width: 1400px;
+  }
+
+  /* Contact page */
+  body .contact-container {
+    width: min(1360px, 94%);
+  }
+
+  /* Explore page — hero + intro sections */
+  body .explore-hero {
+    max-width: 1100px;
+  }
+
+  body .explore-intro {
+    max-width: 1020px;
+  }
+
+  /* Footer */
+  body .footer-container {
+    width: min(1400px, 94%);
+  }
+
+  body .footer-bottom p {
+    width: min(1400px, 94%);
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES — max-width: 360px
+   Floating buttons: pull in and shrink slightly so they
+   never cover page content on the narrowest screens.
+   (`body` prefix keeps this winning over app.css.)
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  body .whatsapp-float,
+  body .instagram-float {
+    right: 10px;
+
+    width: 38px;
+    height: 38px;
+  }
+
+  body .whatsapp-float {
+    bottom: 12px;
+  }
+
+  body .instagram-float {
+    bottom: 57px;
+  }
+
+  body .whatsapp-icon,
+  body .instagram-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+}

@@ -196,6 +196,30 @@
   font-weight: 600;
 }
 
+/* =========================================================
+   DARK MODE
+   Color-only overrides. Layout/responsive rules untouched.
+========================================================= */
+
+body.dark-mode .service-info-card,
+body.dark-mode .service-action-card,
+body.dark-mode .not-found {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+}
+
+/* --primary flips to near-white in dark mode, so the
+   button needs the teal treatment like .details-button. */
+body.dark-mode .apply-button {
+  background: var(--teal);
+  color: #071419;
+}
+
+body.dark-mode .apply-button:hover {
+  background: #63dce2;
+  color: #071419;
+}
+
+
 /* =========================
    TABLET / MOBILE
 ========================= */

@@ -7,11 +7,15 @@ import {
   Service
 } from '../../data/services.data';
 
+import { TranslatePipe } from '../../core/translate.pipe';
+import { TranslationService } from '../../core/translation.service';
+
 @Component({
   selector: 'app-service-details',
   imports: [
     CommonModule,
-    RouterLink
+    RouterLink,
+    TranslatePipe
   ],
   templateUrl: './service-details.html',
   styleUrl: './service-details.css'
@@ -22,7 +26,8 @@ export class ServiceDetails implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    public i18n: TranslationService
   ) {}
 
   ngOnInit(): void {

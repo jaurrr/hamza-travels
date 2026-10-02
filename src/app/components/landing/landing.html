@@ -1,0 +1,325 @@
+<div class="landing-page">
+
+  <!-- =====================================
+       HOME / HERO
+  ====================================== -->
+
+  <section id="home" class="snap-section landing-hero">
+    <app-home></app-home>
+  </section>
+
+
+  <!-- =====================================
+       POPULAR SERVICES
+  ====================================== -->
+
+  <section id="services" class="snap-section landing-section">
+
+    <div class="landing-container">
+
+      <span class="landing-tag">
+        {{ 'landing.popularTag' | translate }}
+      </span>
+
+      <h2 class="landing-title">
+        {{ 'landing.popularTitle' | translate }}
+      </h2>
+
+      <p class="landing-sub">
+        {{ 'landing.popularDesc' | translate }}
+      </p>
+
+
+      <div class="popular-grid">
+
+        <article
+          class="popular-card"
+          *ngFor="let s of popularServices">
+
+          <h3>
+            {{ ('svc.' + s.id + '.name') | translate:s.name }}
+          </h3>
+
+          <p>
+            {{ ('svc.' + s.id + '.desc') | translate:s.description }}
+          </p>
+
+          <a
+            [routerLink]="['/service', s.id]"
+            class="enquire-link">
+
+            {{ 'common.enquireNow' | translate }}
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+          </a>
+
+        </article>
+
+      </div>
+
+
+      <a
+        routerLink="/services"
+        class="view-all-link">
+
+        {{ 'landing.viewAll' | translate }}
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       ABOUT (CONDENSED)
+  ====================================== -->
+
+  <section id="about" class="snap-section landing-section landing-section-alt">
+
+    <div class="landing-container">
+
+      <span class="landing-tag">
+        {{ 'landing.aboutTag' | translate }}
+      </span>
+
+      <h2 class="landing-title">
+        {{ 'landing.aboutTitle' | translate }}
+      </h2>
+
+      <p class="landing-sub">
+        {{ 'landing.aboutDesc' | translate }}
+      </p>
+
+
+      <span class="landing-tag landing-tag-soft">
+        {{ 'landing.whyTag' | translate }}
+      </span>
+
+      <h3 class="why-title">
+        {{ 'landing.whyTitle' | translate }}
+      </h3>
+
+
+      <div class="why-grid">
+
+        <div class="why-point">
+          <div class="why-icon">
+            <i class="fa-solid fa-house-laptop"></i>
+          </div>
+          <div>
+            <strong>{{ 'landing.why1t' | translate }}</strong>
+            <span>{{ 'landing.why1d' | translate }}</span>
+          </div>
+        </div>
+
+        <div class="why-point">
+          <div class="why-icon">
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+          </div>
+          <div>
+            <strong>{{ 'landing.why2t' | translate }}</strong>
+            <span>{{ 'landing.why2d' | translate }}</span>
+          </div>
+        </div>
+
+        <div class="why-point">
+          <div class="why-icon">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <div>
+            <strong>{{ 'landing.why3t' | translate }}</strong>
+            <span>{{ 'landing.why3d' | translate }}</span>
+          </div>
+        </div>
+
+      </div>
+
+
+      <a
+        routerLink="/about"
+        class="view-all-link">
+
+        {{ 'landing.knowMore' | translate }}
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       EXPLORE (CONDENSED)
+  ====================================== -->
+
+  <section id="explore" class="snap-section landing-section">
+
+    <div class="landing-container">
+
+      <span class="landing-tag">
+        {{ 'landing.exploreTag' | translate }}
+      </span>
+
+      <h2 class="landing-title">
+        {{ 'landing.exploreTitle' | translate }}
+      </h2>
+
+      <p class="landing-sub">
+        {{ 'landing.exploreDesc' | translate }}
+      </p>
+
+
+      <div class="dest-grid">
+
+        <a
+          *ngFor="let dest of previewDestinations"
+          [href]="destWaLink(dest.key)"
+          target="_blank"
+          rel="noopener"
+          class="dest-mini"
+          [attr.aria-label]="('explore.dest.' + dest.key + '.name') | translate">
+
+          <img
+            [src]="dest.image"
+            [attr.alt]="('explore.dest.' + dest.key + '.name') | translate"
+            loading="lazy">
+
+          <div class="dest-mini-body">
+            <strong>
+              {{ ('explore.dest.' + dest.key + '.name') | translate }}
+            </strong>
+            <span>
+              {{ ('explore.dest.' + dest.key + '.desc') | translate }}
+            </span>
+          </div>
+
+          <i class="fa-brands fa-whatsapp dest-mini-wa"></i>
+
+        </a>
+
+      </div>
+
+
+      <a
+        routerLink="/explore"
+        class="view-all-link">
+
+        {{ 'landing.exploreAll' | translate }}
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       CONTACT (CONDENSED)
+  ====================================== -->
+
+  <section id="contact" class="snap-section landing-section landing-section-alt">
+
+    <div class="landing-container contact-block">
+
+      <span class="landing-tag">
+        {{ 'landing.contactTag' | translate }}
+      </span>
+
+      <h2 class="landing-title">
+        {{ 'landing.contactTitle' | translate }}
+      </h2>
+
+      <p class="landing-sub">
+        {{ 'landing.contactDesc' | translate }}
+      </p>
+
+
+      <a
+        [href]="whatsappCta"
+        target="_blank"
+        rel="noopener"
+        class="whatsapp-cta">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+        <!-- i18n: 'landing.whatsappCta' does not exist yet;
+             using the closest available key below. -->
+        {{ 'landing.contactButton' | translate }}
+
+      </a>
+
+
+      <p class="contact-alt">
+        {{ 'landing.contactAlt' | translate }}
+        <a routerLink="/contact">{{ 'nav.contact' | translate }}</a>
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       TESTIMONIALS
+  ====================================== -->
+
+  <section id="reviews" class="snap-section landing-section">
+
+    <div class="landing-container">
+
+      <span class="landing-tag">
+        {{ 'landing.testiTag' | translate }}
+      </span>
+
+      <h2 class="landing-title">
+        {{ 'landing.testiTitle' | translate }}
+      </h2>
+
+
+      <div class="testi-grid">
+
+        <article
+          class="testi-card"
+          *ngFor="let t of testimonials">
+
+      
+
+    <div class="testi-stars" aria-hidden="true">
+  <i
+    class="fa-solid fa-star"
+    *ngFor="let s of starList(t.stars)">
+  </i>
+</div>
+
+
+          <p class="testi-text">
+            &ldquo;{{ ('landing.' + t.textKey) | translate }}&rdquo;
+          </p>
+
+          <div class="testi-who">
+            <strong>
+              {{ ('landing.' + t.nameKey) | translate }}
+            </strong>
+            <!-- i18n: 'landing.tNrole' keys do not exist yet -->
+            <span>
+              {{ ('landing.' + t.roleKey) | translate:'Customer' }}
+            </span>
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>

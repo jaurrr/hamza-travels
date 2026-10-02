@@ -17,10 +17,10 @@
 
         <div class="brand-glow"></div>
 
-        <h1>
+        <div class="brand-name">
           <span class="brand-main">Hamza</span>
           <span class="brand-highlight">Travels</span>
-        </h1>
+        </div>
 
       </div>
 
@@ -76,11 +76,16 @@
      MAIN WEBSITE
 ========================================================= -->
 
-<app-navbar></app-navbar>
+@if (i18n.ready()) {
 
-<router-outlet></router-outlet>
+  <app-navbar></app-navbar>
 
-<app-footer></app-footer>
+  <router-outlet></router-outlet>
+
+  <app-footer></app-footer>
+
+}
+
 
 
 <!-- =========================================================
@@ -89,7 +94,7 @@
 
 <a
   class="whatsapp-float"
-  href="https://wa.me/919935212224"
+  [href]="whatsappFloatLink"
   target="_blank"
   rel="noopener noreferrer"
   aria-label="Chat with Hamza Travels on WhatsApp"
@@ -113,7 +118,7 @@
 
 <a
   class="instagram-float"
-  href="https://www.instagram.com/hamzatravel98/"
+  [href]="instagramUrl"
   target="_blank"
   rel="noopener noreferrer"
   aria-label="Follow Hamza Travels on Instagram"
